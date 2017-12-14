@@ -4,6 +4,7 @@ import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import BrowseScreen from './screens//BrowseScreen/BrowseScreen';
 import { Drawer as DrawerContent } from './components/DrawerComponent';
+import { withLoading } from './components/hoc/withLoading';
 
 import { AppLoading, Constants } from 'expo';
 import {drawerActiveBackgroundColor, drawerBackgroundColor, drawerInactiveTintColor, drawerActiveTintColor} from './common/constants';
@@ -12,7 +13,7 @@ import {drawerActiveBackgroundColor, drawerBackgroundColor, drawerInactiveTintCo
 
 const Main = DrawerNavigator({
   Home: { screen: HomeScreen },
-  Browse: { screen: BrowseScreen }
+  Browse: { screen: withLoading(BrowseScreen) }
 }, {
     contentComponent: DrawerContent,
     drawerBackgroundColor: drawerBackgroundColor,
