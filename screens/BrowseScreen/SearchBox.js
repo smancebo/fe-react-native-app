@@ -7,6 +7,7 @@ export default class SearchBox extends React.Component {
     constructor(props) {
         super(props);
         this.handleTextChange = this.handleTextChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
     state = {
         seachText: ''
@@ -20,14 +21,14 @@ export default class SearchBox extends React.Component {
     }
 
     render() {
-        
+        const {searchText} = this.state
         return (
             <TextInput autoFocus
                 onSubmitEditing={this.onSubmit} 
                 onChangeText={this.handleTextChange} 
                 underlineColorAndroid={searchBoxUnderLineColor}
                 allowFontScaling={true} 
-                value={this.state.seachText}
+                value={searchText}
                 style={styles.searchBox}></TextInput>
             )
     }
