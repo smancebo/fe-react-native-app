@@ -7,8 +7,10 @@ export const Show = (props) => {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source={{ uri: `${config.API}/image/${image}`}} />
-            <Text style={styles.title}>{title.length > 30 ? title.substring(0,30) : title}</Text>
+            <View style={styles.shadow}>
+                <Image style={styles.image} source={{ uri: `${config.API}/image/${image}`}} />
+            </View>
+            <Text style={styles.title}>{title}</Text>
         </View>
     )
 }
@@ -16,7 +18,7 @@ export const Show = (props) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         flex: 1,
         minWidth: 200,
@@ -24,13 +26,21 @@ const styles = StyleSheet.create({
     },
     title : {
         fontSize: 24,
-        color: 'white'
+        color: 'white',
+        textAlign: 'center'
     },
     image: {
         width: 190,
         height: 230,
-        minHeight: 230,
-        minWidth: 190
+        borderRadius: 10
+    },
+    shadow: {
+        elevation: 3,
+        width: 190,
+        height: 230,
+        backgroundColor: '#222222',
+        borderRadius: 10
     }
+
 
 })
