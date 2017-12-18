@@ -23,12 +23,13 @@ export default class SearchBox extends React.Component {
     render() {
         const {searchText} = this.state
         return (
-            <TextInput autoFocus
+            <TextInput autoFocus={true}
                 onSubmitEditing={this.onSubmit} 
                 onChangeText={this.handleTextChange} 
                 underlineColorAndroid={searchBoxUnderLineColor}
                 allowFontScaling={true} 
                 value={searchText}
+                
                 style={styles.searchBox}></TextInput>
             )
     }

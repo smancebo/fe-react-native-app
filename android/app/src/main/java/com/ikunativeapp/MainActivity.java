@@ -1,6 +1,8 @@
 package com.ikunativeapp;
 
 import com.facebook.react.ReactActivity;
+import android.view.KeyEvent;
+import net.kangyufei.KeyEventModule;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +13,14 @@ public class MainActivity extends ReactActivity {
     @Override
     protected String getMainComponentName() {
         return "ikunativeapp";
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(event.getRepeatCount() == 0) {
+            KeyEventModule.getInstance().onKeyDownEvent(keyCode, event);
+        }
+        super.onKeyDown(keyCode, event);
+        return true;
     }
 }

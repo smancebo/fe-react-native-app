@@ -1,19 +1,56 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Image, Text, StyleSheet, Animated, Easing } from 'react-native';
 import { config } from '../config';
 
-export const Show = (props) => {
-    const { link, title, image } = props
+export default class Show extends React.Component {
+    constructor(props){
+        super(props);
+        this.fadeValue = new Animated.Value(0);
+        this.fadeIn = this.fadeIn.bind(this);
+        this.fadeOut = this.fadeOut.bind(this);
+    }
+    componentDidMount(){
+        //this.fadeIn();
+    }
+    componentWillUnmount(){
+       //this.fadeOut();
+    }
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.shadow}>
-                <Image style={styles.image} source={{ uri: `${config.API}/image/${image}`}} />
+    fadeIn(){
+        this.fadeValue.setValue(0);
+        Animated.timing(this.fadeValue,{
+            duration: 200,
+            toValue: 1,
+            easing: Easing.linear
+        }).start();
+    }
+
+    fadeOut(){
+        this.fadeValue.setValue(1);
+        Animated.timing(this.fadeValue,{
+            duration: 200,
+            toValue: 0,
+            easing: Easing.linear
+        })
+    }
+
+  
+
+    render() {
+        const { link, title, image } = this.props
+
+        return (
+            <View style={styles.container}>
+                <View style={styles.shadow}>
+                    <Image style={styles.image} source={{ uri: `${config.API}/image/${image}` }} />
+                </View>
+                <Text style={styles.title}>{title}</Text>
             </View>
-            <Text style={styles.title}>{title}</Text>
-        </View>
-    )
+        )
+    }
 }
+  
+
 
 const styles = StyleSheet.create({
     container: {

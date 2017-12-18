@@ -31,6 +31,8 @@ const Navigator = StackNavigator({
 
 }, {
     headerMode: 'none',
+    animationEnabled: false,
+    swipeEnabled: false
   })
 
 
