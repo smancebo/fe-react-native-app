@@ -5,7 +5,7 @@ import { globalStyles } from '../../common/styles';
 import SearchBox from './SearchBox';
 import Service from '../../common/api/service';
 import Show  from '../../components/Show';
-import Paginator from '../../components/Paginator';
+import {Paginator} from '../../components/Paginator';
 
 
 const a = new Array(100).fill('');
@@ -56,7 +56,7 @@ class BrowseScreen extends React.Component {
 
                     </View>
                     <View style={{ paddingTop: 20, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', alignSelf: 'stretch' }}>
-                        <Paginator pageSize={3} items={results} template={<Show />} />
+                        <Paginator  pageSize={3} items={results} template={<Show />} />
                     </View>
 
                 </Content>

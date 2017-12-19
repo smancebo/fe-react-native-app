@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Image, Text, StyleSheet, Animated, Easing } from 'react-native';
 import { config } from '../config';
+import { Selectable } from './hoc/Selectable';
 
-export default class Show extends React.Component {
+class Show extends React.Component {
     constructor(props){
         super(props);
         this.fadeValue = new Animated.Value(0);
@@ -34,13 +35,11 @@ export default class Show extends React.Component {
         })
     }
 
-  
-
     render() {
-        const { link, title, image } = this.props
+        const { link, title, image, onLayout } = this.props
 
         return (
-            <View style={styles.container}>
+            <View style={styles.container} onLayout={onLayout} >
                 <View style={styles.shadow}>
                     <Image style={styles.image} source={{ uri: `${config.API}/image/${image}` }} />
                 </View>
@@ -49,6 +48,8 @@ export default class Show extends React.Component {
         )
     }
 }
+
+export default Selectable(Show)
   
 
 
