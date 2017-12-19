@@ -1,4 +1,0 @@
-#Fri Dec 15 17:32:21 AST 2017
-base.0=/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9
-renamed.0=classes.dex
-file.0=/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex

@@ -4,8 +4,9 @@ import { Container, Header, Body, Title, Left, Right, Button, Icon, Text, Conten
 import { DrawerNavigator } from 'react-navigation'
 import { BrowseScreen } from '../BrowseScreen/BrowseScreen'
 import {Logo} from '../../common/constants'
-
-
+import KeyEvent from 'react-native-key-event';
+import { DPAD_MENU} from '../../common/dpadKeyCodes';
+ 
 
 export default class HomeScreen extends React.Component {
     static navigationOptions = {
@@ -15,6 +16,21 @@ export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
         this.handleButton = this.handleButton.bind(this);
+    }
+
+    componentDidMount(){
+        
+        KeyEvent.onKeyDownListener((event) => {
+            const {navigate} = this.props.navigation;
+            switch(event.keyCode){
+                case DPAD_MENU:
+                    navigate('DrawerToggle')      
+                    break;
+                    
+                default: 
+                break;
+            }
+        })
     }
 
     handleButton(e) {

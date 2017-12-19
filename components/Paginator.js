@@ -4,6 +4,7 @@ import { View, StyleSheet, Animated, Easing } from 'react-native'
 import { Grid, Row, Col, Button, Icon } from 'native-base';
 import { baseOrangeColor } from '../common/constants'
 import KeyEvent from 'react-native-key-event'
+import {DPAD_FAST_FORWARD, DPAD_FAST_BACKWARD } from '../common/dpadKeyCodes';
 
 let fadeValue = new Animated.Value(1);
 let slideValue = new Animated.Value(0);
@@ -40,9 +41,23 @@ export default class Paginator extends React.Component {
     }
 
     componentDidMount(){
-        KeyEvent.onKeyDownListener((keyCode)=>{
+        KeyEvent.onKeyDownListener((event)=>{
+            switch (event.keyCode){
+                case DPAD_FAST_FORWARD:
+                    this.forwardPage();
+                    break;
+                case DPAD_FAST_BACKWARD:
+                    this.backwardPage();
+                    break;
 
+                default:
+                    break;
+            }
         })
+    }
+
+    componentWillUnmount() {
+        KeyEvent.removeKeyDownListener();
     }
 
     forwardPage(){
@@ -89,14 +104,14 @@ export default class Paginator extends React.Component {
        
         return (
             <View style={styles.grid}>
-                <View style={styles.backward} >
+                <View style={styles.backward} onLayout={(e) => { console.log('left', e) }} >
                     { currentPage > 1 && 
                         <Button  backgroundColor={baseOrangeColor} onPress={this.backwardPage} >
                             <Icon name='md-rewind' />
                         </Button>
                     }
                 </View>
-                <View style={styles.content}>
+                <View style={styles.content} onLayout={(e) => { console.log('grid', e) }} >
                     <Grid>
                        
                             {
@@ -110,7 +125,7 @@ export default class Paginator extends React.Component {
                         
                     </Grid>
                 </View>
-                <View style={styles.forward}>
+                <View style={styles.forward} onLayout={(e) => { console.log('rigth', e) }}>
                    {
                         (pages.getTotalPages(pageSize) > 1) && (currentPage < pages.getTotalPages(pageSize)) &&
                         <Button  backgroundColor={baseOrangeColor} style={{ alignSelf: 'flex-end' }} onPress={this.forwardPage} >
