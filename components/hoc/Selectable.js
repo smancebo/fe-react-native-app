@@ -10,36 +10,24 @@ export const Selectable = (WrappedComponent) => class withSelectable extends Rea
         super(props);
         this.state = {
             registered: false,
-            isFocus: false
+            isFocus: false,
+            target: 0
         }
         this.onLayout = this.onLayout.bind(this);
         this.onPress = this.onPress.bind(this);
         this._handleFocus = this._handleFocus.bind(this);
         this._handleBlur = this._handleBlur.bind(this);
-        this.scaleValue = new Animated.Value(1);
-        this.SelectElement = (cb) => {
-            this.scaleValue.setValue(1)
-            Animated.timing(this.scaleValue, {
-                toValue: 1.1,
-                duration: 200
-            }).start(() => {
-                if (cb) cb();
-            });
-        }
-        this.DeSelectElement = (cb) => {
-            this.scaleValue.setValue(1.1);
-            Animated.timing(this.scaleValue, {
-                toValue: 1,
-                duration: 200
-            }).start(() => {
-                if (cb) cb();
-            })
-        }
+       
+    }
+
+    componentWillUnmount() {
+        //  this.context.unRegisterSelectable(this.state.target)
     }
 
     static contextTypes = {
         registerSelectable: PropTypes.func,
-        selectFirstElement: PropTypes.func
+        selectFirstElement: PropTypes.func,
+        unRegisterSelectable: PropTypes.func
     }
 
     onLayout(e) {
@@ -47,29 +35,40 @@ export const Selectable = (WrappedComponent) => class withSelectable extends Rea
             return;
         }
         const { layout } = e.nativeEvent;
-        this.context.registerSelectable({
-            x: layout.x,
-            y: layout.y,
-            onFocus: this._handleFocus,
-            onBlur: this._handleBlur,
-            onPress: this.onPress
-        });
+        const target = e.nativeEvent.target;
+        this.refs.wrappedComponent._self.measure((x, y, w, h ,px, py) => {
+            if (this.context.registerSelectable) {
 
-        if (this.props.onLayout) {
-            this.props.onLayout();
-        }
-        this.setState({ registered: true })
+
+                this.context.registerSelectable({
+                    x: px,
+                    y: py,
+                    onFocus: this._handleFocus,
+                    onBlur: this._handleBlur,
+                    onPress: this.onPress,
+                    props: this.props,
+                    target: target,
+                    removable: this.props.removable || false
+                });
+
+                if (this.props.onLayout) {
+                    this.props.onLayout();
+                }
+                this.setState({ registered: true, target: target })
+            }
+        })
+        
 
     }
 
     onPress() {
         const { onPress = () => { } } = this.props;
-        onPress();
+        onPress(this.props);
     }
     _handleFocus(callback) {
         const { onFocus } = this.props;
         this.setState({ isFocus: true });
-        this.SelectElement(callback);
+        // this.SelectElement(callback);
         if (onFocus) {
             onFocus();
         }
@@ -77,7 +76,7 @@ export const Selectable = (WrappedComponent) => class withSelectable extends Rea
     _handleBlur(callback) {
         const { onBlur } = this.props;
         this.setState({ isFocus: false })
-        this.DeSelectElement(callback);
+        // this.DeSelectElement(callback);
         if (onBlur) {
             onBlur()
         }
@@ -86,9 +85,9 @@ export const Selectable = (WrappedComponent) => class withSelectable extends Rea
     render() {
         const { isFocus } = this.state;
         return (
-            <Animated.View style={[this.props.style, isFocus === true ? {transform: [{scaleX: this.scaleValue}, {scaleY: this.scaleValue}]} : {}]}>
-                <WrappedComponent style={[this.props.style]} onLayout={this.onLayout} {... this.props} />
-            </Animated.View>
+            <View>
+                <WrappedComponent isFocus={isFocus} ref="wrappedComponent" style={[this.props.style]} onLayout={this.onLayout} {... this.props} />
+            </View>
         )
     }
 
@@ -98,7 +97,7 @@ export const Selectable = (WrappedComponent) => class withSelectable extends Rea
 const styles = StyleSheet.create({
     active: {
         opacity: .8,
-        
+
     }
 })
 

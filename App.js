@@ -2,18 +2,20 @@ import React from 'react';
 import { StyleSheet, Text, View, ToolbarAndroid, TextInput, AppRegistry } from 'react-native';
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import HomeScreen from './screens/HomeScreen/HomeScreen';
-import BrowseScreen from './screens//BrowseScreen/BrowseScreen';
+import BrowseScreen from './screens/BrowseScreen/BrowseScreen';
+import EpisodeScreen from './screens/EpisodesScreen/EpisodeScreen';
 import { Drawer as DrawerContent } from './components/DrawerComponent';
 import { withLoading } from './components/hoc/withLoading';
 
 
-import {drawerActiveBackgroundColor, drawerBackgroundColor, drawerInactiveTintColor, drawerActiveTintColor} from './common/constants';
+import { drawerActiveBackgroundColor, drawerBackgroundColor, drawerInactiveTintColor, drawerActiveTintColor } from './common/constants';
 
 
 
 const Main = DrawerNavigator({
   Home: { screen: HomeScreen },
-  Browse: { screen: withLoading(BrowseScreen) }
+  Browse: { screen: withLoading(BrowseScreen) },
+  
 }, {
     contentComponent: DrawerContent,
     drawerBackgroundColor: drawerBackgroundColor,
@@ -28,7 +30,7 @@ const Main = DrawerNavigator({
 const Navigator = StackNavigator({
 
   Main: { screen: Main },
-
+  Episodes: { screen: withLoading(EpisodeScreen) }
 }, {
     headerMode: 'none',
     animationEnabled: false,
@@ -55,10 +57,10 @@ export default class App extends React.Component {
       return (
         <Navigator />
       )
-    } 
+    }
 
   }
 }
 
-AppRegistry.registerComponent('ikuApp',() => App);
+AppRegistry.registerComponent('ikuApp', () => App);
 

@@ -5,8 +5,8 @@ import { globalStyles } from '../../common/styles';
 import SearchBox from './SearchBox';
 import Service from '../../common/api/service';
 import Show  from '../../components/Show';
-import {Paginator} from '../../components/Paginator';
-
+import Paginator from '../../components/Paginator';
+import SelectableContainer from '../../components/containers/SelectableContainer'
 
 const a = new Array(100).fill('');
 class BrowseScreen extends React.Component {
@@ -14,6 +14,7 @@ class BrowseScreen extends React.Component {
     constructor(props) {
         super(props)
         this.onSeachSubmit = this.onSeachSubmit.bind(this);
+        this.openShow = this.openShow.bind(this);
         this.state = {
             results: []
         }
@@ -35,29 +36,36 @@ class BrowseScreen extends React.Component {
 
     }
 
-
+    async openShow(e){
+        const { navigate } = this.props.navigation;
+        this.props.openDialog();
+        const { data: episodes} = await Service.GetEpisodes(e.link).catch((err) => {console.log(err)})
+        console.log(episodes);
+        this.props.closeDialog();
+        navigate('Episodes', {episodes, show: e});
+    }
 
     render() {
         const { results } = this.state;
-       
+        const fowardPage = () => {
+            this._paginator && this._paginator.forwardPage()
+        }
+        const backwardPage = () => {
+            this._paginator && this._paginator.backwardPage()
+        }
 
         return (
             <Container>
 
                 <Content style={globalStyles.page} padder >
 
-                    <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-                        <View style={{ flex: 1 }}>
-                            <SearchBox onSubmit={this.onSeachSubmit} />
+                    <SelectableContainer onFastForward={fowardPage} onFastBackward={backwardPage}>
+                        
+                        <SearchBox onSubmit={this.onSeachSubmit} />
+                        <View style={{ paddingTop: 20, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', alignSelf: 'stretch' }}>
+                            <Paginator ref={(x) => this._paginator = x}  pageSize={3} items={results} template={<Show onPress={this.openShow} />} />
                         </View>
-                        <View style={{ justifyContent: 'flex-end' }}>
-                            <Icon name='md-search' style={{ color: 'white' }}></Icon>
-                        </View>
-
-                    </View>
-                    <View style={{ paddingTop: 20, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', alignSelf: 'stretch' }}>
-                        <Paginator  pageSize={3} items={results} template={<Show />} />
-                    </View>
+                    </SelectableContainer>
 
                 </Content>
             </Container>

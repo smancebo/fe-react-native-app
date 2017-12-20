@@ -4,7 +4,7 @@ import { View, StyleSheet, Animated, Easing } from 'react-native'
 import { Grid, Row, Col, Button, Icon } from 'native-base';
 import { baseOrangeColor } from '../common/constants'
 import KeyEvent from 'react-native-key-event'
-import {DPAD_FAST_FORWARD, DPAD_FAST_BACKWARD } from '../common/dpadKeyCodes';
+import { DPAD_FAST_FORWARD, DPAD_FAST_BACKWARD } from '../common/dpadKeyCodes';
 import SelectableContainer from '../components/containers/SelectableContainer';
 import { Selectable } from '../components/hoc/Selectable';
 import PropTypes from 'prop-types';
@@ -24,14 +24,14 @@ const fadeOut = Animated.timing(fadeValue, {
 
 
 
-class ClsPaginator extends React.Component {
+export default class Paginator extends React.Component {
     constructor(props) {
         super(props);
         this.__forward = this.__forward.bind(this);
         this.__backward = this.__backward.bind(this);
         this.forwardPage = this.forwardPage.bind(this);
         this.backwardPage = this.backwardPage.bind(this);
-        
+
         this.state = {
             currentPage: 1,
             fowardPageValue: new Animated.Value(1)
@@ -39,86 +39,90 @@ class ClsPaginator extends React.Component {
         this.fowardPageValue = new Animated.Value(1);
         this.backwardPageValue = new Animated.Value(0);
         this.fadeValue = new Animated.Value(1);
-        
+
     }
 
     static contextTypes = {
 
-        selectFirstElement: PropTypes.func
+        selectFirstElement: PropTypes.func,
+        clearSelectables: PropTypes.func
     }
-    
-    forwardPage(){
+
+    forwardPage() {
         fadeOut.start(() => {
             this.__forward();
             fadeIn.start();
         })
     }
 
-    backwardPage(){
+    backwardPage() {
         fadeOut.start(() => {
             this.__backward();
             fadeIn.start();
         })
     }
-    
-    __backward() {
-        const {currentPage} = this.state;
 
-        if(currentPage > 1){
+    __backward() {
+        const { currentPage } = this.state;
+
+        if (currentPage > 1) {
             let newPage = currentPage - 1
-            this.setState({currentPage: newPage });
-            this.context.selectFirstElement();
+            this.setState({ currentPage: newPage });
+            this.context.clearSelectables && this.context.clearSelectables();
+            //this.context.selectFirstElement();
         }
     }
 
-    __forward(){
-        const {currentPage} = this.state;
-        const {items} = this.props;
+    __forward() {
+        const { currentPage } = this.state;
+        const { items } = this.props;
         const pages = new PaginatorArray(items).getTotalPages(this.props.pageSize);
 
-        if(currentPage < pages) {
+        if (currentPage < pages) {
             const newPage = currentPage + 1;
-            this.setState({currentPage: (newPage)});
-            this.context.selectFirstElement();
+            this.setState({ currentPage: (newPage) });
+
+            this.context.clearSelectables && this.context.clearSelectables();
+            //this.context.selectFirstElement();
         }
     }
 
     render() {
-        const { template : TemplateNode, pageSize, items } = this.props;
+        const { template: TemplateNode, pageSize, items } = this.props;
         const { currentPage } = this.state;
         const pages = new PaginatorArray(items);
 
-       //const SelectableNode = Selectable(TemplateNode.type)
-       
+        //const SelectableNode = Selectable(TemplateNode.type)
+
         return (
             <View style={styles.grid}>
-                <View style={styles.backward} onLayout={(e) => { console.log('left', e.nativeEvent) }} >
-                    { currentPage > 1 && 
-                        <Button  backgroundColor={baseOrangeColor} onPress={this.backwardPage} >
+                <View style={styles.backward}  >
+                    {currentPage > 1 &&
+                        <Button backgroundColor={baseOrangeColor} onPress={this.backwardPage} >
                             <Icon name='md-rewind' />
                         </Button>
                     }
                 </View>
-                <View style={styles.content} onLayout={(e) => { console.log('grid', e.nativeEvent) }} >
-                   
-                        <Grid>
+                <View style={styles.content} >
 
-                            {
-                                pages.paginate(currentPage, pageSize).map((item, i) =>
-                                    <Col key={i}>
-                                        <Animated.View style={{ opacity: fadeValue }}>
-                                            <TemplateNode.type {...item} />
-                                        </Animated.View>
-                                    </Col>
-                                )}
+                    <Grid>
 
-                        </Grid>
-                    
+                        {
+                            pages.paginate(currentPage, pageSize).map((item, i) =>
+                                <Col key={item.id}>
+                                    <Animated.View style={{ opacity: fadeValue }}>
+                                        <TemplateNode.type {...TemplateNode.props} removable={true} {...item} />
+                                    </Animated.View>
+                                </Col>
+                            )}
+
+                    </Grid>
+
                 </View>
-                <View style={styles.forward} onLayout={(e) => { console.log('rigth', e.nativeEvent) }}>
-                   {
+                <View style={styles.forward}>
+                    {
                         (pages.getTotalPages(pageSize) > 1) && (currentPage < pages.getTotalPages(pageSize)) &&
-                        <Button  backgroundColor={baseOrangeColor} style={{ alignSelf: 'flex-end' }} onPress={this.forwardPage} >
+                        <Button backgroundColor={baseOrangeColor} style={{ alignSelf: 'flex-end' }} onPress={this.forwardPage} >
                             <Icon name='md-fastforward' />
                         </Button>
                     }
@@ -128,19 +132,7 @@ class ClsPaginator extends React.Component {
     }
 }
 
-export const Paginator = (props) => {
-    const fowardPage = () => {
-        this._paginator && this._paginator.forwardPage()
-    }
-    const backwardPage = () => {
-        this._paginator && this._paginator.backwardPage()
-    }
-    return (
-        <SelectableContainer onFastForward={fowardPage} onFastBackward={backwardPage}>
-            <ClsPaginator {...props} ref={(elm) => { this._paginator = elm }} />
-        </SelectableContainer>
-    )
-}
+
 
 
 
