@@ -27,9 +27,17 @@ class BrowseScreen extends React.Component {
 
     async onSeachSubmit(text) {
         this.props.openDialog();
-        const { data: results } = await Service.Search(text).catch((err)=> {console.log(err)});
-        this.setState({ results })
-        this.props.closeDialog();
+        try {
+            const { data: results } = await Service.Search(text).catch((err) => { throw err });
+            this.setState({ results })
+            this.props.closeDialog();
+        }
+        catch( ex){
+            this.props.closeDialog();
+            Alert.alert('Error', ex.message);
+        }
+        
+       
     }
 
     componentDidMount() {
@@ -59,7 +67,7 @@ class BrowseScreen extends React.Component {
 
                 <Content style={globalStyles.page} padder >
 
-                    <SelectableContainer onFastForward={fowardPage} onFastBackward={backwardPage}>
+                    <SelectableContainer onFastForward={fowardPage} onFastBackward={backwardPage} firstSelectable={1}>
                         
                         <SearchBox onSubmit={this.onSeachSubmit} />
                         <View style={{ paddingTop: 20, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', alignSelf: 'stretch' }}>

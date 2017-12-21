@@ -12,7 +12,7 @@ class Show extends React.Component {
         this.scaleValue = new Animated.Value(1);
         this.onLayout = this.onLayout.bind(this);
         this.SelectElement = (cb) => {
-            this.scaleValue.setValue(1)
+       
             Animated.timing(this.scaleValue, {
                 toValue: 1.1,
                 duration: 200
@@ -21,7 +21,7 @@ class Show extends React.Component {
             });
         }
         this.DeSelectElement = (cb) => {
-            this.scaleValue.setValue(1.1);
+           
             Animated.timing(this.scaleValue, {
                 toValue: 1,
                 duration: 200
@@ -73,7 +73,7 @@ class Show extends React.Component {
         const { link, title, image, onLayout, isFocus, style } = this.props
         
         return (
-            <Animated.View style={[style, isFocus === true ? { transform: [{ scaleX: this.scaleValue }, { scaleY: this.scaleValue }] } : {}]}>
+            <Animated.View style={[style,{ transform: [{ scaleX: this.scaleValue }, { scaleY: this.scaleValue }] } ]}>
                 <View style={styles.container} ref={(e) => this._self = e} onLayout={this.onLayout}>
                     <View style={styles.shadow}>
                         <Image style={styles.image} source={{ uri: `${config.API}/image/${image}` }} />
@@ -96,7 +96,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
         minWidth: 200,
-        padding: 20
+        padding: 20,
+        width:230
     },
     title: {
         fontSize: 24,

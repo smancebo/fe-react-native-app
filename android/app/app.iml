@@ -124,7 +124,5 @@
     <orderEntry type="library" exported="" name="support-annotations-23.0.1" level="project" />
     <orderEntry type="module" module-name="react-native-key-event" exported="" />
     <orderEntry type="module" module-name="react-native-vector-icons" exported="" />
-    <orderEntry type="library" exported="" name="react-native-key-event-unspecified" level="project" />
-    <orderEntry type="library" exported="" name="react-native-vector-icons-unspecified" level="project" />
   </component>
 </module>

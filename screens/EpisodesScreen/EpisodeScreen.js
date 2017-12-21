@@ -5,6 +5,7 @@ import Show from '../../components/Show';
 import Paginator from '../../components/Paginator';
 import SelectableContainer from '../../components/containers/SelectableContainer';
 import { Episode } from '../../components/Episode';
+import {globalStyles} from '../../common/styles';
  
 export default class EpisodeScreen extends React.Component {
     render(){
@@ -14,12 +15,12 @@ export default class EpisodeScreen extends React.Component {
 
         return(
             <Container>
-                <Content>
+                <Content padder style={globalStyles.page}>
                     <View style={{flex: 1, flexDirection: 'row'}}>
-                        <View style={{flex: 10}}>
+                        <View style={{flex: 30}}>
                             <Show { ...show } />
                         </View>
-                        <View style={{flex: 90}}>
+                        <View style={{flex: 70}}>
                             <SelectableContainer>
                                 <Paginator pageSize={24} items={episodes} ref="paginator" template={<Episode onPress={this.onSelectedEpisode} />} />
                             </SelectableContainer>

@@ -98,31 +98,34 @@ export default class Paginator extends React.Component {
             <View style={styles.grid}>
                 <View style={styles.backward}  >
                     {currentPage > 1 &&
-                        <Button backgroundColor={baseOrangeColor} onPress={this.backwardPage} >
+                        <Button rounded backgroundColor={baseOrangeColor} onPress={this.backwardPage} >
                             <Icon name='md-rewind' />
                         </Button>
                     }
                 </View>
                 <View style={styles.content} >
+                    <View style={{flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
 
-                    <Grid>
+                    
+                    {/* <Grid> */}
 
                         {
                             pages.paginate(currentPage, pageSize).map((item, i) =>
-                                <Col key={item.id}>
-                                    <Animated.View style={{ opacity: fadeValue }}>
+                                // <Col key={item.id}>
+                                <Animated.View key={item.id} style={{ opacity: fadeValue }}>
                                         <TemplateNode.type {...TemplateNode.props} removable={true} {...item} />
                                     </Animated.View>
-                                </Col>
+                                // </Col>
                             )}
 
-                    </Grid>
+                    {/* </Grid> */}
+                    </View>
 
                 </View>
                 <View style={styles.forward}>
                     {
                         (pages.getTotalPages(pageSize) > 1) && (currentPage < pages.getTotalPages(pageSize)) &&
-                        <Button backgroundColor={baseOrangeColor} style={{ alignSelf: 'flex-end' }} onPress={this.forwardPage} >
+                        <Button rounded backgroundColor={baseOrangeColor} style={{ alignSelf: 'flex-end' }} onPress={this.forwardPage} >
                             <Icon name='md-fastforward' />
                         </Button>
                     }
@@ -144,7 +147,10 @@ const styles = StyleSheet.create({
         flex: 10, justifyContent: 'center'
     },
     content: {
-        flex: 80
+        flex: 80,
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+        alignSelf: 'center'
     },
     grid: {
         flex: 1, flexDirection: 'row'

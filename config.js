@@ -1,4 +1,4 @@
 
 export const config = {
-    API : 'https://iku-app.herokuapp.com/api'
+    API : 'http://iku-app.herokuapp.com/api'
 }

@@ -89,9 +89,9 @@ export default class SelectableContainer extends React.Component {
 
         if (activeSelectable) {
             if ((direction === DPAD_LEFT) || (direction === DPAD_RIGHT)) {
-                sortedSelectables = selectables.sort((a, b) => a.x - b.x).filter((item) => item.y === activeSelectable.y);
+                sortedSelectables = selectables.filter((item) => item.y === activeSelectable.y || item.target === activeSelectable.target).sort((a, b) => (a.x - b.x) || (a.target - b.target) )
             } else if ((direction === DPAD_DOWN) || (direction === DPAD_UP)) {
-                sortedSelectables = selectables.sort((a, b) => a.y - b.y).filter((item) => item.y !== activeSelectable.y); //sort and remove with same 'y'
+                sortedSelectables = selectables.filter((item) => (item.y !== activeSelectable.y) || item.target === activeSelectable.target).sort((a, b) => (a.y - b.y) || (a.target - b.target)); //sort and remove with same 'y'
             }
             const activeIndex = sortedSelectables.indexOf(activeSelectable);
             if (activeIndex !== -1) {
@@ -112,7 +112,10 @@ export default class SelectableContainer extends React.Component {
             newSelected = sortedSelectables[0];
         }
         activeSelectable.onBlur()
-        newSelected && newSelected.onFocus()
+        setTimeout(() => {
+            newSelected && newSelected.onFocus()
+        })  
+       
         this.setState({
             activeSelectable: newSelected
         });
@@ -143,11 +146,14 @@ export default class SelectableContainer extends React.Component {
         });
         const newSelectable = [...selectables];
         //newSelectable[0].onFocus();
+        const firstSelectable = this.props.firstSelectable || 0
+      
         this.setState({
             selectables: newSelectable,
-            activeSelectable: newSelectable[0]
+            activeSelectable: newSelectable[firstSelectable]
         })
-        this.selectComponent(x => x + 1, DPAD_DOWN);
+        newSelectable[firstSelectable] && newSelectable[firstSelectable].onFocus();
+    
 
     }
     unRegisterSelectable(target) {

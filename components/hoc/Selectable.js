@@ -48,7 +48,8 @@ export const Selectable = (WrappedComponent) => class withSelectable extends Rea
                     onPress: this.onPress,
                     props: this.props,
                     target: target,
-                    removable: this.props.removable || false
+                    removable: this.props.removable || false,
+                    firstSelectable: this.props.firstSelectable || false
                 });
 
                 if (this.props.onLayout) {
