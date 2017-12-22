@@ -24,17 +24,18 @@ export default class SelectableContainer extends React.Component {
         this.clearSelectables = this.clearSelectables.bind(this);
         this.unRegisterSelectable = this.unRegisterSelectable.bind(this);
         this.clickItem = this.clickItem.bind(this);
+        this.bindKeyDownListener - this.bindKeyDownListener.bind(this);
         this.state = {
             activeSelectable: null,
             selectables: []
         }
     }
 
-    componentDidMount() {
-        const {
-            onFastForward,
-            onFastBackward
-        } = this.props;
+    componentDidUpdate(){
+        this.bindKeyDownListener();
+    }
+    bindKeyDownListener(){
+        KeyEvent.removeKeyDownListener();
         KeyEvent.onKeyDownListener((event) => {
             switch (event.keyCode) {
                 case DPAD_LEFT:
@@ -66,6 +67,14 @@ export default class SelectableContainer extends React.Component {
         })
     }
 
+    componentDidMount() {
+        const {onFastForward,onFastBackward} = this.props;
+        this.bindKeyDownListener();
+       
+    }
+
+
+    
     componentWillUnmount() {
         KeyEvent.removeKeyDownListener();
     }
@@ -82,16 +91,16 @@ export default class SelectableContainer extends React.Component {
     selectComponent(indexMod, direction) {
         let sortedSelectables = [];
         let newSelected = {};
-        const {
-            selectables,
-            activeSelectable
-        } = this.state;
+        const { selectables, activeSelectable} = this.state;
 
         if (activeSelectable) {
+            const sortY = (a, b) => {
+                return 0;
+            }
             if ((direction === DPAD_LEFT) || (direction === DPAD_RIGHT)) {
                 sortedSelectables = selectables.filter((item) => item.y === activeSelectable.y || item.target === activeSelectable.target).sort((a, b) => (a.x - b.x) || (a.target - b.target) )
             } else if ((direction === DPAD_DOWN) || (direction === DPAD_UP)) {
-                sortedSelectables = selectables.filter((item) => (item.y !== activeSelectable.y) || item.target === activeSelectable.target).sort((a, b) => (a.y - b.y) || (a.target - b.target)); //sort and remove with same 'y'
+                sortedSelectables = selectables.filter((item) => (item.y !== activeSelectable.y) || item.target === activeSelectable.target).sort((a, b) => (a.y - b.y) || (a.x - b.x)); //sort and remove with same 'y'
             }
             const activeIndex = sortedSelectables.indexOf(activeSelectable);
             if (activeIndex !== -1) {

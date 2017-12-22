@@ -11,3 +11,7 @@ https://github.com/souhe/react-native-firestick/blob/master/src/components/Selec
 
 https://blog.callstack.io/amazon-fire-tv-stick-app-in-react-native-ad49648550d
 
+
+*** Vector Icons **
+
+https://oblador.github.io/react-native-vector-icons/

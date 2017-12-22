@@ -2,25 +2,15 @@ import React from 'react';
 import { Selectable } from './hoc/Selectable';
 import { View, Animated, Text, StyleSheet } from 'react-native';
 import { baseOrangeColor } from '../common/constants'
+import { Icon } from 'native-base';
 
 
-export const Episode = Selectable(class Episode extends React.Component {
+export default class Episode extends React.Component {
     constructor(props) {
         super(props)
         this.scaleValue = new Animated.Value(1);
-        this.onLayout = this.onLayout.bind(this);
-        this.scaleUp = () => {
-            Animated.timing(this.scaleValue, {
-                toValue: 1.1,
-                duration: 200
-            }).start();
-        }
-        this.scaleDown = () => {
-            Animated.timing(this.scaleValue, {
-                toValue: 1,
-                duration: 200
-            }).start();
-        }
+      
+
         this.styles = StyleSheet.create({
 
             active: {
@@ -33,48 +23,36 @@ export const Episode = Selectable(class Episode extends React.Component {
                 backgroundColor: '#3d3e3f',
                 padding: 2,
                 borderRadius: 5,
-                margin: 5
+                margin: 1,
+                marginBottom: 0
             },
             episodeName: {
                 fontSize: 24,
                 color: 'white',
-                textAlign: 'center'
+                textAlign: 'left'
             }
         })
     }
 
-    componentWillReceiveProps(newProps) {
-        const { isFocus } = newProps;
 
-        if(isFocus){
-            //this.scaleUp()
-        }else {
-            //this.scaleDown()
-        }
-    }
-    onLayout(e){
-        const { layout } = e.nativeEvent;
-        // this._self = {
-        //     measure: (cb) => {
-        //         cb(layout.x, layout.y, layout.width, layout.height, layout.x, layout.y)
-        //     }
-        // }
-        this.props.onLayout(e);
-    }
+
 
     render() {
         const { name, link, isFocus = false } = this.props
         return (
-            <Animated.View style={[this.styles.episode, { transform: [{ scaleX: this.scaleValue }, { scaleY: this.scaleValue }] }, isFocus === true ? this.styles.active : {}]}>
-                <View ref={(x)=>{this._self = x}} onLayout={this.onLayout}>
+            <View style={[{ height: 80, backgroundColor: '#222222', margin: 10, flexDirection: 'row', marginBottom: 0, borderRadius: 10}, isFocus ? {backgroundColor: baseOrangeColor} : {}]}>
+                <View style={{ flex: 20 }}>
+                    <View style={{ backgroundColor: '#000000', height: '100%', flex: 1, alignItems: 'center', justifyContent: 'center', margin: 5, borderRadius: 10 }}>
+                        <Icon style={{width: 32, height: 32, color: 'white', textAlign: 'center'}} name='md-play' color='white' />
+                    </View>
+                </View>
+                <View style={{ flex: 80 }}>
                     <Text style={this.styles.episodeName}>{name}</Text>
                 </View>
-            </Animated.View>
+            </View>
         )
     }
-
-
-})
+}
 
 
 
