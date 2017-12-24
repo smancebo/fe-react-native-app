@@ -1,8 +1,9 @@
 package com.ikunativeapp;
 
 import com.facebook.react.ReactActivity;
-import android.view.KeyEvent;
-import net.kangyufei.KeyEventModule;
+import android.view.KeyEvent; // <--- import
+import com.github.kevinejohn.keyevent.KeyEventModule;
+
 
 public class MainActivity extends ReactActivity {
 
@@ -17,9 +18,9 @@ public class MainActivity extends ReactActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //if(event.getRepeatCount() == 0) {
+        if(event.getRepeatCount() == 0) {
             KeyEventModule.getInstance().onKeyDownEvent(keyCode, event);
-        //}
+        }
         super.onKeyDown(keyCode, event);
         return true;
     }

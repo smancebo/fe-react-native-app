@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Alert, StyleSheet, StatusBar, Image } from 'react-native';
+import { View, Alert, StyleSheet, StatusBar, Image, Button as Btn } from 'react-native';
 import { Container, Header, Body, Title, Left, Right, Button, Icon, Text, Content } from 'native-base'
 import { DrawerNavigator } from 'react-navigation'
 import { BrowseScreen } from '../BrowseScreen/BrowseScreen'
 import {Logo} from '../../common/constants'
-import KeyEvent from 'react-native-key-event';
+import KeyEvent from 'react-native-keyevent';
 import { DPAD_MENU} from '../../common/dpadKeyCodes';
  
 
@@ -19,7 +19,7 @@ export default class HomeScreen extends React.Component {
     }
 
     componentDidMount(){
-        
+      
         KeyEvent.onKeyDownListener((event) => {
             const {navigate} = this.props.navigation;
             switch(event.keyCode){
@@ -53,10 +53,11 @@ export default class HomeScreen extends React.Component {
                     <View style={{flex: 1, flexDirection:'row', justifyContent:'flex-end'}} >
                         <Image source={Logo}></Image>
                     </View>
-                    <Button vertical backgroundColor='#f19d37' onPress={() => {navigate('DrawerOpen')}}>
+                    <Button  vertical backgroundColor='#f19d37' onPress={() => {navigate('DrawerOpen')}}>
                         <Icon name='menu'></Icon>
                         <Text>Menu</Text>
                     </Button>
+                    
                     <Section title='Favorites'></Section>
                     
                 </Content>

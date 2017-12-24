@@ -8,7 +8,7 @@ import {
     DPAD_FAST_BACKWARD,
     DPAD_FAST_FORWARD
 } from '../../common/dpadKeyCodes';
-import KeyEvent from 'react-native-key-event';
+import KeyEvent from 'react-native-keyevent';
 import PropTypes from 'prop-types'
 import {
     View
@@ -35,6 +35,7 @@ export default class SelectableContainer extends React.Component {
         this.bindKeyDownListener();
     }
     bindKeyDownListener(){
+        const { onFastForward, onFastBackward } = this.props;
         KeyEvent.removeKeyDownListener();
         KeyEvent.onKeyDownListener((event) => {
             switch (event.keyCode) {
@@ -68,13 +69,10 @@ export default class SelectableContainer extends React.Component {
     }
 
     componentDidMount() {
-        const {onFastForward,onFastBackward} = this.props;
+      
         this.bindKeyDownListener();
        
     }
-
-
-    
     componentWillUnmount() {
         KeyEvent.removeKeyDownListener();
     }
@@ -85,7 +83,12 @@ export default class SelectableContainer extends React.Component {
 
     clickItem(){
         const {activeSelectable} = this.state;
-        activeSelectable && activeSelectable.onPress();
+        if(activeSelectable){
+            activeSelectable.onPress();
+        }else {
+            this.selectFirstElement();
+        }
+       
     }
 
     selectComponent(indexMod, direction) {
@@ -120,7 +123,7 @@ export default class SelectableContainer extends React.Component {
         } else {
             newSelected = sortedSelectables[0];
         }
-        activeSelectable.onBlur()
+        activeSelectable && activeSelectable.onBlur()
         setTimeout(() => {
             newSelected && newSelected.onFocus()
         })  
@@ -138,7 +141,7 @@ export default class SelectableContainer extends React.Component {
         } = this.state;
         let newSelected = selectables[0];
 
-        activeSelectable.onBlur(() => {
+        activeSelectable && activeSelectable.onBlur(() => {
             newSelected.onFocus();
         });
         this.setState({

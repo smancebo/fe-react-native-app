@@ -8,7 +8,7 @@ import { Icon } from 'native-base';
 export default class Episode extends React.Component {
     constructor(props) {
         super(props)
-        this.scaleValue = new Animated.Value(1);
+       
       
 
         this.styles = StyleSheet.create({
@@ -33,10 +33,6 @@ export default class Episode extends React.Component {
             }
         })
     }
-
-
-
-
     render() {
         const { name, link, isFocus = false } = this.props
         return (

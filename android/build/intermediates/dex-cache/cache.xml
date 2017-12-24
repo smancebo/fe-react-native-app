@@ -2,22 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/node_modules/react-native-keyevent/android/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="85f1b5379d9bbf7bd67bbff425dd6b17fda6b712">
-        <dex dex="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5f867f1c01d28e8e56ec8f0b6d0f945158fca5fe/classes.dex" />
+        sha1="a9c6fe195b8bd6eb7abc13e32bcec057d92f823c">
+        <dex dex="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/pre-dexed/debug/classes_3b8903fe40e6eab421d1f51713b31b109ae4b5c5.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/node_modules/react-native-vector-icons/android/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_862209374fd1995760ad254d67ce61bf9cbf9e3c/classes.dex" />
+        sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
+        <dex dex="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/pre-dexed/debug/classes_a13f3034c1e8a1155c55f8c29a8934e9001b9c20.jar" />
     </item>
 
 </items>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Header, Text, Content, Body, Title} from 'native-base';
-import {DrawerItems} from 'react-navigation';
+import { DrawerItems, DrawerView} from 'react-navigation';
 import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
@@ -18,7 +18,8 @@ export const Drawer = (props) => {
                 </Body>
             </Header>
             <Content>
-                <DrawerItems active  {...props}></DrawerItems>
+                <Text {...props}>this is a </Text>
+                <DrawerItems  {...props}></DrawerItems>
             </Content>
         </Container>
     )

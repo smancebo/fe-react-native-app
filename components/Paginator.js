@@ -3,7 +3,7 @@ import PaginatorArray from '../common/PaginatorArray';
 import { View, StyleSheet, Animated, Easing } from 'react-native'
 import { Grid, Row, Col, Button, Icon } from 'native-base';
 import { baseOrangeColor } from '../common/constants'
-import KeyEvent from 'react-native-key-event'
+import KeyEvent from 'react-native-keyevent'
 import { DPAD_FAST_FORWARD, DPAD_FAST_BACKWARD } from '../common/dpadKeyCodes';
 import SelectableContainer from '../components/containers/SelectableContainer';
 import { Selectable } from '../components/hoc/Selectable';

@@ -29,7 +29,7 @@ export default class EpisodeScreen extends React.Component {
                             
                         </View>
                         <View style={{flex: 70}}>
-                           <EpisodeList episodes={episodes} />
+                           <EpisodeList  episodes={episodes} />
                         </View>
                     </View>
                 </Content>
