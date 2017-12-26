@@ -15,6 +15,7 @@ class BrowseScreen extends React.Component {
         super(props)
         this.onSeachSubmit = this.onSeachSubmit.bind(this);
         this.openShow = this.openShow.bind(this);
+        this.onRegisterElement = this.onRegisterElement.bind(this);
         this.state = {
             results: []
         }
@@ -31,6 +32,7 @@ class BrowseScreen extends React.Component {
             const { data: results } = await Service.Search(text).catch((err) => { throw err });
             this.setState({ results })
             this.props.closeDialog();
+            this.refs._selectableContainer.selectElement(1);
         }
         catch( ex){
             this.props.closeDialog();
@@ -48,13 +50,19 @@ class BrowseScreen extends React.Component {
         const { navigate } = this.props.navigation;
         this.props.openDialog();
         const { data: episodes} = await Service.GetEpisodes(e.link).catch((err) => {console.log(err)})
-        console.log(episodes);
+        
         this.props.closeDialog();
-        navigate('Episodes', {episodes, show: e});
+        navigate('Episodes', { episodes, show: e});
+    }
+
+    onRegisterElement() {
+        this.refs._selectableContainer.selectElement(1);
     }
 
     render() {
         const { results } = this.state;
+        const { navigation } = this.props;
+        console.log(navigation);
         const fowardPage = () => {
             this._paginator && this._paginator.forwardPage()
         }
@@ -67,7 +75,7 @@ class BrowseScreen extends React.Component {
 
                 <Content style={globalStyles.page} padder >
 
-                    <SelectableContainer onFastForward={fowardPage} onFastBackward={backwardPage} firstSelectable={1}>
+                    <SelectableContainer onFastForward={fowardPage} onFastBackward={backwardPage} ref="_selectableContainer" >
                         
                         <SearchBox onSubmit={this.onSeachSubmit} />
                         <View style={{ paddingTop: 20, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', alignSelf: 'stretch' }}>

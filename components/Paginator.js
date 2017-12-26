@@ -45,7 +45,8 @@ export default class Paginator extends React.Component {
     static contextTypes = {
 
         selectFirstElement: PropTypes.func,
-        clearSelectables: PropTypes.func
+        clearSelectables: PropTypes.func,
+        selectElement: PropTypes.func
     }
 
     forwardPage() {
@@ -69,7 +70,7 @@ export default class Paginator extends React.Component {
             let newPage = currentPage - 1
             this.setState({ currentPage: newPage });
             this.context.clearSelectables && this.context.clearSelectables();
-            //this.context.selectFirstElement();
+            this.context.selectElement(1);
         }
     }
 
@@ -83,7 +84,7 @@ export default class Paginator extends React.Component {
             this.setState({ currentPage: (newPage) });
 
             this.context.clearSelectables && this.context.clearSelectables();
-            //this.context.selectFirstElement();
+            this.context.selectElement(1);
         }
     }
 

@@ -4,8 +4,10 @@ import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import BrowseScreen from './screens/BrowseScreen/BrowseScreen';
 import EpisodeScreen from './screens/EpisodesScreen/EpisodeScreen';
+import ViewEpisodeScreen from './screens/ViewEpisode/ViewEpisodeScreen';
 import { Drawer as DrawerContent } from './components/DrawerComponent';
 import { withLoading } from './components/hoc/withLoading';
+
 
 
 import { drawerActiveBackgroundColor, drawerBackgroundColor, drawerInactiveTintColor, drawerActiveTintColor } from './common/constants';
@@ -30,7 +32,8 @@ const Main = DrawerNavigator({
 const Navigator = StackNavigator({
 
   Main: { screen: Main },
-  Episodes: { screen: withLoading(EpisodeScreen) }
+  Episodes: { screen: withLoading(EpisodeScreen) },
+  View: { screen: withLoading(ViewEpisodeScreen)}
 }, {
     headerMode: 'none',
     animationEnabled: false,

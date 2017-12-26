@@ -25,16 +25,17 @@ export default class SelectableContainer extends React.Component {
         this.unRegisterSelectable = this.unRegisterSelectable.bind(this);
         this.clickItem = this.clickItem.bind(this);
         this.bindKeyDownListener - this.bindKeyDownListener.bind(this);
+        this.selectElement = this.selectElement.bind(this);
         this.state = {
             activeSelectable: null,
             selectables: []
         }
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         this.bindKeyDownListener();
     }
-    bindKeyDownListener(){
+    bindKeyDownListener() {
         const { onFastForward, onFastBackward } = this.props;
         KeyEvent.removeKeyDownListener();
         KeyEvent.onKeyDownListener((event) => {
@@ -69,9 +70,9 @@ export default class SelectableContainer extends React.Component {
     }
 
     componentDidMount() {
-      
+
         this.bindKeyDownListener();
-       
+
     }
     componentWillUnmount() {
         KeyEvent.removeKeyDownListener();
@@ -81,27 +82,28 @@ export default class SelectableContainer extends React.Component {
         return this.props.children
     }
 
-    clickItem(){
-        const {activeSelectable} = this.state;
-        if(activeSelectable){
+    clickItem() {
+        const { activeSelectable } = this.state;
+        if (activeSelectable) {
             activeSelectable.onPress();
-        }else {
+        } else {
             this.selectFirstElement();
         }
-       
+
     }
+
 
     selectComponent(indexMod, direction) {
         let sortedSelectables = [];
         let newSelected = {};
-        const { selectables, activeSelectable} = this.state;
+        const { selectables, activeSelectable } = this.state;
 
         if (activeSelectable) {
             const sortY = (a, b) => {
                 return 0;
             }
             if ((direction === DPAD_LEFT) || (direction === DPAD_RIGHT)) {
-                sortedSelectables = selectables.filter((item) => item.y === activeSelectable.y || item.target === activeSelectable.target).sort((a, b) => (a.x - b.x) || (a.target - b.target) )
+                sortedSelectables = selectables.filter((item) => item.y === activeSelectable.y || item.target === activeSelectable.target).sort((a, b) => (a.x - b.x) || (a.target - b.target))
             } else if ((direction === DPAD_DOWN) || (direction === DPAD_UP)) {
                 sortedSelectables = selectables.filter((item) => (item.y !== activeSelectable.y) || item.target === activeSelectable.target).sort((a, b) => (a.y - b.y) || (a.x - b.x)); //sort and remove with same 'y'
             }
@@ -110,7 +112,7 @@ export default class SelectableContainer extends React.Component {
 
 
                 let newIndex = indexMod(activeIndex);
-                if(newIndex === activeIndex)return;
+                if (newIndex === activeIndex) return;
                 if (newIndex > (sortedSelectables.length - 1)) newIndex = (sortedSelectables.length - 1)
                 if (newIndex < 0) newIndex = 0
 
@@ -126,8 +128,8 @@ export default class SelectableContainer extends React.Component {
         activeSelectable && activeSelectable.onBlur()
         setTimeout(() => {
             newSelected && newSelected.onFocus()
-        })  
-       
+        })
+
         this.setState({
             activeSelectable: newSelected
         });
@@ -135,37 +137,41 @@ export default class SelectableContainer extends React.Component {
     }
 
     selectFirstElement() {
-        const {
-            selectables,
-            activeSelectable
-        } = this.state;
-        let newSelected = selectables[0];
-
-        activeSelectable && activeSelectable.onBlur(() => {
-            newSelected.onFocus();
-        });
-        this.setState({
-            activeSelectable: newSelected
-        });
+        selectElement(0);
     }
 
+    selectElement(indx) {
+        const { selectables, activeSelectable } = this.state;
+        const newSelectable = selectables[indx];
+        if (activeSelectable) {
+            activeSelectable.onBlur(() => {
+                newSelectable.onFocus();
+            });
+        } else {
+            newSelectable && newSelectable.onFocus();
+        }
+
+        this.setState({ activeSelectable: newSelectable })
+    }
     registerSelectable(selectable) {
         const {
             selectables
         } = this.state;
-        selectables.push({ ...selectable,
+        selectables.push({
+            ...selectable,
             id: selectables.length
         });
         const newSelectable = [...selectables];
         //newSelectable[0].onFocus();
         const firstSelectable = this.props.firstSelectable || 0
-      
+
         this.setState({
             selectables: newSelectable,
             activeSelectable: newSelectable[firstSelectable]
         })
-        newSelectable[firstSelectable] && newSelectable[firstSelectable].onFocus();
-    
+        this.props.onRegisterElement && this.props.onRegisterElement(selectable)
+        //newSelectable[firstSelectable] && newSelectable[firstSelectable].onFocus();
+
 
     }
     unRegisterSelectable(target) {
@@ -193,7 +199,8 @@ export default class SelectableContainer extends React.Component {
             registerSelectable: this.registerSelectable,
             selectFirstElement: this.selectFirstElement,
             clearSelectables: this.clearSelectables,
-            unRegisterSelectable: this.unRegisterSelectable
+            unRegisterSelectable: this.unRegisterSelectable,
+            selectElement: this.selectElement
         };
     }
 }
@@ -202,5 +209,6 @@ SelectableContainer.childContextTypes = {
     registerSelectable: PropTypes.func,
     selectFirstElement: PropTypes.func,
     clearSelectables: PropTypes.func,
-    unRegisterSelectable: PropTypes.func
+    unRegisterSelectable: PropTypes.func,
+    selectElement: PropTypes.func
 }

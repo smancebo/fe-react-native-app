@@ -1,15 +1,30 @@
 import React from 'react';
 import {Container, Content} from 'native-base';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, BackHandler } from 'react-native';
 import Show from '../../components/Show';
 import Paginator from '../../components/Paginator';
 import SelectableContainer from '../../components/containers/SelectableContainer';
 import EpisodeList from '../../components/EpisodeList';
 import {globalStyles} from '../../common/styles';
+import KeyEvent from 'react-native-keyevent';
 
 import { config } from '../../config'
+import  Service from '../../common/api/service';
  
 export default class EpisodeScreen extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.onEpisodeSelected = this.onEpisodeSelected.bind(this);
+    }
+    
+    async onEpisodeSelected(episode){
+        this.props.openDialog();
+        const {data: videoLink} = await Service.GetVideo(episode.link);
+        console.log(videoLink);
+        this.props.navigation.navigate('View', {url: videoLink.url, episode})
+        this.props.closeDialog();
+    }
     render(){
 
         const { params } = this.props.navigation.state
@@ -29,7 +44,7 @@ export default class EpisodeScreen extends React.Component {
                             
                         </View>
                         <View style={{flex: 70}}>
-                           <EpisodeList  episodes={episodes} />
+                            <EpisodeList episodes={episodes} onEpisodeSelected={this.onEpisodeSelected} />
                         </View>
                     </View>
                 </Content>

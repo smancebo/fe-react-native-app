@@ -18,24 +18,8 @@ export default class EpisodeList extends React.Component {
         this.currentPosition = 0;
         this.currentItem = 0;
         this.timeOutInterval = 0;
-        this.moeDown = (space) => {
-            const { episodes } = this.props;
-            const { currentItem } = this.state;
-
-            const moveSpace = (space + this.currentItem) > (episodes.length - 1) ? ((episodes.length - 1) - this.currentItem) : space;
-            if (currentItem < episodes.length - 1) {
-                const scrollTo = this.currentItem === 0 ? (MOVE_VALUE * (moveSpace - 2)) : (MOVE_VALUE * (moveSpace))
-                this.currentItem += moveSpace;
-
-                this.focusItem(this.currentItem, DPAD_DOWN);
-                if (this.currentItem > 2) {
-                    this.currentPosition -= scrollTo;
-                    this.timeOutInterval = setTimeout(() => {
-                        this.scrollList(this.currentPosition);
-                    }, 200)
-                }
-            }
-        }
+        this.selectEpisode = this.selectEpisode.bind(this);
+       
         this.moveDown = () => {
             const { currentItem } = this.state;
             const { episodes } = this.props;
@@ -83,6 +67,7 @@ export default class EpisodeList extends React.Component {
     componentDidMount() {
         const { episodes } = this.props;
         this.setState({ items: episodes.slice(0, 6) });
+        this.previousKeyDown = KeyEvents.listenerKeyDown;
 
         KeyEvents.removeKeyDownListener();
         KeyEvents.onKeyDownListener(({ keyCode }) => {
@@ -107,6 +92,10 @@ export default class EpisodeList extends React.Component {
                 case DPAD_UP:
                     this.moveUp();
                     break;
+
+                case DPAD_CENTER: 
+                    this.selectEpisode();
+                break;
 
             }
         });
@@ -144,7 +133,14 @@ export default class EpisodeList extends React.Component {
     }
     componentWillUnmount() {
         KeyEvents.removeKeyDownListener();
+        KeyEvents.onKeyDownListener(this.previousKeyDown.listener);
     }
+    selectEpisode(){
+        const { episodes } = this.props;
+        const { currentItem } = this.state;
+
+        this.props.onEpisodeSelected(episodes[currentItem]);
+    }   
 
     render() {
         const { currentItem } = this.state
@@ -153,7 +149,7 @@ export default class EpisodeList extends React.Component {
             <View style={{ backgroundColor: '#000000', height: 9999, overflow: 'hidden', paddingTop: (MOVE_VALUE * -1) }} >
                 <Animated.View style={{ transform: [{ translateY: this.translateValue }], height: 99999, overflow: 'hidden' }}>
                     <View style={{ flex: 1, flexDirection: 'column' }}>
-                        {episodes.map((episode, i) => <Episode isFocus={currentItem === i ? true : false} key={i} {...episode} onPress={this.props.onEpisodeSelected} />)}
+                        {episodes.map((episode, i) => <Episode isFocus={currentItem === i ? true : false} key={i} {...episode}  />)}
                     </View>
                 </Animated.View>
             </View>

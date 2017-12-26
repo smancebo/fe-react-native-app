@@ -5,8 +5,11 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/ikunativeapp.iml" filepath="$PROJECT_DIR$/ikunativeapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-key-event/android/react-native-key-event.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-key-event/android/react-native-key-event.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-key-event/android/react-native-key-event.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-key-event/android/react-native-key-event.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-key-event/android/react-native-key-event.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-key-event/android/react-native-key-event.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-keyevent/android/react-native-keyevent.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-keyevent/android/react-native-keyevent.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-video/android/react-native-video.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-video/android/react-native-video.iml" />
     </modules>
   </component>
 </project>

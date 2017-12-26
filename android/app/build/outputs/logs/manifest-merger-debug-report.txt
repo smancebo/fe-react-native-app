@@ -1,96 +1,98 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:1:1-32:12
+ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:1:1-32:12
 	package
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:2:5-31
-		INJECTED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:2:5-31
+		INJECTED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:4:5-30
-		INJECTED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:4:5-30
+		INJECTED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml
 	android:versionCode
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:3:5-28
-		INJECTED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:3:5-28
+		INJECTED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:6:5-67
+ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:6:5-67
 	android:name
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:6:22-64
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:7:5-77
-MERGED from [com.facebook.react:react-native:0.50.3] /Users/sjmancebo/.android/build-cache/9d25d7978bd54dd9e61352d6b04917aea6178c16/output/AndroidManifest.xml:11:5-78
+ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:7:5-77
+MERGED from [com.facebook.react:react-native:0.50.3] /Users/smancebo/.android/build-cache/f58e9080757ecba9e620bc934a48e46827f805dd/output/AndroidManifest.xml:11:5-78
 	android:name
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:7:22-75
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:7:22-75
 uses-sdk
-ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:9:5-11:41
-MERGED from [ikunativeapp:react-native-keyevent:unspecified] /Users/sjmancebo/stuff/React/Native/fe-react-native-app/node_modules/react-native-keyevent/android/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
-MERGED from [ikunativeapp:react-native-vector-icons:unspecified] /Users/sjmancebo/stuff/React/Native/fe-react-native-app/node_modules/react-native-vector-icons/android/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.50.3] /Users/sjmancebo/.android/build-cache/9d25d7978bd54dd9e61352d6b04917aea6178c16/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.1] /Users/sjmancebo/.android/build-cache/1b6c7f67889e94a1de8fb675050e30ced4714b3a/output/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/sjmancebo/.android/build-cache/2dfbefccf195e9fdbda05381442e501b4a7adb66/output/AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/sjmancebo/.android/build-cache/5f0742383374528c5611772391a251968ca902a2/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/sjmancebo/.android/build-cache/091c96eb66e3c6d594166801c11c02d684c138e9/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/sjmancebo/.android/build-cache/82745b2cad26e30e489c340f130607aec05271f6/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/sjmancebo/.android/build-cache/ec25765182fbc217b5d542727d42979b7717276d/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/sjmancebo/.android/build-cache/1b73314be7672f3ed4e731ca0c2a4b562b6234c8/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/sjmancebo/.android/build-cache/ee0ef286f0af88b91511cf29c2d51afb5ee69895/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/sjmancebo/.android/build-cache/7de04570d9a399a021e7d258689085a95b45645b/output/AndroidManifest.xml:2:3-70
+ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:9:5-11:41
+MERGED from [ikunativeapp:react-native-video:unspecified] /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/node_modules/react-native-video/android/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
+MERGED from [com.yqritc:android-scalablevideoview:1.0.4] /Users/smancebo/.android/build-cache/1892f1397030a4710cb7c7c321c69af9d67bf27f/output/AndroidManifest.xml:8:5-10:41
+MERGED from [ikunativeapp:react-native-keyevent:unspecified] /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/node_modules/react-native-keyevent/android/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
+MERGED from [ikunativeapp:react-native-vector-icons:unspecified] /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/node_modules/react-native-vector-icons/android/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.50.3] /Users/smancebo/.android/build-cache/f58e9080757ecba9e620bc934a48e46827f805dd/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.1] /Users/smancebo/.android/build-cache/b901535f9330b70460124002cdcd8b34e662beae/output/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/smancebo/.android/build-cache/a039103adda95eeecfe1af410e0e333b76229cd8/output/AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/smancebo/.android/build-cache/dc42384d58e738f7818fdb1320b89ee59566acfa/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/smancebo/.android/build-cache/e1aa787c0512c818914a29a57bc58646b7392ea3/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/smancebo/.android/build-cache/e10d004465af403c76cf39efe1bedcc0f3606f06/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/smancebo/.android/build-cache/3c7ec416517f946f575175f7ecd147554780acdf/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/smancebo/.android/build-cache/04f2df871648ace02e9624d587a4839f05b180d2/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/smancebo/.android/build-cache/ea720f04a6f010e1a7e31c7930249cd5013d4dbe/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/smancebo/.android/build-cache/450c001282fcb49467f8185d0126d546a311a120/output/AndroidManifest.xml:2:3-70
 	android:targetSdkVersion
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:11:9-38
-		INJECTED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:11:9-38
+		INJECTED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:10:9-35
-		INJECTED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:10:9-35
+		INJECTED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml
 application
-ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:13:5-30:19
-MERGED from [com.facebook.react:react-native:0.50.3] /Users/sjmancebo/.android/build-cache/9d25d7978bd54dd9e61352d6b04917aea6178c16/output/AndroidManifest.xml:13:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.1] /Users/sjmancebo/.android/build-cache/1b6c7f67889e94a1de8fb675050e30ced4714b3a/output/AndroidManifest.xml:22:5-20
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/sjmancebo/.android/build-cache/7de04570d9a399a021e7d258689085a95b45645b/output/AndroidManifest.xml:3:3-17
-MERGED from [org.webkit:android-jsc:r174650] /Users/sjmancebo/.android/build-cache/2d9d8abdad78e9632d8302dd383bcb5db8754159/output/AndroidManifest.xml:2:3-17
+ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:13:5-30:19
+MERGED from [com.facebook.react:react-native:0.50.3] /Users/smancebo/.android/build-cache/f58e9080757ecba9e620bc934a48e46827f805dd/output/AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.1] /Users/smancebo/.android/build-cache/b901535f9330b70460124002cdcd8b34e662beae/output/AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/smancebo/.android/build-cache/450c001282fcb49467f8185d0126d546a311a120/output/AndroidManifest.xml:3:3-17
+MERGED from [org.webkit:android-jsc:r174650] /Users/smancebo/.android/build-cache/99c81bbfbb931916062d29e47dfccc44cf3d61f6/output/AndroidManifest.xml:2:3-17
 	android:label
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:16:7-39
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:16:7-39
 	android:allowBackup
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:15:7-33
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:15:7-33
 	android:icon
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:17:7-41
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:17:7-41
 	android:theme
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:18:7-38
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:18:7-38
 	android:name
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:14:7-38
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:14:7-38
 activity#com.ikunativeapp.MainActivity
-ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:19:7-28:18
+ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:19:7-28:18
 	android:label
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:21:9-41
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:21:9-41
 	android:windowSoftInputMode
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:23:9-51
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:23:9-51
 	android:configChanges
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:22:9-79
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:22:9-79
 	android:name
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:20:9-37
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:20:9-37
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:24:9-27:25
+ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:24:9-27:25
 action#android.intent.action.MAIN
-ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:25:13-65
+ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:25:13-65
 	android:name
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:25:21-62
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:25:21-62
 category#android.intent.category.LAUNCHER
-ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:26:13-73
+ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:26:13-73
 	android:name
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:26:23-70
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:26:23-70
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:29:7-84
+ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:29:7-84
 	android:name
-		ADDED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:29:17-81
+		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:29:17-81
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from /Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE

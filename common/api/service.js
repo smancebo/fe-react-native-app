@@ -8,4 +8,7 @@ export default class Service {
     static GetEpisodes(show) {
         return get(`${config.API}/episodes/${show}`)
     }
+    static GetVideo(link) {
+        return get(`${config.API}/view/${link}`);
+    }
 }
