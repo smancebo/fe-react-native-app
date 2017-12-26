@@ -9,8 +9,7 @@ export default class Episode extends React.Component {
     constructor(props) {
         super(props)
        
-      
-
+    
         this.styles = StyleSheet.create({
 
             active: {
@@ -32,6 +31,13 @@ export default class Episode extends React.Component {
                 textAlign: 'left'
             }
         })
+    }
+    shouldComponentUpdate(nextProps, nextState){
+        if(nextProps.isFocus !== this.props.isFocus){
+            return true
+        }else {
+            return false;
+        }
     }
     render() {
         const { name, link, isFocus = false } = this.props
