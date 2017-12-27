@@ -26,8 +26,6 @@ MERGED from [com.facebook.react:react-native:0.50.3] /Users/smancebo/.android/bu
 		ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:7:22-75
 uses-sdk
 ADDED from /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/src/main/AndroidManifest.xml:9:5-11:41
-MERGED from [ikunativeapp:react-native-video:unspecified] /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/node_modules/react-native-video/android/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
-MERGED from [com.yqritc:android-scalablevideoview:1.0.4] /Users/smancebo/.android/build-cache/1892f1397030a4710cb7c7c321c69af9d67bf27f/output/AndroidManifest.xml:8:5-10:41
 MERGED from [ikunativeapp:react-native-keyevent:unspecified] /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/node_modules/react-native-keyevent/android/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
 MERGED from [ikunativeapp:react-native-vector-icons:unspecified] /Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/node_modules/react-native-vector-icons/android/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.50.3] /Users/smancebo/.android/build-cache/f58e9080757ecba9e620bc934a48e46827f805dd/output/AndroidManifest.xml:7:5-9:41

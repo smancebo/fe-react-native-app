@@ -1,0 +1,36 @@
+package com.ikunativeapp;
+
+import android.app.Activity;
+import android.content.Context;
+
+import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.NativeModule;
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.uimanager.ViewManager;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * Created by smancebo on 12/27/17.
+ */
+
+public class VideoViewPackage implements ReactPackage {
+
+    Context context;
+    public VideoViewPackage(Context activity){
+        this.context = activity;
+    }
+    @Override
+    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
+        return Collections.emptyList();
+    }
+
+    @Override
+    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
+         return Arrays.<ViewManager>asList(
+                new VideoViewManager(this.context)
+        );
+    }
+}

@@ -3,15 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="/Users/smancebo/.android/build-cache/1892f1397030a4710cb7c7c321c69af9d67bf27f/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4394e0421a1e2c0cb691a783a393c192a84697ab">
-        <dex dex="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_177cee2c7bf3b8220b128327625b72b18a437276/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"

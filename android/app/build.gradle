@@ -138,7 +138,6 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-video')
     compile project(':react-native-keyevent')
     compile project(':react-native-vector-icons')
     compile fileTree(dir: "libs", include: ["*.jar"])
