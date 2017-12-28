@@ -2,8 +2,9 @@ import React from 'react';
 import {Content, Container, Text} from 'native-base';
 import {globalStyles} from '../../common/styles';
 import Video from '../../components/native/Video';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, WebView, View } from 'react-native';
 import { config } from '../../config';
+import videoHtml from './video.html';
 
 export default class ViewEpisodeScreen extends React.Component
 {
@@ -31,9 +32,11 @@ export default class ViewEpisodeScreen extends React.Component
         console.log(videoUrl)
         return (
             <Container>
-                <Content style={globalStyles.page}>
-                    
-                    <Video source={videoUrl} ref={(x) => console.log(x)} autoplay={true} style={}  />
+                <Content style={[globalStyles.page]} contentContainerStyle={{height: '100%'}}>
+                    <View style={styles.container}>
+                        <WebView injectedJavaScript={`setVideoUrl('${videoUrl}')`} mediaPlaybackRequiresUserAction={false} source={videoHtml} style={styles.fullContent} ></WebView>
+                    </View>
+                    {/* <Video source={videoUrl} ref={(x) => console.log(x)} autoplay={true} style={{width: '100%', height: '100%'}} /> */}
                 </Content>
             </Container>
         )
@@ -48,5 +51,15 @@ const styles = StyleSheet.create({
         bottom: 0,
         right: 0,
     },
+    fullContent: {
+       flex: 1,
+       backgroundColor: 'black'
+    },
+    container: { 
+        width: '100%', 
+        height: '100%',
+        flexDirection: 'column'
+    }
+
 });
 
