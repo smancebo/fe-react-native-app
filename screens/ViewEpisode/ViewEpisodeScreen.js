@@ -31,9 +31,9 @@ export default class ViewEpisodeScreen extends React.Component
         console.log(videoUrl)
         return (
             <Container>
-                <Content style={globalStyles.page} padder>
-                    <Text> this is text</Text>
-                    <Video source={videoUrl} ref={(x) => console.log(x)} autoplay={true} style={{width: 300, height: 300}}  />
+                <Content style={globalStyles.page}>
+                    
+                    <Video source={videoUrl} ref={(x) => console.log(x)} autoplay={true} style={}  />
                 </Content>
             </Container>
         )
