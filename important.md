@@ -15,3 +15,12 @@ https://blog.callstack.io/amazon-fire-tv-stick-app-in-react-native-ad49648550d
 *** Vector Icons **
 
 https://oblador.github.io/react-native-vector-icons/
+
+
+** Native Ui Components**
+
+https://github.com/john1jan/ReactNativeSignatureExample/blob/master/index.android.js
+
+https://github.com/john1jan/ReactNativeSignatureExample/blob/master/node_modules/react-native-signature-capture/SignatureCapture.js
+
+https://medium.com/@john1jan/communicating-to-and-from-native-ui-components-in-react-native-android-b8abcfb2f9c8
