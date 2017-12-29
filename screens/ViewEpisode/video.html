@@ -1,30 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link href="http://vjs.zencdn.net/6.2.8/video-js.css" rel="stylesheet">
-
-    <!-- If you'd like to support IE8 -->
-    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
-
 <body>
-    <div class='video-content'>
-        <video id="my-video" class="video-js" controls preload="auto" autoplay  data-setup="{}">
+    <video id='video' controls autoplay  style='width: 100%; height:100%' >
+        <source id='source' />
+    </video>
 
-           
-            <p class="vjs-no-js">
-                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-            </p>
-        </video>
-    </div>
-
-    <script src="http://vjs.zencdn.net/6.2.8/video.js"></script>
     <script>
         function setVideoUrl(url){
-            var myVideo = videojs('my-video');
-            myVideo.src({src:url, type:"video/mp4"});
-            myVideo.play();
-            // document.body.style.backgroundColor = 'red';
-            // document.querySelector('video').setAttribute('src', url);
+            var video = document.getElementById('video');
+            var source = document.getElementById('source');
+            
+            source.src = url;
+            source.setAttribute('type', 'video/mp4');
+            video.load()
+            video.play();
         }
     </script>
 </body>
+</html>

@@ -69,7 +69,7 @@ public class VideoViewManager extends SimpleViewManager<VideoView> {
             mediaPlayer.setAnchorView(video);
             try {
 
-                Uri uri = Uri.parse(getDataSource(url));
+                Uri uri = Uri.parse((url));
 
                 video.setVideoURI(uri);
                 video.setMediaController(mediaPlayer);
