@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <video id='video' controls autoplay  style='width: 100%; height:100%' >
+    <video id='video' onloadedmetadata="onVideoLoad()" controls autoplay  style='width: 100%; height:100%; display: none' >
         <source id='source' />
     </video>
 
@@ -20,6 +20,10 @@
             source.setAttribute('type', 'video/mp4');
             video.load()
             video.play();
+        }
+        function onVideoLoad(){
+            var video = document.getElementById('video');
+            video.style.display = 'block'
         }
     </script>
 </body>

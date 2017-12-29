@@ -135,11 +135,12 @@ export default class EpisodeList extends React.Component {
         KeyEvents.removeKeyDownListener();
         KeyEvents.onKeyDownListener(this.previousKeyDown.listener);
     }
-    selectEpisode(){
+    selectEpisode(item){
         const { episodes } = this.props;
         const { currentItem } = this.state;
+        const index = item || currentItem;
 
-        this.props.onEpisodeSelected(episodes[currentItem]);
+        this.props.onEpisodeSelected(episodes[index]);
     }   
 
     render() {
@@ -149,7 +150,7 @@ export default class EpisodeList extends React.Component {
             <View style={{ backgroundColor: '#000000', height: 9999, overflow: 'hidden', paddingTop: (MOVE_VALUE * -1) }} >
                 <Animated.View style={{ transform: [{ translateY: this.translateValue }], height: 99999, overflow: 'hidden' }}>
                     <View style={{ flex: 1, flexDirection: 'column' }}>
-                        {episodes.map((episode, i) => <Episode isFocus={currentItem === i ? true : false} key={i} {...episode}  />)}
+                        {episodes.map((episode, i) => <Episode onPress={() => this.selectEpisode(currentItem)} isFocus={currentItem === i ? true : false} key={i} {...episode}  />)}
                     </View>
                 </Animated.View>
             </View>

@@ -15,6 +15,11 @@ import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+import com.facebook.react.bridge.ReactMethod;
+
+
+import com.facebook.react.bridge.ReadableArray;
+import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
@@ -25,14 +30,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Map;
 
 /**
  * Created by smancebo on 12/27/17.
  */
 
-public class VideoViewManager extends SimpleViewManager<VideoView> {
+public class VideoViewManager extends SimpleViewManager<VideoMainView> {
 
     public static final String REACT_CLASS = "RCTVideoView";
+    public static final int PLAY_VIDEO = 1;
+    public static final int PAUSE_VIDEO = 2;
+    public static final int SEEK_VIDEO = 3;
 
     @Override
     public String getName() {
@@ -40,115 +49,58 @@ public class VideoViewManager extends SimpleViewManager<VideoView> {
     }
     ThemedReactContext context;
     Context mActivity;
-    Dialog progressDlg;
 
     public VideoViewManager(Context context){
         this.mActivity = context;
     }
 
     @Override
-    protected VideoView createViewInstance(ThemedReactContext reactContext) {
-        VideoView video = new VideoView(reactContext);
+    protected VideoMainView createViewInstance(ThemedReactContext reactContext) {
+        VideoMainView video = new VideoMainView(reactContext);
         this.context = reactContext;
-        this.progressDlg = new ProgressDialog(reactContext);
-
-        video.setMediaController(new MediaController(reactContext));
-        video.requestFocus();
-        video.setLayoutParams(getFullScreenParams());
-
-
         return video;
     }
 
+    @Override
+    public Map getExportedCustomBubblingEventTypeConstants(){
+        return MapBuilder.builder()
+                .put("onReady", MapBuilder.of("phasedRegistrationNames",MapBuilder.of("bubbled", "onReady")))
+                .put("onResume", MapBuilder.of("phaseRegistrationNames", MapBuilder.of("bubbled", "onResume")))
+                .put("onPaused", MapBuilder.of("phaseRegistrationNames", MapBuilder.of("bubbled", "onPaused")))
+                .build();
+    }
+
+
+    @Override
+    public Map<String, Integer> getCommandsMap() {
+
+        return MapBuilder.of(
+                "play",
+                PLAY_VIDEO,
+                "pause",
+                PAUSE_VIDEO,
+                "seek",
+                SEEK_VIDEO
+        );
+    }
+
+    @Override
+    public void receiveCommand(VideoMainView video, int commandId, @javax.annotation.Nullable ReadableArray args) {
+        switch (commandId){
+            case PLAY_VIDEO:
+                    video.Play();
+                return;
+
+            case PAUSE_VIDEO:
+                    video.Pause();
+                return;
+        }
+    }
+
     @ReactProp(name = "source")
-    public void setVideoUrl(final VideoView video, @Nullable String url){
+    public void setVideoUrl(final VideoMainView video, @Nullable String url){
         if(!url.toString().equals(null) && !url.toString().equals("")){
-            progressDlg.setTitle("Please Wait");
-            progressDlg.show();
-            MediaController mediaPlayer = new MediaController(this.context);
-            mediaPlayer.setAnchorView(video);
-            try {
-
-                Uri uri = Uri.parse((url));
-
-                video.setVideoURI(uri);
-                video.setMediaController(mediaPlayer);
-                video.requestFocus();
-
-
-                video.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                    @Override
-                    public void onPrepared(MediaPlayer mp) {
-                        video.start();
-                        progressDlg.hide();
-                    }
-                });
-            }
-            catch(Exception e)
-            {
-                progressDlg.hide();
-            }
-
-        }
-
-    }
-
-    @ReactProp(name = "autoplay", defaultBoolean =  true)
-    public void setAutoplay(VideoView video, boolean autoplay){
-        if(autoplay){
-            video.start();
-        }
-    }
-
-
-    public static String getDataSource(String path) throws IOException {
-        if (!URLUtil.isNetworkUrl(path)) {
-            return path;
-        } else {
-            URL url = new URL(path);
-            URLConnection cn = url.openConnection();
-            cn.connect();
-            InputStream stream = cn.getInputStream();
-            if (stream == null)
-                throw new RuntimeException("stream is null");
-            File temp = File.createTempFile("mediaplayertmp", "dat");
-            temp.deleteOnExit();
-            String tempPath = temp.getAbsolutePath();
-            FileOutputStream out = new FileOutputStream(temp);
-            byte buf[] = new byte[128];
-            do {
-                int numread = stream.read(buf);
-                if (numread <= 0)
-                    break;
-                out.write(buf, 0, numread);
-            } while (true);
-            try {
-                stream.close();
-                out.close();
-            } catch (IOException ex) {
-                //  Log.e(TAG, "error: " + ex.getMessage(), ex);
-            }
-            return tempPath;
-        }
-    }
-
-    LinearLayout.LayoutParams getFullScreenParams(){
-        DisplayMetrics metrics = mActivity.getResources().getDisplayMetrics();
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        params.width = metrics.widthPixels;
-        params.height = metrics.heightPixels;
-        params.leftMargin = 0;
-
-        return params;
-    }
-
-
-
-    class ExecuteNetwork extends AsyncTask<String, Void, String>{
-
-        @Override
-        protected String doInBackground(String... params) {
-            return null;
+           video.Load(Uri.parse(url));
         }
     }
 
