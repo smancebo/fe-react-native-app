@@ -3,6 +3,7 @@ package com.ikunativeapp;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.view.KeyEvent;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
@@ -53,7 +54,48 @@ public class VideoMainView extends VideoView {
     }
 
     public void Seek(int position){
+        int duration  = getDuration();
 
+        this.seekTo(duration + (position));
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode){
+
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
+                if(canSeekForward()){
+                    Seek(5000);
+                }
+                break;
+
+            case KeyEvent.KEYCODE_DPAD_LEFT:
+                if(canSeekBackward()){
+                    Seek(-5000);
+                }
+                break;
+
+            case KeyEvent.KEYCODE_DPAD_CENTER:
+                TogglePlayPause();
+                break;
+
+            case KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE:
+                TogglePlayPause();
+                break;
+
+            case KeyEvent.KEYCODE_MEDIA_FAST_FORWARD:
+                if(canSeekForward()){
+                    Seek(30000);
+                }
+                break;
+
+            case KeyEvent.KEYCODE_MEDIA_REWIND:
+                if(canSeekBackward()){
+                    Seek(-30000);
+                }
+                break;
+        }
+        return true;
     }
 
     public void Load(Uri uri){
