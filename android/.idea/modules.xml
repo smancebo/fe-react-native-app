@@ -3,6 +3,22 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/extensions/ffmpeg/exoplayer-extension-ffmpeg.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/extensions/ffmpeg/exoplayer-extension-ffmpeg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/extensions/flac/exoplayer-extension-flac.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/extensions/flac/exoplayer-extension-flac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/extensions/gvr/exoplayer-extension-gvr.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/extensions/gvr/exoplayer-extension-gvr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/extensions/ima/exoplayer-extension-ima.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/extensions/ima/exoplayer-extension-ima.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/extensions/mediasession/exoplayer-extension-mediasession.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/extensions/mediasession/exoplayer-extension-mediasession.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/extensions/okhttp/exoplayer-extension-okhttp.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/extensions/okhttp/exoplayer-extension-okhttp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/extensions/opus/exoplayer-extension-opus.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/extensions/opus/exoplayer-extension-opus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/extensions/rtmp/exoplayer-extension-rtmp.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/extensions/rtmp/exoplayer-extension-rtmp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/extensions/vp9/exoplayer-extension-vp9.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/extensions/vp9/exoplayer-extension-vp9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/library/all/exoplayer-library.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/library/all/exoplayer-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/library/core/exoplayer-library-core.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/library/core/exoplayer-library-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/library/dash/exoplayer-library-dash.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/library/dash/exoplayer-library-dash.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/library/hls/exoplayer-library-hls.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/library/hls/exoplayer-library-hls.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/library/smoothstreaming/exoplayer-library-smoothstreaming.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/library/smoothstreaming/exoplayer-library-smoothstreaming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/library/ui/exoplayer-library-ui.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/library/ui/exoplayer-library-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../exoplayer-amzn/testutils/exoplayer-testutils.iml" filepath="$PROJECT_DIR$/../exoplayer-amzn/testutils/exoplayer-testutils.iml" />
       <module fileurl="file://$PROJECT_DIR$/ikunativeapp.iml" filepath="$PROJECT_DIR$/ikunativeapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-key-event/android/react-native-key-event.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-key-event/android/react-native-key-event.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-keyevent/android/react-native-keyevent.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-keyevent/android/react-native-keyevent.iml" />

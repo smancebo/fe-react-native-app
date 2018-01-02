@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
+    <attr format="reference" name="controller_layout_id"/>
     <attr format="reference" name="drawerArrowStyle"/>
+    <attr format="integer" name="fastforward_increment"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
+    <attr format="reference" name="player_layout_id"/>
+    <attr name="repeat_toggle_modes">
+    <flag name="none" value="0"/>
+    <flag name="one" value="1"/>
+    <flag name="all" value="2"/>
+  </attr>
+    <attr format="enum" name="resize_mode">
+    <enum name="fit" value="0"/>
+    <enum name="fixed_width" value="1"/>
+    <enum name="fixed_height" value="2"/>
+    <enum name="fill" value="3"/>
+  </attr>
+    <attr format="integer" name="rewind_increment"/>
+    <attr format="integer" name="show_timeout"/>
+    <attr format="enum" name="surface_type">
+    <enum name="none" value="0"/>
+    <enum name="surface_view" value="1"/>
+    <enum name="texture_view" value="2"/>
+  </attr>
     <attr format="string" name="title"/>
     <bool name="abc_action_bar_embed_tabs">true</bool>
     <bool name="abc_action_bar_embed_tabs_pre_jb">false</bool>
@@ -34,6 +55,7 @@
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
+    <color name="exo_edit_mode_background_color">#FFF4F3F0</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
@@ -78,7 +100,9 @@
     <declare-styleable name="ActivityChooserView"><attr format="string" name="initialActivityCount"/><attr format="reference" name="expandActivityOverflowButtonDrawable"/></declare-styleable>
     <declare-styleable name="AlertDialog"><attr name="android:layout"/><attr format="reference" name="buttonPanelSideLayout"/><attr format="reference" name="listLayout"/><attr format="reference" name="multiChoiceItemLayout"/><attr format="reference" name="singleChoiceItemLayout"/><attr format="reference" name="listItemLayout"/></declare-styleable>
     <declare-styleable name="AppCompatTextView"><attr format="reference|boolean" name="textAllCaps"/><attr name="android:textAppearance"/></declare-styleable>
+    <declare-styleable name="AspectRatioFrameLayout"><attr name="resize_mode"/></declare-styleable>
     <declare-styleable name="CompoundButton"><attr name="android:button"/><attr format="color" name="buttonTint"/><attr name="buttonTintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/></attr></declare-styleable>
+    <declare-styleable name="DefaultTimeBar"><attr format="dimension" name="bar_height"/><attr format="dimension" name="touch_target_height"/><attr format="dimension" name="ad_marker_width"/><attr format="dimension" name="scrubber_enabled_size"/><attr format="dimension" name="scrubber_disabled_size"/><attr format="dimension" name="scrubber_dragged_size"/><attr format="color" name="played_color"/><attr format="color" name="scrubber_color"/><attr format="color" name="buffered_color"/><attr format="color" name="unplayed_color"/><attr format="color" name="ad_marker_color"/><attr format="color" name="played_ad_marker_color"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="arrowHeadLength"/><attr format="dimension" name="arrowShaftLength"/><attr format="dimension" name="barLength"/><attr format="dimension" name="thickness"/></declare-styleable>
     <declare-styleable name="GenericDraweeHierarchy"><attr format="integer" name="fadeDuration"/><attr format="float" name="viewAspectRatio"/><attr format="reference" name="placeholderImage"/><attr name="placeholderImageScaleType">
       <enum name="none" value="-1"/>
@@ -137,10 +161,12 @@
     <declare-styleable name="MenuGroup"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:checkableBehavior"/><attr name="android:visible"/><attr name="android:enabled"/></declare-styleable>
     <declare-styleable name="MenuItem"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:title"/><attr name="android:titleCondensed"/><attr name="android:icon"/><attr name="android:alphabeticShortcut"/><attr name="android:numericShortcut"/><attr name="android:checkable"/><attr name="android:checked"/><attr name="android:visible"/><attr name="android:enabled"/><attr name="android:onClick"/><attr name="showAsAction"><flag name="never" value="0"/><flag name="ifRoom" value="1"/><flag name="always" value="2"/><flag name="withText" value="4"/><flag name="collapseActionView" value="8"/></attr><attr format="reference" name="actionLayout"/><attr format="string" name="actionViewClass"/><attr format="string" name="actionProviderClass"/></declare-styleable>
     <declare-styleable name="MenuView"><attr name="android:itemTextAppearance"/><attr name="android:horizontalDivider"/><attr name="android:verticalDivider"/><attr name="android:headerBackground"/><attr name="android:itemBackground"/><attr name="android:windowAnimationStyle"/><attr name="android:itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/></declare-styleable>
+    <declare-styleable name="PlaybackControlView"><attr name="show_timeout"/><attr name="rewind_increment"/><attr name="fastforward_increment"/><attr name="repeat_toggle_modes"/><attr name="controller_layout_id"/></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/></declare-styleable>
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
     <declare-styleable name="SearchView"><attr format="reference" name="layout"/><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr format="string" name="defaultQueryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/><attr format="reference" name="closeIcon"/><attr format="reference" name="goIcon"/><attr format="reference" name="searchIcon"/><attr format="reference" name="searchHintIcon"/><attr format="reference" name="voiceIcon"/><attr format="reference" name="commitIcon"/><attr format="reference" name="suggestionRowLayout"/><attr format="reference" name="queryBackground"/><attr format="reference" name="submitBackground"/><attr name="android:focusable"/></declare-styleable>
     <declare-styleable name="SimpleDraweeView"><attr format="string" name="actualImageUri"/><attr format="reference" name="actualImageResource"/></declare-styleable>
+    <declare-styleable name="SimpleExoPlayerView"><attr format="boolean" name="use_artwork"/><attr format="reference" name="default_artwork"/><attr format="boolean" name="use_controller"/><attr format="boolean" name="hide_on_touch"/><attr format="boolean" name="auto_show"/><attr name="resize_mode"/><attr name="surface_type"/><attr name="show_timeout"/><attr name="rewind_increment"/><attr name="fastforward_increment"/><attr name="player_layout_id"/><attr name="controller_layout_id"/></declare-styleable>
     <declare-styleable name="Spinner"><attr name="android:prompt"/><attr name="popupTheme"/><attr name="android:popupBackground"/><attr name="android:dropDownWidth"/></declare-styleable>
     <declare-styleable name="SwitchCompat"><attr name="android:thumb"/><attr format="reference" name="track"/><attr name="android:textOn"/><attr name="android:textOff"/><attr format="dimension" name="thumbTextPadding"/><attr format="reference" name="switchTextAppearance"/><attr format="dimension" name="switchMinWidth"/><attr format="dimension" name="switchPadding"/><attr format="boolean" name="splitTrack"/><attr format="boolean" name="showText"/></declare-styleable>
     <declare-styleable name="TextAppearance"><attr name="android:textColor"/><attr name="android:textSize"/><attr name="android:textStyle"/><attr name="android:shadowColor"/><attr name="android:shadowDx"/><attr name="android:shadowDy"/><attr name="android:shadowRadius"/><attr name="android:typeface"/><attr name="textAllCaps"/></declare-styleable>
@@ -216,6 +242,8 @@
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <dimen name="exo_media_button_height">52dp</dimen>
+    <dimen name="exo_media_button_width">71dp</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
@@ -227,6 +255,23 @@
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
+    <item name="exo_artwork" type="id"/>
+    <item name="exo_content_frame" type="id"/>
+    <item name="exo_controller" type="id"/>
+    <item name="exo_controller_placeholder" type="id"/>
+    <item name="exo_duration" type="id"/>
+    <item name="exo_ffwd" type="id"/>
+    <item name="exo_next" type="id"/>
+    <item name="exo_overlay" type="id"/>
+    <item name="exo_pause" type="id"/>
+    <item name="exo_play" type="id"/>
+    <item name="exo_position" type="id"/>
+    <item name="exo_prev" type="id"/>
+    <item name="exo_progress" type="id"/>
+    <item name="exo_repeat_toggle" type="id"/>
+    <item name="exo_rew" type="id"/>
+    <item name="exo_shutter" type="id"/>
+    <item name="exo_subtitles" type="id"/>
     <item name="home" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
@@ -279,6 +324,16 @@
     <string name="catalyst_report_button" project="catalyst" translatable="false">Report</string>
     <string name="catalyst_settings" project="catalyst" translatable="false">Dev Settings</string>
     <string name="catalyst_settings_title" project="catalyst" translatable="false">Catalyst Dev Settings</string>
+    <string name="exo_controls_fastforward_description">Fast forward</string>
+    <string name="exo_controls_next_description">Next track</string>
+    <string name="exo_controls_pause_description">Pause</string>
+    <string name="exo_controls_play_description">Play</string>
+    <string name="exo_controls_previous_description">Previous track</string>
+    <string name="exo_controls_repeat_all_description">Repeat all</string>
+    <string name="exo_controls_repeat_off_description">Repeat none</string>
+    <string name="exo_controls_repeat_one_description">Repeat one</string>
+    <string name="exo_controls_rewind_description">Rewind</string>
+    <string name="exo_controls_stop_description">Stop</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
@@ -1223,6 +1278,35 @@
     <style name="DialogAnimationSlide">
     <item name="android:windowEnterAnimation">@anim/catalyst_slide_up</item>
     <item name="android:windowExitAnimation">@anim/catalyst_slide_down</item>
+  </style>
+    <style name="ExoMediaButton">
+    <item name="android:background">@null</item>
+    <item name="android:layout_width">@dimen/exo_media_button_width</item>
+    <item name="android:layout_height">@dimen/exo_media_button_height</item>
+  </style>
+    <style name="ExoMediaButton.FastForward">
+    <item name="android:src">@drawable/exo_controls_fastforward</item>
+    <item name="android:contentDescription">@string/exo_controls_fastforward_description</item>
+  </style>
+    <style name="ExoMediaButton.Next">
+    <item name="android:src">@drawable/exo_controls_next</item>
+    <item name="android:contentDescription">@string/exo_controls_next_description</item>
+  </style>
+    <style name="ExoMediaButton.Pause">
+    <item name="android:src">@drawable/exo_controls_pause</item>
+    <item name="android:contentDescription">@string/exo_controls_pause_description</item>
+  </style>
+    <style name="ExoMediaButton.Play">
+    <item name="android:src">@drawable/exo_controls_play</item>
+    <item name="android:contentDescription">@string/exo_controls_play_description</item>
+  </style>
+    <style name="ExoMediaButton.Previous">
+    <item name="android:src">@drawable/exo_controls_previous</item>
+    <item name="android:contentDescription">@string/exo_controls_previous_description</item>
+  </style>
+    <style name="ExoMediaButton.Rewind">
+    <item name="android:src">@drawable/exo_controls_rewind</item>
+    <item name="android:contentDescription">@string/exo_controls_rewind_description</item>
   </style>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>

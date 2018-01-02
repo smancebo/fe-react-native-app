@@ -330,358 +330,201 @@
                     "startLine": 19,
                     "startColumn": 4,
                     "startOffset": 1902,
-                    "endColumn": 100,
-                    "endOffset": 1998
+                    "endColumn": 89,
+                    "endOffset": 1987
                 },
                 "from": {
-                    "file": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/values-ro/values-ro.xml",
+                    "file": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-ro/values-ro.xml",
                     "position": {
-                        "startLine": 21,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 2127,
-                        "endColumn": 100,
-                        "endOffset": 2223
+                        "startOffset": 55,
+                        "endColumn": 89,
+                        "endOffset": 140
                     }
                 }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ro/values-ro.xml",
-        "map": [
+            },
             {
                 "to": {
-                    "startLine": 2,
+                    "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 120,
-                    "endOffset": 171
+                    "startOffset": 1992,
+                    "endColumn": 77,
+                    "endOffset": 2065
                 },
                 "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
+                    "file": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-ro/values-ro.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 145,
+                        "endColumn": 77,
+                        "endOffset": 218
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2070,
+                    "endColumn": 66,
+                    "endOffset": 2132
+                },
+                "from": {
+                    "file": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-ro/values-ro.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 280,
-                        "endColumn": 120,
-                        "endOffset": 396
+                        "startOffset": 223,
+                        "endColumn": 66,
+                        "endOffset": 285
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 3,
+                    "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 176,
-                    "endColumn": 107,
-                    "endOffset": 279
+                    "startOffset": 2137,
+                    "endColumn": 66,
+                    "endOffset": 2199
                 },
                 "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
+                    "file": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-ro/values-ro.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 401,
-                        "endColumn": 107,
-                        "endOffset": 504
+                        "startOffset": 290,
+                        "endColumn": 66,
+                        "endOffset": 352
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 4,
+                    "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 284,
-                    "endColumn": 122,
-                    "endOffset": 402
+                    "startOffset": 2204,
+                    "endColumn": 82,
+                    "endOffset": 2282
                 },
                 "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
+                    "file": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-ro/values-ro.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 509,
-                        "endColumn": 122,
-                        "endOffset": 627
+                        "startOffset": 357,
+                        "endColumn": 82,
+                        "endOffset": 435
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 5,
+                    "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 407,
-                    "endColumn": 103,
-                    "endOffset": 506
+                    "startOffset": 2287,
+                    "endColumn": 80,
+                    "endOffset": 2363
                 },
                 "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
+                    "file": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-ro/values-ro.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 632,
-                        "endColumn": 103,
-                        "endOffset": 731
+                        "startOffset": 440,
+                        "endColumn": 80,
+                        "endOffset": 516
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 6,
+                    "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 511,
-                    "endColumn": 112,
-                    "endOffset": 619
+                    "startOffset": 2368,
+                    "endColumn": 82,
+                    "endOffset": 2446
                 },
                 "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
+                    "file": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-ro/values-ro.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 736,
-                        "endColumn": 112,
-                        "endOffset": 844
+                        "startOffset": 521,
+                        "endColumn": 82,
+                        "endOffset": 599
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 7,
+                    "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 624,
-                    "endColumn": 87,
-                    "endOffset": 707
+                    "startOffset": 2451,
+                    "endColumn": 79,
+                    "endOffset": 2526
                 },
                 "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
+                    "file": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-ro/values-ro.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 849,
-                        "endColumn": 87,
-                        "endOffset": 932
+                        "startOffset": 604,
+                        "endColumn": 79,
+                        "endOffset": 679
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 8,
+                    "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 712,
-                    "endColumn": 111,
-                    "endOffset": 819
+                    "startOffset": 2531,
+                    "endColumn": 70,
+                    "endOffset": 2597
                 },
                 "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
+                    "file": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-ro/values-ro.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 937,
-                        "endColumn": 111,
-                        "endOffset": 1044
+                        "startOffset": 684,
+                        "endColumn": 70,
+                        "endOffset": 750
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 9,
+                    "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 824,
-                    "endColumn": 120,
-                    "endOffset": 940
+                    "startOffset": 2602,
+                    "endColumn": 66,
+                    "endOffset": 2664
                 },
                 "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
+                    "file": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-ro/values-ro.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 1049,
-                        "endColumn": 120,
-                        "endOffset": 1165
+                        "startOffset": 755,
+                        "endColumn": 66,
+                        "endOffset": 817
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 10,
+                    "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 945,
-                    "endColumn": 82,
-                    "endOffset": 1023
-                },
-                "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1170,
-                        "endColumn": 82,
-                        "endOffset": 1248
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1028,
-                    "endColumn": 111,
-                    "endOffset": 1135
-                },
-                "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1253,
-                        "endColumn": 111,
-                        "endOffset": 1360
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1140,
-                    "endColumn": 112,
-                    "endOffset": 1248
-                },
-                "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1365,
-                        "endColumn": 112,
-                        "endOffset": 1473
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1253,
-                    "endColumn": 99,
-                    "endOffset": 1348
-                },
-                "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1478,
-                        "endColumn": 99,
-                        "endOffset": 1573
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1353,
-                    "endColumn": 113,
-                    "endOffset": 1462
-                },
-                "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1578,
-                        "endColumn": 113,
-                        "endOffset": 1687
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1467,
-                    "endColumn": 104,
-                    "endOffset": 1567
-                },
-                "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1692,
-                        "endColumn": 104,
-                        "endOffset": 1792
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1572,
-                    "endColumn": 105,
-                    "endOffset": 1673
-                },
-                "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1797,
-                        "endColumn": 105,
-                        "endOffset": 1898
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1678,
-                    "endColumn": 120,
-                    "endOffset": 1794
-                },
-                "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1903,
-                        "endColumn": 120,
-                        "endOffset": 2019
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1799,
-                    "endColumn": 102,
-                    "endOffset": 1897
-                },
-                "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 2024,
-                        "endColumn": 102,
-                        "endOffset": 2122
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1902,
+                    "startOffset": 2669,
                     "endColumn": 100,
-                    "endOffset": 1998
+                    "endOffset": 2765
                 },
                 "from": {
-                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-ro/values-ro.xml",
+                    "file": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/values-ro/values-ro.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,

@@ -16,5 +16,15 @@
     <string msgid="893419373245838918" name="abc_searchview_description_voice">"Ovozli qidiruv"</string>
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Bo‘lishish:"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Yig‘ish"</string>
+    <string name="exo_controls_fastforward_description">"Oldinga o‘tkazish"</string>
+    <string name="exo_controls_next_description">"Keyingi musiqa"</string>
+    <string name="exo_controls_pause_description">"To‘xtatib turish"</string>
+    <string name="exo_controls_play_description">"Ijro qilish"</string>
+    <string name="exo_controls_previous_description">"Avvalgi musiqa"</string>
+    <string name="exo_controls_repeat_all_description">"Barchasini takrorlash"</string>
+    <string name="exo_controls_repeat_off_description">"Takrorlamaslik"</string>
+    <string name="exo_controls_repeat_one_description">"Bir marta takrorlash"</string>
+    <string name="exo_controls_rewind_description">"Orqaga o‘tkazish"</string>
+    <string name="exo_controls_stop_description">"To‘xtatish"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

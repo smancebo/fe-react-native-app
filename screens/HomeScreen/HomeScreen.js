@@ -94,6 +94,9 @@ class Section extends React.Component {
         return (
             <View style={this.styles.main}>
                 <Text style={this.styles.title}>{title}</Text>
+                <View>
+
+                </View>
             </View>
         )
     }
@@ -104,7 +107,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#222222'
     },
     page: {
-        backgroundColor: '#222222',
+        backgroundColor: '#303030',
         flex: 1,
         
 

@@ -17,5 +17,15 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"اشتراک‌گذاری با"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"‏اشتراک‌گذاری با %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"کوچک کردن"</string>
+    <string name="exo_controls_fastforward_description">"جلو بردن سریع"</string>
+    <string name="exo_controls_next_description">"آهنگ بعدی"</string>
+    <string name="exo_controls_pause_description">"مکث"</string>
+    <string name="exo_controls_play_description">"پخش"</string>
+    <string name="exo_controls_previous_description">"آهنگ قبلی"</string>
+    <string name="exo_controls_repeat_all_description">"تکرار همه"</string>
+    <string name="exo_controls_repeat_off_description">"تکرار هیچ‌کدام"</string>
+    <string name="exo_controls_repeat_one_description">"یک‌بار تکرار"</string>
+    <string name="exo_controls_rewind_description">"عقب بردن"</string>
+    <string name="exo_controls_stop_description">"توقف"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"۹۹۹+"</string>
 </resources>

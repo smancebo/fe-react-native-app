@@ -17,5 +17,15 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Jakaminen:"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Jakaminen: %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Kutista"</string>
+    <string name="exo_controls_fastforward_description">"Kelaa eteen"</string>
+    <string name="exo_controls_next_description">"Seuraava raita"</string>
+    <string name="exo_controls_pause_description">"Tauko"</string>
+    <string name="exo_controls_play_description">"Toista"</string>
+    <string name="exo_controls_previous_description">"Edellinen raita"</string>
+    <string name="exo_controls_repeat_all_description">"Toista kaikki"</string>
+    <string name="exo_controls_repeat_off_description">"Toista ei mitään"</string>
+    <string name="exo_controls_repeat_one_description">"Toista yksi"</string>
+    <string name="exo_controls_rewind_description">"Kelaa taakse"</string>
+    <string name="exo_controls_stop_description">"Seis"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

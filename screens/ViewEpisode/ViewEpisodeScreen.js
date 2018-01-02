@@ -15,7 +15,7 @@ export default class ViewEpisodeScreen extends React.Component
         this.onVideoReady = this.onVideoReady.bind(this);
     }
     componentDidMount(){
-        //this.props.openDialog();
+        this.props.openDialog();
     }
 
     onLoad(){
@@ -40,8 +40,8 @@ export default class ViewEpisodeScreen extends React.Component
             <Container>
                 <Content style={[globalStyles.page]} contentContainerStyle={{height: '100%'}}>
                     <View style={styles.container}>
-                        <WebView injectedJavaScript={`setVideoUrl('${videoUrl}')`} mediaPlaybackRequiresUserAction={false} source={videoHtml} style={styles.fullContent} ></WebView>
-                        {/* <Video source={videoUrl} ref="videoPlayer" onReady={this.onVideoReady} autoplay={true} style={{width: '100%', height: '100%'}} /> */}
+                        {/* <WebView injectedJavaScript={`setVideoUrl('${videoUrl}')`} mediaPlaybackRequiresUserAction={false} source={videoHtml} style={styles.fullContent} ></WebView> */}
+                        <Video source={videoUrl} ref="videoPlayer" onReady={this.onVideoReady} autoplay={true} style={{width: '100%', height: '100%'}} />
                     </View>
                     
                 </Content>

@@ -38,10 +38,11 @@ import java.util.Map;
 
 public class VideoViewManager extends SimpleViewManager<VideoMainView> {
 
-    public static final String REACT_CLASS = "RCTVideoView";
-    public static final int PLAY_VIDEO = 1;
-    public static final int PAUSE_VIDEO = 2;
-    public static final int SEEK_VIDEO = 3;
+    private static final String REACT_CLASS = "RCTVideoView";
+    private static final int PLAY_VIDEO = 1;
+    private static final int PAUSE_VIDEO = 2;
+    private static final int SEEK_VIDEO = 3;
+    private static final int DISPOSE_VIDEO = 4;
 
     @Override
     public String getName() {
@@ -80,7 +81,9 @@ public class VideoViewManager extends SimpleViewManager<VideoMainView> {
                 "pause",
                 PAUSE_VIDEO,
                 "seek",
-                SEEK_VIDEO
+                SEEK_VIDEO,
+                "dispose",
+                DISPOSE_VIDEO
         );
     }
 
@@ -94,6 +97,8 @@ public class VideoViewManager extends SimpleViewManager<VideoMainView> {
             case PAUSE_VIDEO:
                     video.Pause();
                 return;
+            case SEEK_VIDEO:
+                    video.Seek(args.getInt(0));
         }
     }
 

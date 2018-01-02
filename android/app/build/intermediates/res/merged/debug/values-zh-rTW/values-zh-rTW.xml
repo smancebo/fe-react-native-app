@@ -17,5 +17,15 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"選擇分享對象"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"與「%s」分享"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"收合"</string>
+    <string name="exo_controls_fastforward_description">"快轉"</string>
+    <string name="exo_controls_next_description">"下一首曲目"</string>
+    <string name="exo_controls_pause_description">"暫停"</string>
+    <string name="exo_controls_play_description">"播放"</string>
+    <string name="exo_controls_previous_description">"上一首曲目"</string>
+    <string name="exo_controls_repeat_all_description">"重複播放所有媒體項目"</string>
+    <string name="exo_controls_repeat_off_description">"不重複播放"</string>
+    <string name="exo_controls_repeat_one_description">"重複播放單一媒體項目"</string>
+    <string name="exo_controls_rewind_description">"倒轉"</string>
+    <string name="exo_controls_stop_description">"停止"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>
