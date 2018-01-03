@@ -1,6 +1,8 @@
 import React from 'react';
 import { requireNativeComponent, View, UIManager, findNodeHandle } from 'react-native';
 import PropTypes from 'prop-types';
+import KeyEvent from 'react-native-keyevent';
+import { DPAD, DPAD_FAST_FORWARD } from '../../common/dpadKeyCodes';
 
 
 class Video extends React.Component {
@@ -11,6 +13,43 @@ class Video extends React.Component {
         this._onResume = this._onResume.bind(this);
         this.play = this.play.bind(this);
 
+    }
+
+    componentDidMount(){
+        this.previousKeyDown = KeyEvent.listenerKeyDown;
+        KeyEvent.removeKeyDownListener();
+        KeyEvent.onKeyDownListener(( {keyCode} ) => {
+            switch(keyCode){
+                case DPAD.DPAD_CENTER:
+                    this.togglePlayPause();
+                break;
+
+                case DPAD.DPAD_FAST_BACKWARD:
+                    this.seek(-30000);
+                break;
+
+                case DPAD.DPAD_FAST_FORWARD:
+                    this.seek(30000);
+                break;
+
+                case DPAD.DPAD_LEFT:
+                    this.seek(-5000);
+                break;
+
+                case DPAD.DPAD_RIGHT:
+                    this.seek(5000);
+                break;
+
+                case DPAD.DPAD_PLAY_PAUSA:
+                    this.togglePlayPause();
+                break;
+            }
+        })
+    }
+
+    componentWillUnmount(){
+        KeyEvent.removeKeyDownListener();
+        KeyEvent.onKeyDownListener(this.previousKeyDown.listener);
     }
 
     _onReady(event){
@@ -48,6 +87,9 @@ class Video extends React.Component {
     }
     play(){
         this._dispatchCommand('play', []);
+    }
+    seek(time){
+        this._dispatchCommand('seek', [time])
     }
     render() {
         return (<RCTVideoView {...this.props} onReady={this._onReady} onPaused={this._onPaused} onResume={this._onResume} />)

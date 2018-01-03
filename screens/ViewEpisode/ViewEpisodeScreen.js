@@ -16,15 +16,14 @@ export default class ViewEpisodeScreen extends React.Component
         this.onVideoPaused = this.onVideoPaused.bind(this);
         this.onVideoResume = this.onVideoResume.bind(this);
         this.showOverlay = this.showOverlay.bind(this);
-        this.prevListener = null;
+        
         this.state = {
             showOverlay: false
         }
     }
     componentDidMount(){
         this.props.openDialog();
-        this.prevListener = KeyEvent.listenerKeyDown;
-        KeyEvent.removeKeyDownListener();
+        
     }
 
     onVideoReady(event) {
@@ -69,7 +68,7 @@ export default class ViewEpisodeScreen extends React.Component
     }
     componentWillUnmount(){
         this.refs.videoPlayer.release();
-        KeyEvent.onKeyDownListener(this.prevListener);
+        
     }
 }
 

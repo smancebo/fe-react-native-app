@@ -7,6 +7,9 @@ import {Logo} from '../../common/constants'
 import KeyEvent from 'react-native-keyevent';
 import { DPAD_MENU} from '../../common/dpadKeyCodes';
 import { VideoOverlay } from '../ViewEpisode/VideoOverlay';
+import Tile from '../../components/Tile';
+import Section from '../../components/Section';
+
  
 
 export default class HomeScreen extends React.Component {
@@ -21,17 +24,17 @@ export default class HomeScreen extends React.Component {
 
     componentDidMount(){
       
-        KeyEvent.onKeyDownListener((event) => {
-            const {navigate} = this.props.navigation;
-            switch(event.keyCode){
-                case DPAD_MENU:
-                    navigate('DrawerToggle')      
-                    break;
+        // KeyEvent.onKeyDownListener((event) => {
+        //     const {navigate} = this.props.navigation;
+        //     switch(event.keyCode){
+        //         case DPAD_MENU:
+        //             navigate('DrawerToggle')      
+        //             break;
                     
-                default: 
-                break;
-            }
-        })
+        //         default: 
+        //         break;
+        //     }
+        // })
     }
 
     handleButton(e) {
@@ -58,8 +61,56 @@ export default class HomeScreen extends React.Component {
                         <Icon name='menu'></Icon>
                         <Text>Menu</Text>
                     </Button>
-                    
-                    <Section title='Favorites'></Section>
+                   
+                    <Section title='Continue Watching' focus={true}>
+                       
+                            <Tile style={{ backgroundColor: 'white'}} focus={true}>
+                                <View>
+                                    <Text style={{ fontSize: 24, color: '#d43125' }}>NETFLIX</Text>
+                                </View>
+                            </Tile>
+                            <Tile style={{ backgroundColor: '#1a1a1a' }}>
+                                <View>
+                                    <Text style={{ fontSize: 24, color: '#e05a93' }}>PLAYER</Text>
+                                </View>
+                            </Tile>
+                            <Tile style={{ backgroundColor: '#cf4236' }}>
+                                <View>
+                                    <Text style={{ fontSize: 24, color: 'white' }}>YOUTUBE</Text>
+                                </View>
+                            </Tile>
+                            <Tile style={{ backgroundColor: '#a4c94f' }}>
+                                <View>
+                                    <Text style={{ fontSize: 24, color: 'white' }}>HULU</Text>
+                                </View>
+                            </Tile>
+                       
+                    </Section>
+
+                    <Section title='Favorites'>
+                        <View style={{ flexDirection: 'row' }} >
+                            <Tile style={{ backgroundColor: 'white' }}>
+                                <View>
+                                    <Text style={{ fontSize: 24, color: '#d43125' }}>NETFLIX</Text>
+                                </View>
+                            </Tile>
+                            <Tile style={{ backgroundColor: '#1a1a1a' }}>
+                                <View>
+                                    <Text style={{ fontSize: 24, color: '#e05a93' }}>PLAYER</Text>
+                                </View>
+                            </Tile>
+                            <Tile style={{ backgroundColor: '#cf4236' }}>
+                                <View>
+                                    <Text style={{ fontSize: 24, color: 'white' }}>YOUTUBE</Text>
+                                </View>
+                            </Tile>
+                            <Tile style={{ backgroundColor: '#a4c94f' }}>
+                                <View>
+                                    <Text style={{ fontSize: 24, color: 'white' }}>HULU</Text>
+                                </View>
+                            </Tile>
+                        </View>
+                    </Section>
                     
                     
                 </Content>
@@ -68,48 +119,17 @@ export default class HomeScreen extends React.Component {
 
         )
     }
-
-
-
-
-
 }
 
 
-class Section extends React.Component {
-    styles = StyleSheet.create({
-        title: {
-            fontSize: 24,
-            color: 'white'
-        },
-        main: {
-            marginTop: 20,
-            padding: 30
-        }
-    })
-    state = {
 
-    }   
-
-    render() {
-        const { title } = this.props
-        return (
-            <View style={this.styles.main}>
-                <Text style={this.styles.title}>{title}</Text>
-                <View>
-
-                </View>
-            </View>
-        )
-    }
-}
 
 const styles = StyleSheet.create({
     header: {
         backgroundColor: '#222222'
     },
     page: {
-        backgroundColor: '#303030',
+        backgroundColor: '#222222',
         flex: 1,
         
 

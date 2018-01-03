@@ -32,7 +32,7 @@ export default class EpisodeList extends React.Component {
                     this.currentPosition -= MOVE_VALUE;
                     this.timeOutInterval = setTimeout(() => {
                         this.scrollList(this.currentPosition);
-                    }, 200)
+                    }, 100)
                 }
             }
         }
@@ -43,7 +43,7 @@ export default class EpisodeList extends React.Component {
                 this.focusItem(this.currentItem, DPAD_UP);
                 this.timeOutInterval = setTimeout(() => {
                     this.scrollList(this.currentPosition, );
-                }, 200)
+                }, 100)
 
             } else {
                 if (this.currentItem > 0) {

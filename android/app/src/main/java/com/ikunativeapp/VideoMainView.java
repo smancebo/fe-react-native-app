@@ -6,10 +6,12 @@ import android.media.MediaPlayer;
 import android.media.session.PlaybackState;
 import android.net.Uri;
 import android.os.Handler;
+import android.support.v4.media.session.MediaSessionCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -36,6 +38,7 @@ import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelection;
 import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
+import com.google.android.exoplayer2.ui.PlaybackControlView;
 import com.google.android.exoplayer2.ui.SimpleExoPlayerView;
 import com.google.android.exoplayer2.upstream.BandwidthMeter;
 import com.google.android.exoplayer2.upstream.DataSource;
@@ -48,11 +51,14 @@ import com.google.android.exoplayer2.util.Util;
  * Created by smancebo on 12/29/17.
  */
 
-public class VideoMainView extends LinearLayout implements Player.EventListener {
+public class VideoMainView extends FrameLayout implements Player.EventListener {
 
 
     SimpleExoPlayer _mediaPlayer;
     SimpleExoPlayerView _mediaPlayerView;
+    PlaybackControlView _mediaPlayerController;
+    MediaSessionCompat _mediaSession;
+
     boolean firstTimeLoad;
 
     Context _context;
@@ -66,7 +72,9 @@ public class VideoMainView extends LinearLayout implements Player.EventListener 
         _mediaPlayerView = new SimpleExoPlayerView(context);
         _mediaPlayerView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         _mediaPlayerView.setPlayer(_mediaPlayer);
-        _mediaPlayerView.setOnKeyListener(new OnKeyListener() {
+
+
+        _mediaPlayerView.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 return onKeyDown(keyCode, event);
@@ -74,7 +82,10 @@ public class VideoMainView extends LinearLayout implements Player.EventListener 
         });
 
 
-        this.requestFocus();
+
+
+        boolean b = _mediaPlayerView.requestFocus();
+        Log.i("focusable", String.valueOf(b));
         firstTimeLoad = true;
         this.addView(_mediaPlayerView);
     }
@@ -149,7 +160,7 @@ public class VideoMainView extends LinearLayout implements Player.EventListener 
                 Seek(-30000);
                 break;
         }
-        return true;
+        return super.onKeyDown(keyCode, event);
     }
 
     public void Load(Uri uri){
@@ -199,6 +210,7 @@ public class VideoMainView extends LinearLayout implements Player.EventListener 
                 }
                 break;
         }
+        _mediaPlayerView.requestFocus();
     }
 
     @Override
@@ -210,6 +222,7 @@ public class VideoMainView extends LinearLayout implements Player.EventListener 
     public void onPlayerError(ExoPlaybackException error) {
 //        Log.i("Exoplayer Error", error.toString());
         Log.d("Exo player Err", "msg", error);
+        _mediaPlayerView.requestFocus();
     }
 
     @Override
