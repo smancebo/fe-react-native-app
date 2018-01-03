@@ -6,6 +6,7 @@ import { BrowseScreen } from '../BrowseScreen/BrowseScreen'
 import {Logo} from '../../common/constants'
 import KeyEvent from 'react-native-keyevent';
 import { DPAD_MENU} from '../../common/dpadKeyCodes';
+import { VideoOverlay } from '../ViewEpisode/VideoOverlay';
  
 
 export default class HomeScreen extends React.Component {
@@ -59,6 +60,7 @@ export default class HomeScreen extends React.Component {
                     </Button>
                     
                     <Section title='Favorites'></Section>
+                    
                     
                 </Content>
             </Container>

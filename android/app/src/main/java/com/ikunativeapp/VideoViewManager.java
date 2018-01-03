@@ -42,7 +42,8 @@ public class VideoViewManager extends SimpleViewManager<VideoMainView> {
     private static final int PLAY_VIDEO = 1;
     private static final int PAUSE_VIDEO = 2;
     private static final int SEEK_VIDEO = 3;
-    private static final int DISPOSE_VIDEO = 4;
+    private static final int RELEASE_VIDEO = 4;
+    private static final int TOGGLE_PLAY_PAUSE = 5;
 
     @Override
     public String getName() {
@@ -82,8 +83,10 @@ public class VideoViewManager extends SimpleViewManager<VideoMainView> {
                 PAUSE_VIDEO,
                 "seek",
                 SEEK_VIDEO,
-                "dispose",
-                DISPOSE_VIDEO
+                "release",
+                RELEASE_VIDEO,
+                "toggle_play_pause",
+                TOGGLE_PLAY_PAUSE
         );
     }
 
@@ -91,14 +94,24 @@ public class VideoViewManager extends SimpleViewManager<VideoMainView> {
     public void receiveCommand(VideoMainView video, int commandId, @javax.annotation.Nullable ReadableArray args) {
         switch (commandId){
             case PLAY_VIDEO:
-                    video.Play();
+                video.Play();
                 return;
 
             case PAUSE_VIDEO:
-                    video.Pause();
+                video.Pause();
                 return;
+
+            case TOGGLE_PLAY_PAUSE:
+                video.TogglePlayPause();
+                return;
+
+            case RELEASE_VIDEO:
+                video.Release();
+                return;
+
             case SEEK_VIDEO:
-                    video.Seek(args.getInt(0));
+                video.Seek(args.getInt(0));
+                return;
         }
     }
 

@@ -2,49 +2,49 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/smancebo/.android/build-cache/5ae23a369761daeece92f6bfc00c543d3db2eeaa/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/node_modules/react-native-keyevent/android/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
-        <dex dex="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a331e810dd1716d5d645f60d6eb2abe8db485141/classes.dex" />
+        sha1="a9c6fe195b8bd6eb7abc13e32bcec057d92f823c">
+        <dex dex="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/pre-dexed/debug/classes_3b8903fe40e6eab421d1f51713b31b109ae4b5c5.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/core/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="71d2f68382311d90372ea413463af2732d481d5c">
-        <dex dex="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5f867f1c01d28e8e56ec8f0b6d0f945158fca5fe/classes.dex" />
+        sha1="c86b7a4fb70bea31f018df6418d929a9d1344e8c">
+        <dex dex="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/pre-dexed/debug/classes_5ec709c495c6f5cb03987da409ed23e4192fcc8f.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/smancebo/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/25.4.0/f6a2fc748ae3769633dea050563e1613e93c135e/support-annotations-25.4.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e61c0ddb9c19babf6179214a662dac05bbcf053">
+        <dex dex="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/pre-dexed/debug/classes_ebf8e0b794f414785ec0ec26343f0926bb3fd13d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/node_modules/react-native-vector-icons/android/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
+        <dex dex="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/pre-dexed/debug/classes_a13f3034c1e8a1155c55f8c29a8934e9001b9c20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sjmancebo/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/25.4.0/f6a2fc748ae3769633dea050563e1613e93c135e/support-annotations-25.4.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
-        <dex dex="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.4.0_934b2e6f5f7129ef09e27fe1042d3d6f8262854e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/smancebo/.android/build-cache/4e5da619faf3206fe010aae45e65ba7356a9e9b8/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
-        <dex dex="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4d6fb57681644b368ce0d3f5066dc9752d18ef7f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_862209374fd1995760ad254d67ce61bf9cbf9e3c/classes.dex" />
+        <dex dex="/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.4.0_661c34d6a5b4205a30b919c8e82d0305f298a218.jar" />
     </item>
 
 </items>

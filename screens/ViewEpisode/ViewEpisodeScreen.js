@@ -5,51 +5,71 @@ import Video from '../../components/native/Video';
 import { StyleSheet, WebView, View } from 'react-native';
 import { config } from '../../config';
 import videoHtml from './video.html';
+import { VideoOverlay } from './VideoOverlay';
+import KeyEvent from 'react-native-keyevent'
 
 export default class ViewEpisodeScreen extends React.Component
 {
-
     constructor(props){
         super(props);
-        this.onLoad = this.onLoad.bind(this);
         this.onVideoReady = this.onVideoReady.bind(this);
+        this.onVideoPaused = this.onVideoPaused.bind(this);
+        this.onVideoResume = this.onVideoResume.bind(this);
+        this.showOverlay = this.showOverlay.bind(this);
+        this.prevListener = null;
+        this.state = {
+            showOverlay: false
+        }
     }
     componentDidMount(){
         this.props.openDialog();
-    }
-
-    onLoad(){
-        this.props.closeDialog();
-        this.player.presentFullscreenPlayer();
-        console.log(this.player)
+        this.prevListener = KeyEvent.listenerKeyDown;
+        KeyEvent.removeKeyDownListener();
     }
 
     onVideoReady(event) {
-        console.log(event);
         this.props.closeDialog();
         this.refs.videoPlayer.play();
     }
-    render(){
-        const { url, episode } = this.props.navigation.state.params;
-        
-       
 
+    onVideoPaused(event) {
+
+    }
+
+    onVideoResume(event){
+
+    }
+
+    showOverlay(display) {
+        const show = display instanceof Boolean ? display : undefined || false
+        this.setState({showOverlay: display})
+    }
+
+    render(){
+        const { url, episode, show } = this.props.navigation.state.params;
+        const {showOverlay} = this.state
         const videoUrl = url.indexOf('openload') !== -1 ? `${config.API}/watch?video=${url}` : url
        
         return (
             <Container>
                 <Content style={[globalStyles.page]} contentContainerStyle={{height: '100%'}}>
                     <View style={styles.container}>
+                        <VideoOverlay visible={showOverlay} show={{ episode: episode.name , name: show.title, image: show.image }} />
                         {/* <WebView injectedJavaScript={`setVideoUrl('${videoUrl}')`} mediaPlaybackRequiresUserAction={false} source={videoHtml} style={styles.fullContent} ></WebView> */}
-                        <Video source={videoUrl} ref="videoPlayer" onReady={this.onVideoReady} autoplay={true} style={{width: '100%', height: '100%'}} />
+                        <Video source={videoUrl} ref="videoPlayer" 
+                            onReady={this.onVideoReady} 
+                            onPaused={this.onVideoPaused}
+                            onResume={this.onVideoResume}
+                            autoplay={true} 
+                            style={styles.player} />
                     </View>
-                    
                 </Content>
             </Container>
         )
     }
     componentWillUnmount(){
-        
+        this.refs.videoPlayer.release();
+        KeyEvent.onKeyDownListener(this.prevListener);
     }
 }
 
@@ -61,6 +81,7 @@ const styles = StyleSheet.create({
         bottom: 0,
         right: 0,
     },
+    player: { width: '100%', height: '100%' },
     fullContent: {
        flex: 1,
        backgroundColor: 'black'

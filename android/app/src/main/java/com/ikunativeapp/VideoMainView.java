@@ -66,6 +66,15 @@ public class VideoMainView extends LinearLayout implements Player.EventListener 
         _mediaPlayerView = new SimpleExoPlayerView(context);
         _mediaPlayerView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         _mediaPlayerView.setPlayer(_mediaPlayer);
+        _mediaPlayerView.setOnKeyListener(new OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                return onKeyDown(keyCode, event);
+            }
+        });
+
+
+        this.requestFocus();
         firstTimeLoad = true;
         this.addView(_mediaPlayerView);
     }
@@ -161,7 +170,7 @@ public class VideoMainView extends LinearLayout implements Player.EventListener 
         reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(getId(), eventName, event);
     }
 
-    public void Dispose(){
+    public void Release(){
         _mediaPlayer.release();
     }
 

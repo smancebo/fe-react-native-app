@@ -1,0 +1,3 @@
+[submodule "exoplayer-amzn"]
+	path = exoplayer-amzn
+	url = https://github.com/amzn/exoplayer-amazon-port
