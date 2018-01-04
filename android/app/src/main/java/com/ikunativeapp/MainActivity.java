@@ -21,8 +21,8 @@ public class MainActivity extends ReactActivity {
 //        if(event.getRepeatCount() == 0) {
             KeyEventModule.getInstance().onKeyDownEvent(keyCode, event);
 //        }
-        super.onKeyDown(keyCode, event);
-        return true;
+        //super.onKeyDown(keyCode, event);
+        return false;
     }
 
 
