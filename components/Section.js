@@ -4,9 +4,10 @@ import { tileWidth, tileHeight, baseOrangeColor } from '../common/constants';
 import { DPAD } from '../common/dpadKeyCodes';
 import KeyEvent from 'react-native-keyevent';
 import PropTypes from 'prop-types';
+import ScrollList from './ScrollList';
 
 const scrollConstant = 140;
-export default class Section extends React.Component {
+export default class Section extends React.PureComponent {
     constructor(props) {
         super(props);
         this.ScrollValue = new Animated.Value(0);
@@ -89,23 +90,26 @@ export default class Section extends React.Component {
     selectElement(elementIndex) {
         const { currentItem } = this.state;
         const { focus } = this.props;
+        const children = React.Children.toArray(this.props.children);
+
+        elementIndex = elementIndex || 0;
+        elementIndex = elementIndex < 0 ? 0 : elementIndex;
+        elementIndex = elementIndex > (children.length - 1) ? (children.length - 1) : elementIndex;
 
         if (focus) {
+            this.currentPosition = (scrollConstant * elementIndex) * -1;
+            this.currentItem = elementIndex;
 
+            Animated.timing(this.ScrollValue, {
+                duration: 200,
+                toValue: this.currentPosition
+            }).start((done) => {
 
-            if (elementIndex) {
-                let sign = elementIndex < currentItem ? 1 : -1;
-                this.currentPosition = (scrollConstant * elementIndex) * -1;
-                this.currentItem = elementIndex;
+            })
+            this.setState({ currentItem: this.currentItem });
 
-                Animated.timing(this.ScrollValue, {
-                    duration: 200,
-                    toValue: this.currentPosition
-                }).start((done) => {
+            this.props.onSelectedElement && this.props.onSelectedElement(this.currentItem);
 
-                })
-                this.setState({ currentItem: this.currentItem });
-            }
         }
     }
     scrollList(direction, cb) {
@@ -133,22 +137,27 @@ export default class Section extends React.Component {
     }
 
     render() {
-        const { title, focus = false, children } = this.props
+        const { title, focus = false, children, scrollValue = scrollConstant } = this.props
         const { currentItem } = this.state;
-        const opacity = focus ? { opacity: 1 } : { opacity: .6 }
+        const opacity = focus ? { opacity: 1 } : { opacity: .7 }
         return (
             <View style={[this.styles.main, opacity]}>
                 <Text style={this.styles.title}>{title}</Text>
-                <Animated.View style={[{ transform: [{ translateX: this.ScrollValue }] }, { width: 999999 }]} renderToHardwareTextureAndroid={true} >
-                    {/* <Animated.View style={ {left: (this.ScrollValue) * -1 } }>
+                {/* <Animated.View style={[{ transform: [{ translateX: this.ScrollValue }] }, { width: 99999 }]}> */}
+                {/* <Animated.View style={ {left: (this.ScrollValue) * -1 } }>
                         <View style={[focus ? this.styles.selector : { display: 'none' }]}></View>
                     </Animated.View> */}
-                    <View style={{ flexDirection: 'row', marginLeft: 2 }}>
-                        {React.Children.map(children, (child, i) => <child.type key={i} {...child.props} focus={(i === currentItem) && focus ? true : false} />)}
-                    </View>
 
 
-                </Animated.View>
+                <ScrollList direction='horizontal' moveValue={scrollValue} position={currentItem} style={{ flexDirection: 'row', paddingLeft: 30 }} >
+                    {React.Children.map(children, (child, i) => <child.type key={i} {...child.props} focus={(i === currentItem) && focus ? true : false} />)}
+                </ScrollList>
+
+
+
+
+
+                {/* </Animated.View> */}
             </View>
         )
     }

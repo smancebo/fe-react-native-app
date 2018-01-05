@@ -18,12 +18,15 @@ public class MainActivity extends ReactActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if(event.getRepeatCount() == 0) {
+       if(event.getRepeatCount() == 0) {
             KeyEventModule.getInstance().onKeyDownEvent(keyCode, event);
-//        }
-        //super.onKeyDown(keyCode, event);
-        return false;
+        }
+        //
+        super.onKeyDown(keyCode, event);
+        return true;
     }
+
+
 
 
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, ProgressBarAndroid, View, StyleSheet} from 'react-native';
+import {baseOrangeColor} from './constants';
 
 export default class Loading extends React.Component{
     render(){
@@ -7,7 +8,7 @@ export default class Loading extends React.Component{
             <Modal visible={this.props.visible} onRequestClose={this.props.onClose} hardwardAccelerated={true} animationType={'slide'} transparent={true} >
                 <View style={styles.modalContainer}>
                     <View style={styles.innerContainer}>
-                        <ProgressBarAndroid styleAttr='Inverse' indeterminate={true}></ProgressBarAndroid>
+                        <ProgressBarAndroid styleAttr='Inverse' color={baseOrangeColor} indeterminate={true}></ProgressBarAndroid>
                     </View>
                 </View>
             </Modal>

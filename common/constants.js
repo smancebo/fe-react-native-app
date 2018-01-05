@@ -1,9 +1,12 @@
-export const Logo = require('../assets/img/logo.png')
+export const Logo = require('../assets/img/logo.png');
+export const backgroundImage = require('../assets/img/shades_purple.jpg');
 export const drawerBackgroundColor = '#000';
 export const drawerActiveBackgroundColor = '#f19d37';
 export const drawerActiveTintColor = 'black';
 export const drawerInactiveTintColor = 'white';
-export const searchBoxUnderLineColor = '#f19d37'
-export const baseOrangeColor = '#f19d37';
+export const searchBoxUnderLineColor = '#b65473'
+//export const searchBoxUnderLineColor = '#f19d37'
+//export const baseOrangeColor = '#f19d37';
+export const baseOrangeColor = '#b65473';
 export const tileWidth = 130;
 export const tileHeight = 80;

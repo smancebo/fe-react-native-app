@@ -11,8 +11,6 @@ class ScrollList extends React.Component{
         super(props);
         this.scrollValue = new Animated.Value(0);
         this.scrollList = this.scrollList.bind(this);
-       
-        
     }
 
     componentDidMount(){
@@ -20,6 +18,17 @@ class ScrollList extends React.Component{
         this.moveValue =  moveValue;
         this.scrollList(position);
     }
+
+    // shouldComponentUpdate(newProps, newState){
+    //     const newPosition = newProps.position;
+    //     const oldPosition = this.props.position;
+
+    //     if(newPosition !== oldPosition){
+    //         return true;
+    //     }else {
+    //         return false;
+    //     }
+    // }
 
     scrollList(position){
         
@@ -54,8 +63,8 @@ class ScrollList extends React.Component{
         };
 
        return (
-           <View>
-               <Animated.View style={moveStyle}>
+           <View renderToHardwareTextureAndroid={true} >
+               <Animated.View style={[moveStyle, this.props.style]} >
                    {this.props.children}
                </Animated.View>
            </View>

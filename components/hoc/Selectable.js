@@ -17,7 +17,6 @@ export const Selectable = (WrappedComponent) => class withSelectable extends Rea
         this.onPress = this.onPress.bind(this);
         this._handleFocus = this._handleFocus.bind(this);
         this._handleBlur = this._handleBlur.bind(this);
-       
     }
 
     componentWillUnmount() {

@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Animated, TouchableNativeFeedback, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, Animated, TouchableNativeFeedback, TouchableHighlight, Image } from 'react-native';
 import { tileWidth, tileHeight } from '../common/constants';
 import PropTypes from 'prop-types';
+
 
 
 
@@ -81,13 +82,13 @@ class Tile extends React.Component {
         return (
 
             <View style={styles.wrapper} >
-                <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple('white', false)} onPress={this._onPress} style={{ padding: 20, width: tileWidth, height: tileHeight }} >
+                {/* <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple('white', false)} onPress={this._onPress} style={{ padding: 20, width: tileWidth, height: tileHeight }} > */}
                     <Animated.View style={[styles.tile, style, focusStyle]} renderToHardwareTextureAndroid={true}  >
 
                         {this.props.children}
 
                     </Animated.View>
-                </TouchableNativeFeedback>
+                {/* </TouchableNativeFeedback> */}
             </View>
 
 
@@ -97,11 +98,12 @@ class Tile extends React.Component {
 
 Tile.Image = (props) => {
     return (
-        <View style={styles.wrapper}>
-            <View style={[styles.tile, style]} >
-                {props.children}
-            </View>
-        </View>
+       <Tile {...props} style={{padding: 2, backgroundColor: 'white', height: 120, width: 160, margin: 2}}>
+           <View style={{position: 'absolute', width: '100%', height: '100%' }}>
+                <Image source={{ uri: props.image }} style={{width: '100%', height: '100%',  resizeMode:'cover'}} />
+           </View>
+           {props.children}
+       </Tile>
     )
 }
 

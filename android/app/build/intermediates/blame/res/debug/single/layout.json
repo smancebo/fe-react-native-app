@@ -1,103 +1,75 @@
 [
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_dialog_title_material.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_list_menu_item_radio.xml"
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_screen_content_include.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/select_dialog_item_material.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/support_simple_spinner_dropdown_item.xml"
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_list_menu_item_layout.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_action_mode_bar.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/a7c0d2fae63964bd6580f49b6c5caf33a49156cc/output/res/layout/abc_alert_dialog_button_bar_material.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_list_menu_item_layout.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_template_media.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_alert_dialog_material.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_list_menu_item_checkbox.xml"
-    },
-    {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/notification_template_lines.xml"
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_select_dialog_material.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_expanded_menu_layout.xml"
     },
     {
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_media_action.xml"
+    },
+    {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_expanded_menu_layout.xml"
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_template_big_media.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_action_bar_up_container.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_select_dialog_material.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/notification_media_action.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/notification_template_big_media.xml"
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/notification_template_media.xml"
-    },
-    {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_template_big_media_narrow.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/dev_loading_view.xml",
@@ -108,24 +80,8 @@
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/redbox_item_title.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/9d25d7978bd54dd9e61352d6b04917aea6178c16/output/res/layout/redbox_item_title.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/redbox_view.xml",
         "source": "/Users/smancebo/.android/build-cache/f58e9080757ecba9e620bc934a48e46827f805dd/output/res/layout/redbox_view.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_list_menu_item_icon.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/notification_template_part_chronometer.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
@@ -136,20 +92,24 @@
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/select_dialog_item_material.xml"
-    },
-    {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/redbox_item_frame.xml",
+        "source": "/Users/smancebo/.android/build-cache/f58e9080757ecba9e620bc934a48e46827f805dd/output/res/layout/redbox_item_frame.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/redbox_item_title.xml",
         "source": "/Users/smancebo/.android/build-cache/f58e9080757ecba9e620bc934a48e46827f805dd/output/res/layout/redbox_item_title.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_action_menu_layout.xml"
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_template_lines.xml"
+    },
+    {
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
@@ -158,6 +118,10 @@
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/exo_simple_player_view.xml",
         "source": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/layout/exo_simple_player_view.xml"
+    },
+    {
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_template_part_time.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
@@ -170,158 +134,6 @@
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_action_mode_bar.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_screen_content_include.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/exo_playback_control_view.xml",
-        "source": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/layout/exo_playback_control_view.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/exo_playback_control_view.xml",
-        "source": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/layout/exo_playback_control_view.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/a7c0d2fae63964bd6580f49b6c5caf33a49156cc/output/res/layout/notification_action.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_screen_content_include.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_alert_dialog_material.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/select_dialog_multichoice_material.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_list_menu_item_layout.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_popup_menu_item_layout.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_dialog_title_material.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_search_view.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_select_dialog_material.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/select_dialog_singlechoice_material.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_media_action.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_template_big_media.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_activity_chooser_view_list_item.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/dev_loading_view.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/9d25d7978bd54dd9e61352d6b04917aea6178c16/output/res/layout/dev_loading_view.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/redbox_view.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/9d25d7978bd54dd9e61352d6b04917aea6178c16/output/res/layout/redbox_view.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_action_menu_item_layout.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/a7c0d2fae63964bd6580f49b6c5caf33a49156cc/output/res/layout/notification_action_tombstone.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/a7c0d2fae63964bd6580f49b6c5caf33a49156cc/output/res/layout/notification_template_lines_media.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/fps_view.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/9d25d7978bd54dd9e61352d6b04917aea6178c16/output/res/layout/fps_view.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/notification_template_part_time.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/redbox_item_frame.xml",
-        "source": "/Users/smancebo/.android/build-cache/f58e9080757ecba9e620bc934a48e46827f805dd/output/res/layout/redbox_item_frame.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_screen_toolbar.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/a7c0d2fae63964bd6580f49b6c5caf33a49156cc/output/res/layout/abc_popup_menu_header_item_layout.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_template_lines.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/a7c0d2fae63964bd6580f49b6c5caf33a49156cc/output/res/layout/notification_template_media_custom.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_action_mode_close_item_material.xml"
-    },
-    {
-        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
-        "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_template_part_time.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_activity_chooser_view_list_item.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/a7c0d2fae63964bd6580f49b6c5caf33a49156cc/output/res/layout/notification_template_icon_group.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_popup_menu_item_layout.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
@@ -340,28 +152,12 @@
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/notification_media_cancel_action.xml"
     },
     {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/a7c0d2fae63964bd6580f49b6c5caf33a49156cc/output/res/layout/abc_alert_dialog_title_material.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/exo_simple_player_view.xml",
-        "source": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/layout/exo_simple_player_view.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_activity_chooser_view.xml"
+        "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/exo_playback_control_view.xml",
+        "source": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/layout/exo_playback_control_view.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
         "source": "/Users/smancebo/.android/build-cache/f843db2849841a2872e673fde463ac73820d6ed4/output/res/layout/abc_screen_toolbar.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/layout/abc_screen_simple.xml"
-    },
-    {
-        "merged": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/res/merged/debug/layout/redbox_item_frame.xml",
-        "source": "/Users/sjmancebo/.android/build-cache/9d25d7978bd54dd9e61352d6b04917aea6178c16/output/res/layout/redbox_item_frame.xml"
     },
     {
         "merged": "/Users/smancebo/Documents/My Stuff/React/Native/iku-app-bck/android/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",

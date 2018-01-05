@@ -49,7 +49,7 @@ class BrowseScreen extends React.Component {
     async openShow(e){
         const { navigate } = this.props.navigation;
         this.props.openDialog();
-        const { data: episodes} = await Service.GetEpisodes(e.link).catch((err) => {console.log(err)})
+        const { data: episodes} = await Service.GetEpisodes(e.link).catch((err) => {})
         
         this.props.closeDialog();
         navigate('Episodes', { episodes, show: e});
@@ -62,7 +62,7 @@ class BrowseScreen extends React.Component {
     render() {
         const { results } = this.state;
         const { navigation } = this.props;
-        console.log(navigation);
+        
         const fowardPage = () => {
             this._paginator && this._paginator.forwardPage()
         }

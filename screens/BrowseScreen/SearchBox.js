@@ -45,7 +45,6 @@ class SearchBox extends React.Component {
         }
     }
     onLayout(e){
-        console.log(e.nativeEvent)
         this.props.onLayout(e);
     }
 
