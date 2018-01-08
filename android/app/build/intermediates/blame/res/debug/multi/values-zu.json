@@ -535,5 +535,542 @@
                 }
             }
         ]
+    },
+    {
+        "outputFile": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zu/values-zu.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 107,
+                    "endOffset": 158
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 280,
+                        "endColumn": 107,
+                        "endOffset": 383
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 163,
+                    "endColumn": 107,
+                    "endOffset": 266
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 388,
+                        "endColumn": 107,
+                        "endOffset": 491
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 271,
+                    "endColumn": 122,
+                    "endOffset": 389
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 496,
+                        "endColumn": 122,
+                        "endOffset": 614
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 394,
+                    "endColumn": 106,
+                    "endOffset": 496
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 619,
+                        "endColumn": 106,
+                        "endOffset": 721
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 501,
+                    "endColumn": 113,
+                    "endOffset": 610
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 726,
+                        "endColumn": 113,
+                        "endOffset": 835
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 615,
+                    "endColumn": 87,
+                    "endOffset": 698
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 840,
+                        "endColumn": 87,
+                        "endOffset": 923
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 703,
+                    "endColumn": 102,
+                    "endOffset": 801
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 928,
+                        "endColumn": 102,
+                        "endOffset": 1026
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 806,
+                    "endColumn": 126,
+                    "endOffset": 928
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1031,
+                        "endColumn": 126,
+                        "endOffset": 1153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 933,
+                    "endColumn": 85,
+                    "endOffset": 1014
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1158,
+                        "endColumn": 85,
+                        "endOffset": 1239
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1019,
+                    "endColumn": 103,
+                    "endOffset": 1118
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1244,
+                        "endColumn": 103,
+                        "endOffset": 1343
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1123,
+                    "endColumn": 105,
+                    "endOffset": 1224
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1348,
+                        "endColumn": 105,
+                        "endOffset": 1449
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1229,
+                    "endColumn": 97,
+                    "endOffset": 1322
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1454,
+                        "endColumn": 97,
+                        "endOffset": 1547
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1327,
+                    "endColumn": 106,
+                    "endOffset": 1429
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1552,
+                        "endColumn": 106,
+                        "endOffset": 1654
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1434,
+                    "endColumn": 105,
+                    "endOffset": 1535
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1659,
+                        "endColumn": 105,
+                        "endOffset": 1760
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1540,
+                    "endColumn": 105,
+                    "endOffset": 1641
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1765,
+                        "endColumn": 105,
+                        "endOffset": 1866
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1646,
+                    "endColumn": 119,
+                    "endOffset": 1761
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1871,
+                        "endColumn": 119,
+                        "endOffset": 1986
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1766,
+                    "endColumn": 95,
+                    "endOffset": 1857
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1991,
+                        "endColumn": 95,
+                        "endOffset": 2082
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1862,
+                    "endColumn": 89,
+                    "endOffset": 1947
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 89,
+                        "endOffset": 140
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1952,
+                    "endColumn": 79,
+                    "endOffset": 2027
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 145,
+                        "endColumn": 79,
+                        "endOffset": 220
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2032,
+                    "endColumn": 77,
+                    "endOffset": 2105
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 225,
+                        "endColumn": 77,
+                        "endOffset": 298
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2110,
+                    "endColumn": 65,
+                    "endOffset": 2171
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 303,
+                        "endColumn": 65,
+                        "endOffset": 364
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 2176,
+                    "endColumn": 88,
+                    "endOffset": 2260
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 369,
+                        "endColumn": 88,
+                        "endOffset": 453
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 2265,
+                    "endColumn": 78,
+                    "endOffset": 2339
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 458,
+                        "endColumn": 78,
+                        "endOffset": 532
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 2344,
+                    "endColumn": 82,
+                    "endOffset": 2422
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 537,
+                        "endColumn": 82,
+                        "endOffset": 615
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 2427,
+                    "endColumn": 80,
+                    "endOffset": 2503
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 620,
+                        "endColumn": 80,
+                        "endOffset": 696
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 2508,
+                    "endColumn": 77,
+                    "endOffset": 2581
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 701,
+                        "endColumn": 77,
+                        "endOffset": 774
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 2586,
+                    "endColumn": 64,
+                    "endOffset": 2646
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/stuff/React/Native/fe-react-native-app/exoplayer-amzn/library/ui/build/intermediates/bundles/default/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 779,
+                        "endColumn": 64,
+                        "endOffset": 839
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 2651,
+                    "endColumn": 100,
+                    "endOffset": 2747
+                },
+                "from": {
+                    "file": "/Users/sjmancebo/.android/build-cache/0acde91c86e49e98e03a173a4d8120ecea637e9c/output/res/values-zu/values-zu.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2087,
+                        "endColumn": 100,
+                        "endOffset": 2183
+                    }
+                }
+            }
+        ]
     }
 ]

@@ -47,20 +47,21 @@ export default class ViewEpisodeScreen extends React.Component
     render(){
         const { url, episode, show } = this.props.navigation.state.params;
         const {showOverlay} = this.state
-        const videoUrl = url.indexOf('openload') !== -1 ? `${config.API}/watch?video=${url}` : url
+        //const videoUrl = url.indexOf('openload') !== -1 ? `${config.API}/watch?video=${url}` : url
+        const videoUrl = `${config.API}/watch?video=${url}`
        
         return (
             <Container>
                 <Content style={[globalStyles.page]} contentContainerStyle={{height: '100%'}}>
                     <View style={styles.container}>
                         <VideoOverlay visible={showOverlay} show={{ episode: episode.name , name: show.title, image: show.image }} />
-                        {/* <WebView injectedJavaScript={`setVideoUrl('${videoUrl}')`} mediaPlaybackRequiresUserAction={false} source={videoHtml} style={styles.fullContent} ></WebView> */}
-                        <Video source={videoUrl} ref="videoPlayer" 
+                        <WebView injectedJavaScript={`setVideoUrl('${videoUrl}')`} mediaPlaybackRequiresUserAction={false} source={videoHtml} style={styles.fullContent} ></WebView>
+                        {/* <Video source={videoUrl} ref="videoPlayer" 
                             onReady={this.onVideoReady} 
                             onPaused={this.onVideoPaused}
                             onResume={this.onVideoResume}
                             autoplay={true} 
-                            style={styles.player} />
+                            style={styles.player} /> */}
                     </View>
                 </Content>
             </Container>
