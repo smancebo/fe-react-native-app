@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Alert, StyleSheet, StatusBar, Image, Button as Btn } from 'react-native';
+import { View, Alert, StyleSheet, StatusBar, Image, ProgressBarAndroid , Button as Btn } from 'react-native';
 import { Container, Header, Body, Title, Left, Right, Button, Icon, Text, Content } from 'native-base'
 import { DrawerNavigator } from 'react-navigation'
 import { BrowseScreen } from '../BrowseScreen/BrowseScreen'
@@ -13,6 +13,8 @@ import Section from '../../components/Section';
 import Browser from '../../components/Browser';
 import { baseOrangeColor} from '../../common/constants';
 import {config} from '../../config';
+import Service from '../../common/api/service';
+
 
 const apiData = [
     {
@@ -57,23 +59,15 @@ export default class HomeScreen extends React.Component {
         this.openBrowse = this.openBrowse.bind(this);
 
         this.state = {
-            selectedElement: 0
+            selectedElement: 0,
+            recentRelease: []
         }
     }
 
-    componentDidMount(){
-      
-        // KeyEvent.onKeyDownListener((event) => {
-        //     const {navigate} = this.props.navigation;
-        //     switch(event.keyCode){
-        //         case DPAD_MENU:
-        //             navigate('DrawerToggle')      
-        //             break;
-                    
-        //         default: 
-        //         break;
-        //     }
-        // })
+    async componentDidMount(){
+       const { data: recentRelease } = await Service.GetRecentRelease();
+       this.setState({recentRelease})
+        
     }
 
     handleButton(e) {
@@ -103,7 +97,8 @@ export default class HomeScreen extends React.Component {
     render() {
 
         const { navigate } = this.props.navigation;
-        const { selectedElement} = this.state;
+        const { selectedElement, recentRelease} = this.state;
+        const loadingRecent = (recentRelease.length === 0);
         return (
 
 
@@ -137,14 +132,20 @@ export default class HomeScreen extends React.Component {
                             </Tile>
                         </Section>
                             
-                        <Section title='Recent Release' scrollValue={175}>
-                            {apiData.map((item, i) => (
+                       
+                      {  
+                      loadingRecent ? <ProgressBarAndroid indeterminate={true} color={baseOrangeColor} /> :
+                      <Section title='Recent Release' scrollValue={200}>
+                            {recentRelease.map((item, i) => (
                                 <Tile.Image key={item.id} image={`${config.IMAGE}/${item.image}`}>
-                                    <Text>{item.name}</Text>
-                                    <Text>{item.episode}</Text>
+                                    <View style={{ flexDirection: 'column', alignItems: 'center', flexWrap: 'wrap'}}>
+                                        <Text style={styles.tileText}>{item.name}</Text>
+                                        <Text style={styles.tileText}>{item.episode}</Text>
+                                    </View>
                                 </Tile.Image>
                             ))}
                         </Section>
+                    }
                         {/* <Section title='My List'>
                            
                                 <Tile style={{ backgroundColor: 'white'}} >
@@ -229,6 +230,11 @@ const styles = StyleSheet.create({
         flex: 1,
         
 
+    },
+    tileText: {
+        fontSize: 11,
+        color: 'white',
+        textAlign: 'center'
     }
 })
 

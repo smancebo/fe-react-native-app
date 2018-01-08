@@ -11,4 +11,7 @@ export default class Service {
     static GetVideo(link) {
         return get(`${config.API}/view/${link}`);
     }
+    static GetRecentRelease(){
+        return get(`${config.API}/last/episodes`)
+    }
 }

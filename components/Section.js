@@ -139,7 +139,7 @@ export default class Section extends React.PureComponent {
     render() {
         const { title, focus = false, children, scrollValue = scrollConstant } = this.props
         const { currentItem } = this.state;
-        const opacity = focus ? { opacity: 1 } : { opacity: .7 }
+        const opacity = focus ? { opacity: 1 } : { opacity: .6 }
         return (
             <View style={[this.styles.main, opacity]}>
                 <Text style={this.styles.title}>{title}</Text>
@@ -149,7 +149,7 @@ export default class Section extends React.PureComponent {
                     </Animated.View> */}
 
 
-                <ScrollList direction='horizontal' moveValue={scrollValue} position={currentItem} style={{ flexDirection: 'row', paddingLeft: 30 }} >
+                <ScrollList direction='horizontal' moveValue={scrollValue} position={currentItem} style={{ flexDirection: 'row', paddingLeft: 0 }} >
                     {React.Children.map(children, (child, i) => <child.type key={i} {...child.props} focus={(i === currentItem) && focus ? true : false} />)}
                 </ScrollList>
 

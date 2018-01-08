@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, Animated, TouchableNativeFeedback, TouchableHighlight, Image } from 'react-native';
 import { tileWidth, tileHeight } from '../common/constants';
 import PropTypes from 'prop-types';
+import FocusableView from './native/FocusableView'
+import { baseOrangeColor } from '../common/constants';
+
 
 
 
@@ -52,11 +55,11 @@ class Tile extends React.Component {
 
     componentDidMount() {
         const { focus = false } = this.props;
-        this.evaluateFocus(focus);
+        //this.evaluateFocus(focus);
     }
     componentWillReceiveProps(newProps) {
         const { focus = false } = newProps;
-        this.evaluateFocus(focus);
+        //this.evaluateFocus(focus);
 
     }
 
@@ -72,8 +75,8 @@ class Tile extends React.Component {
         const { onPress = () => { } } = this.props;
         setTimeout(() => {
             onPress(ev);
-        },200)
-        
+        }, 200)
+
     }
 
     render() {
@@ -81,29 +84,37 @@ class Tile extends React.Component {
         const focusStyle = { transform: [{ scaleX: this.scaleValue }, { scaleY: this.scaleValue }], opacity: this.opacityValue }
         return (
 
-            <View style={styles.wrapper} >
-                {/* <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple('white', false)} onPress={this._onPress} style={{ padding: 20, width: tileWidth, height: tileHeight }} > */}
-                    <Animated.View style={[styles.tile, style, focusStyle]} renderToHardwareTextureAndroid={true}  >
+            <FocusableView focusView={focus} style={{margin: 5}}  >
+
+                <View style={styles.wrapper} >
+                    <View style={[styles.tile, style,]}  >
 
                         {this.props.children}
 
-                    </Animated.View>
-                {/* </TouchableNativeFeedback> */}
-            </View>
+                    </View>
+                </View>
+
+
+            </FocusableView>
 
 
         )
     }
 }
 
+
+
+
 Tile.Image = (props) => {
     return (
-       <Tile {...props} style={{padding: 2, backgroundColor: 'white', height: 120, width: 160, margin: 2}}>
-           <View style={{position: 'absolute', width: '100%', height: '100%' }}>
-                <Image source={{ uri: props.image }} style={{width: '100%', height: '100%',  resizeMode:'cover'}} />
-           </View>
-           {props.children}
-       </Tile>
+        <View style={{ flexWrap: 'wrap', width: 200, flexDirection: 'column' , alignItems: 'center'  }}>
+            <Tile {...props} style={{ padding: 2, backgroundColor: '#222222', height: 120, width: 180, margin: 0 }}>
+                <View style={{ position: 'absolute', width: '100%', height: '100%' }}>
+                    <Image source={{ uri: props.image }} style={{ width: '100%', height: '100%', resizeMode: 'cover', borderRadius: 2 }} />
+                </View>
+            </Tile>
+            {props.children}
+        </View>
     )
 }
 
@@ -112,14 +123,14 @@ Tile.contextTypes = {
 }
 
 const styles = StyleSheet.create({
-    wrapper: { padding: 5 },
+    wrapper: { },
     tile: {
         borderRadius: 2,
         width: tileWidth,
         height: tileHeight,
         padding: 10,
         backgroundColor: '#222',
-        flexDirection: 'row',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         elevation: 2

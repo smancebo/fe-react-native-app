@@ -55,7 +55,7 @@ class ScrollList extends React.Component{
         let moveStyle = {};
         switch(direction){
             case HORIZONTAL:
-                moveStyle = {transform: [{translateX: this.scrollValue}]};
+                moveStyle = {transform: [{translateX: this.scrollValue}], width: 99999};
             break;
             case VERTICAL:
                 moveStyle = {transform: [{translateY: this.scrollValue}]};
@@ -63,7 +63,7 @@ class ScrollList extends React.Component{
         };
 
        return (
-           <View renderToHardwareTextureAndroid={true} >
+           <View  >
                <Animated.View style={[moveStyle, this.props.style]} >
                    {this.props.children}
                </Animated.View>

@@ -86,6 +86,12 @@ export default class EpisodeList extends React.Component {
                         this.moveUp();
                     }
                     break;
+
+                case 0:
+                    for (let i = 0; i <= 10; i++) {
+                        this.moveDown();
+                    }
+                break;
                 case DPAD_DOWN:
                     this.moveDown();
                     break;

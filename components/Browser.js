@@ -15,6 +15,7 @@ export default class Browser extends React.Component
         this.selectElement = this.selectElement.bind(this);
         this.pressElement = this.pressElement.bind(this);
         this._onSectionElementSelected = this._onSectionElementSelected.bind(this);
+        this.registerSections = this.registerSections.bind(this);
         this.currentItem = 0;
         this.state = {
             sections:[],
@@ -25,6 +26,16 @@ export default class Browser extends React.Component
                 childrens: 0
             }
         }
+    }
+
+    registerSections(){
+        let sections = React.Children.map(this.props.children, (child, i) => {
+            const childrens = React.Children.toArray(child.props.children);
+            const { selectedElement: currentItem = 0 } = child.props;
+            return { index: i, currentItem, childrens: childrens.length }
+        });
+
+        this.setState({ sections });
     }
 
     componentDidMount(){
@@ -62,10 +73,14 @@ export default class Browser extends React.Component
     }
 
     selectSection(dpadDirection){
+        if (this.state.selectedSection.childrens === 0) {
+            this.registerSections();
+        }
         const { selectedSection, sections } = this.state;
         
         let newSections = [...sections];
         let index = selectedSection.index;
+        
 
         newSections[index] = selectedSection;
 
@@ -88,7 +103,12 @@ export default class Browser extends React.Component
     }
 
     selectElement(dpadDirection){
+        if (this.state.selectedSection.childrens === 0) {
+            this.registerSections();
+
+        }
         let { selectedSection } = this.state;
+        
        
         if(dpadDirection === DPAD.DPAD_RIGHT){
             if(selectedSection.currentItem < (selectedSection.childrens - 1)){

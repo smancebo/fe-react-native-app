@@ -11,6 +11,9 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
+
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
@@ -44,6 +47,8 @@ import com.google.android.exoplayer2.upstream.BandwidthMeter;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 
 
@@ -65,6 +70,13 @@ public class VideoMainView extends FrameLayout implements Player.EventListener {
 
     private boolean autoPlay;
 
+    static final CookieManager DEFAULT_COOKIE_MANAGER;
+    static {
+        DEFAULT_COOKIE_MANAGER = new CookieManager();
+        DEFAULT_COOKIE_MANAGER.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+    }
+
+
     public VideoMainView(Context context) {
         super(context);
         _context = context;
@@ -80,6 +92,13 @@ public class VideoMainView extends FrameLayout implements Player.EventListener {
                 return onKeyDown(keyCode, event);
             }
         });
+
+
+
+        if(CookieManager.getDefault() != DEFAULT_COOKIE_MANAGER)
+        {
+            CookieManager.setDefault(DEFAULT_COOKIE_MANAGER);
+        }
 
 
 
@@ -165,8 +184,23 @@ public class VideoMainView extends FrameLayout implements Player.EventListener {
 
     public void Load(Uri uri){
         DefaultBandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
-        DataSource.Factory datasourceFactory = new DefaultDataSourceFactory(_context,
-                Util.getUserAgent(_context, "ikunativeapp"), bandwidthMeter);
+//        DataSource.Factory datasourceFactory = new DefaultDataSourceFactory(_context,
+//                Util.getUserAgent(_context, "ikunativeapp"), bandwidthMeter);
+
+
+
+        DefaultHttpDataSourceFactory httpDataSource = new DefaultHttpDataSourceFactory(
+                Util.getUserAgent(_context, "ikunativeapp"),
+                null,
+                DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
+                DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,
+                true);
+
+        DefaultDataSourceFactory datasourceFactory = new DefaultDataSourceFactory(
+                _context,
+                null,
+                httpDataSource
+        );
 
         ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
 
