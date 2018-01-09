@@ -149,7 +149,7 @@ export default class Browser extends React.Component
 
         return (
             <View style={styles.browser}>
-                <ScrollList direction='vertical' position={selectedSection.index} moveValue={sectionHeight} >
+                <ScrollList direction='vertical' movePosition={selectedSection.index} moveValue={sectionHeight} >
                     {React.Children.map(children, (child, i) => <child.type {...child.props} focus={i === selectedSection.index ? true : false} onSelectedElement={this._onSectionElementSelected} selectedElement={i === selectedSection.index ? selectedSection.currentItem : sections[i] === undefined ? 0 : sections[i].currentItem} onItemSelected={this._onItemSelected} />)}
                 </ScrollList>
             </View>

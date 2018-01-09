@@ -4,7 +4,7 @@ import { tileWidth, tileHeight, baseOrangeColor } from '../common/constants';
 import { DPAD } from '../common/dpadKeyCodes';
 import KeyEvent from 'react-native-keyevent';
 import PropTypes from 'prop-types';
-import ScrollList from './ScrollList';
+import ScrollList from './native/ScrollList';
 
 const scrollConstant = 140;
 export default class Section extends React.PureComponent {
@@ -25,6 +25,7 @@ export default class Section extends React.PureComponent {
             padding: 30,
             paddingBottom: 0,
             paddingTop: 10,
+            flexDirection: 'column'
 
         },
         selector: {
@@ -149,7 +150,7 @@ export default class Section extends React.PureComponent {
                     </Animated.View> */}
 
 
-                <ScrollList direction='horizontal' moveValue={scrollValue} position={currentItem} style={{ flexDirection: 'row', paddingLeft: 0 }} >
+                <ScrollList direction='horizontal' moveValue={scrollValue} movePosition={currentItem} style={{ flexDirection: 'row', paddingLeft: 0}} >
                     {React.Children.map(children, (child, i) => <child.type key={i} {...child.props} focus={(i === currentItem) && focus ? true : false} />)}
                 </ScrollList>
 

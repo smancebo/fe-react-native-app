@@ -135,7 +135,7 @@ export default class HomeScreen extends React.Component {
                        
                       {  
                       loadingRecent ? <ProgressBarAndroid indeterminate={true} color={baseOrangeColor} /> :
-                      <Section title='Recent Release' scrollValue={200}>
+                      <Section title='Recent Release' scrollValue={400}>
                             {recentRelease.map((item, i) => (
                                 <Tile.Image key={item.id} image={`${config.IMAGE}/${item.image}`}>
                                     <View style={{ flexDirection: 'column', alignItems: 'center', flexWrap: 'wrap'}}>
