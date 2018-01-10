@@ -121,7 +121,8 @@ export default class HomeScreen extends React.Component {
                     <Button onPress={this.movePrev}>
                         <Text> Prev </Text>
                     </Button> */}
-                    
+                    {
+                    loadingRecent ? <ProgressBarAndroid indeterminate={true} color={baseOrangeColor} /> :
                     <Browser style={{paddingTop: 30}}>
                         <Section focus={true}>
                             <Tile style={{backgroundColor: baseOrangeColor}} onPress={this.openBrowse} >
@@ -133,8 +134,8 @@ export default class HomeScreen extends React.Component {
                         </Section>
                             
                        
-                      {  
-                      loadingRecent ? <ProgressBarAndroid indeterminate={true} color={baseOrangeColor} /> :
+                        
+                     
                       <Section title='Recent Release' scrollValue={400}>
                             {recentRelease.map((item, i) => (
                                 <Tile.Image key={item.id} image={`${config.IMAGE}/${item.image}`}>
@@ -145,7 +146,7 @@ export default class HomeScreen extends React.Component {
                                 </Tile.Image>
                             ))}
                         </Section>
-                    }
+                    
                         {/* <Section title='My List'>
                            
                                 <Tile style={{ backgroundColor: 'white'}} >
@@ -183,6 +184,7 @@ export default class HomeScreen extends React.Component {
                                 </Tile>
                         </Section> */}
                     </Browser>
+                    }
 
                     {/* <Section title='Favorites'>
                         <View style={{ flexDirection: 'row' }} >
