@@ -80,11 +80,11 @@ class Tile extends React.Component {
     }
 
     render() {
-        const { style = {}, focus = false } = this.props;
+        const { style = {}, focus = false, pivotX = 0, pivotY = 0 } = this.props;
         const focusStyle = { transform: [{ scaleX: this.scaleValue }, { scaleY: this.scaleValue }], opacity: this.opacityValue }
         return (
 
-            <FocusableView focusView={focus} style={{margin: 5}}  >
+            <FocusableView focusView={focus} style={{ margin: 5 }} pivotX={pivotX} pivotY={pivotY}  >
 
                 <View style={styles.wrapper} >
                     <View style={[styles.tile, style,]}  >
@@ -106,11 +106,30 @@ class Tile extends React.Component {
 
 
 Tile.Image = (props) => {
+    const {focus} = props;
+    const selected = focus ? { backgroundColor: 'white' } : {} 
+   
     return (
-        <View style={{ flexWrap: 'wrap', width: 200, flexDirection: 'column' , alignItems: 'center'  }}>
-            <Tile {...props} style={{ padding: 2, backgroundColor: '#222222', height: 120, width: 180, margin: 0 }}>
-                <View style={{ position: 'absolute', width: '100%', height: '100%' }}>
-                    <Image source={{ uri: props.image }} style={{ width: '100%', height: '100%', resizeMode: 'cover', borderRadius: 2 }} />
+        <View style={styles.imageTileWrapper}>
+            <Tile {...props} style={[styles.imageTile, selected]} >
+                <View style={styles.imageTileImageWrapper}>
+                    <Image source={{ uri: props.image }} style={styles.imageTileImage} />
+                </View>
+            </Tile>
+            {props.children}
+        </View>
+    )
+}
+
+Tile.Show = (props) => {
+    const { focus } = props;
+    const selected = focus ? { backgroundColor: 'white' } : {}
+
+    return (
+        <View style={styles.showTileWrapper}>
+            <Tile {...props} style={[styles.showTile, selected]} >
+                <View style={styles.showTileImageWrapper}>
+                    <Image source={{ uri: props.image }} style={styles.showTileImage} />
                 </View>
             </Tile>
             {props.children}
@@ -123,7 +142,7 @@ Tile.contextTypes = {
 }
 
 const styles = StyleSheet.create({
-    wrapper: { },
+    wrapper: {},
     tile: {
         borderRadius: 2,
         width: tileWidth,
@@ -134,7 +153,23 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         elevation: 2
-    }
+    },
+    imageTileWrapper: {
+        flexWrap: 'wrap', width: 200, flexDirection: 'column', alignItems: 'center'
+    },
+    imageTile: {
+        padding: 2, backgroundColor: '#222222', height: 120, width: 180, margin: 0
+    },
+    imageTileImageWrapper: { position: 'absolute', width: '100%', height: '100%' },
+    imageTileImage: { width: '100%', height: '100%', resizeMode: 'cover', borderRadius: 2 },
+    showTileWrapper: {
+        flexWrap: 'wrap', width: 210, flexDirection: 'column', alignItems: 'center'
+    },
+    showTile: {
+        padding: 2, backgroundColor: '#222222', height: 230, width: 190, margin: 0
+    },
+    showTileImageWrapper: { position: 'absolute', width: '100%', height: '100%' },
+    showTileImage: { width: '100%', height: '100%', resizeMode: 'cover', borderRadius: 2 }
 })
 
 

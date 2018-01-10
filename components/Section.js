@@ -80,7 +80,7 @@ export default class Section extends React.PureComponent {
 
     componentWillReceiveProps(newProps) {
         const { selectedElement } = newProps;
-        this.selectElement(selectedElement);
+       this.setState({currentItem: selectedElement})
     }
 
     registerTile(tile) {
@@ -138,7 +138,7 @@ export default class Section extends React.PureComponent {
     }
 
     render() {
-        const { title, focus = false, children, scrollValue = scrollConstant } = this.props
+        const { title, focus = false, children, scrollValue = scrollConstant, offsetElement = 0 } = this.props
         const { currentItem } = this.state;
         const opacity = focus ? { opacity: 1 } : { opacity: .6 }
         return (
@@ -150,7 +150,7 @@ export default class Section extends React.PureComponent {
                     </Animated.View> */}
 
 
-                <ScrollList direction='horizontal' moveValue={scrollValue} movePosition={currentItem} style={{ flexDirection: 'row', paddingLeft: 0}} >
+                <ScrollList direction='horizontal' offsetElement={offsetElement} offsetX={60} moveValue={scrollValue} movePosition={currentItem} style={{ flexDirection: 'row', paddingLeft: 0, padding: 5}} >
                     {React.Children.map(children, (child, i) => <child.type key={i} {...child.props} focus={(i === currentItem) && focus ? true : false} />)}
                 </ScrollList>
 

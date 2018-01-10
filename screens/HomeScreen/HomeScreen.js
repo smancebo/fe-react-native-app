@@ -5,7 +5,6 @@ import { DrawerNavigator } from 'react-navigation'
 import { BrowseScreen } from '../BrowseScreen/BrowseScreen'
 import {Logo} from '../../common/constants'
 import {backgroundImage} from '../../common/constants'
-import KeyEvent from 'react-native-keyevent';
 import { DPAD_MENU} from '../../common/dpadKeyCodes';
 import { VideoOverlay } from '../ViewEpisode/VideoOverlay';
 import Tile from '../../components/Tile';
@@ -14,37 +13,10 @@ import Browser from '../../components/Browser';
 import { baseOrangeColor} from '../../common/constants';
 import {config} from '../../config';
 import Service from '../../common/api/service';
+import Background from '../../components/Background';
 
 
-const apiData = [
-    {
-        id: 0,
-        name: "YOUKAI APARTMENT NO YUUGA NA NICHIJOU (2017) (Español España)",
-        link: "d07f743517e2c7d0b256153dc6d9dc19aba7aa4e775eb5103d7007ae24699d9cfcf877440f3b2d59b8f19b693b1e4c2ac24cb7449e207d8b821b921b431dfd56e30925d1d3b8501d8e599d5f7cf9d39c0f4a40945294daf437442ca4fbf8d476",
-        image: "41ac5ab38eead990a1670ec71b2a2a577166d2d34059b091343cf5478dcb36b98bda98223d11d1eba4fd4597e9f0a2c003164ea95f76a6809c7a6b333fbe95ba2cdb604d742ae9dc579c6b7bef6ea636",
-        episode: "Episodio 26"
-    },
-    {
-        id: 1,
-        "name": "FOLKTALES FROM JAPAN S2 (2017) (Español España)",
-        "link": "d07f743517e2c7d0b256153dc6d9dc1953ecc772ef970ae1acf049db931ea1b3ac938a9613e052785f7f37a30705e43549c1ee43947033fb298184ceda89c9b9fb167b7737610afc2e77b00a41f62771e21089e9a62e4d7be1c1b29d5124605d",
-        "image": "41ac5ab38eead990a1670ec71b2a2a577166d2d34059b091343cf5478dcb36b9d832f1badee34ac2a2a17d001df55274eaef3e8f9788a3b606bde2a9e8817ce278fbe50430384c0b0f3147d9a2beb1fc",
-        "episode": "Episodio 39"
-    },
-    {
-        id: 2,
-        "name": "Yuru Camp△ (2018)",
-        "link": "d07f743517e2c7d0b256153dc6d9dc1978e97f32c20038c1f88a4779cbd35ddc73df33f50d661e154577f11f12ab8db694504d747d3f60d660764421ff4fd334",
-        "image": "41ac5ab38eead990a1670ec71b2a2a577166d2d34059b091343cf5478dcb36b9fba2ba59d9def78dfcc3046ec4e97ba384813f2832f445657031ab7bd2e9dcc4b0bf95e2fdc41d547838300391c3da9e",
-        "episode": "Episodio 1"
-    },
-    {
-        id: 3,
-        "name": "Ramen Daisuki Koizumi-san (2018)",
-        "link": "d07f743517e2c7d0b256153dc6d9dc19c7884c0d4f5a1000873eb8ebd1e3e1d4d251f94dd0790bb3f3ee675f6d246907b4383495f3b68bca23ccedebbe6c7c4ce42ec29620d15871c7d9a0eab2db73ad",
-        "image": "41ac5ab38eead990a1670ec71b2a2a577166d2d34059b091343cf5478dcb36b9fba2ba59d9def78dfcc3046ec4e97ba3204ab354587dcf785f08c966908b41049e5a5b189262aca40bf141b35cecf803",
-        "episode": "Episodio 1"
-    }];
+
 
 export default class HomeScreen extends React.Component {
     static navigationOptions = {
@@ -105,9 +77,7 @@ export default class HomeScreen extends React.Component {
             <Container>
               
                 <Content style={styles.page} contentContainerStyle={{height: '100%'}} >
-                    <View style={{width: '100%', height: '100%', position: 'absolute', opacity: .4}}>
-                        <Image source={backgroundImage} resizeMode='stretch' style={{width: '100%', height: '100%'}} />
-                    </View>
+                    <Background />
                     {/* <View style={{flex: 1, flexDirection:'row', position: 'absolute', justifyContent:'flex-end', right: 0, opacity: .3}} >
                         <Image source={Logo}></Image>
                     </View> */}
@@ -122,7 +92,10 @@ export default class HomeScreen extends React.Component {
                         <Text> Prev </Text>
                     </Button> */}
                     {
-                    loadingRecent ? <ProgressBarAndroid indeterminate={true} color={baseOrangeColor} /> :
+                    loadingRecent ? 
+                    <View style={{width: '100%', height: '100%', position: 'absolute', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                        <ProgressBarAndroid indeterminate={true} color={baseOrangeColor} />
+                    </View> :
                     <Browser style={{paddingTop: 30}}>
                         <Section focus={true}>
                             <Tile style={{backgroundColor: baseOrangeColor}} onPress={this.openBrowse} >
@@ -137,6 +110,16 @@ export default class HomeScreen extends React.Component {
                         
                      
                       <Section title='Recent Release' scrollValue={400}>
+                            {recentRelease.map((item, i) => (
+                                <Tile.Image key={item.id} image={`${config.IMAGE}/${item.image}`}>
+                                    <View style={{ flexDirection: 'column', alignItems: 'center', flexWrap: 'wrap'}}>
+                                        <Text style={styles.tileText}>{item.name}</Text>
+                                        <Text style={styles.tileText}>{item.episode}</Text>
+                                    </View>
+                                </Tile.Image>
+                            ))}
+                        </Section>
+                      <Section title='My Watch List' scrollValue={400}>
                             {recentRelease.map((item, i) => (
                                 <Tile.Image key={item.id} image={`${config.IMAGE}/${item.image}`}>
                                     <View style={{ flexDirection: 'column', alignItems: 'center', flexWrap: 'wrap'}}>
@@ -234,7 +217,7 @@ const styles = StyleSheet.create({
 
     },
     tileText: {
-        fontSize: 11,
+        fontSize: 13,
         color: 'white',
         textAlign: 'center'
     }

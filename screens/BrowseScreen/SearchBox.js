@@ -37,23 +37,23 @@ class SearchBox extends React.Component {
     }
 
     componentWillReceiveProps(newProps){
-        const {isFocus} = newProps;
-        if (isFocus) {
+        const {focus} = newProps;
+        if (focus) {
             this.focus()
         } else {
             this.blur()
         }
     }
     onLayout(e){
-        this.props.onLayout(e);
+        //this.props.onLayout(e);
     }
 
     render() {
         const {searchText} = this.state
-        const {isFocus} = this.props;
+        
 
         return (
-            <View style={{ flexDirection: 'row', justifyContent: 'center' }} onLayout={this.onLayout}>
+            <View style={{ flexDirection: 'row', justifyContent: 'center', width: '100%' }} onLayout={this.onLayout}>
                 <View style={{ flex: 1 }} >
                     <TextInput autoFocus={true}
                         
@@ -77,7 +77,7 @@ class SearchBox extends React.Component {
 
 
 
-export default Selectable(SearchBox);
+export default (SearchBox);
 
 const styles = StyleSheet.create({
     searchBox: {

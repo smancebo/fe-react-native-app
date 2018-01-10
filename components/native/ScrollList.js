@@ -19,6 +19,9 @@ ScrollList.propTypes = {
     direction: PropTypes.oneOf(['horizontal','vertical']).isRequired,
     moveValue: PropTypes.number.isRequired,
     movePosition: PropTypes.number.isRequired,
+    offsetX: PropTypes.number,
+    offsetY: PropTypes.number,
+    offsetElement: PropTypes.number,
     ...View.propTypes
 }
 

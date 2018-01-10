@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, StyleSheet, Animated} from 'react-native';
-import ScrollList from './ScrollList';
+import ScrollList from './native/ScrollList';
 import KeyEvent from 'react-native-keyevent';
 import {DPAD} from '../common/dpadKeyCodes';
 
 
-const sectionHeight = 100;
+const sectionHeight = 350;
 export default class Browser extends React.Component
 {
     constructor(props){
@@ -15,7 +15,7 @@ export default class Browser extends React.Component
         this.selectElement = this.selectElement.bind(this);
         this.pressElement = this.pressElement.bind(this);
         this._onSectionElementSelected = this._onSectionElementSelected.bind(this);
-        this.registerSections = this.registerSections.bind(this);
+        this.refreshSections = this.refreshSections.bind(this);
         this.currentItem = 0;
         this.state = {
             sections:[],
@@ -28,14 +28,15 @@ export default class Browser extends React.Component
         }
     }
 
-    registerSections(){
+    refreshSections(){
         let sections = React.Children.map(this.props.children, (child, i) => {
             const childrens = React.Children.toArray(child.props.children);
             const { selectedElement: currentItem = 0 } = child.props;
             return { index: i, currentItem, childrens: childrens.length }
         });
 
-        this.setState({ sections });
+        this.setState({ sections, selectedSection: { index: 0, currentItem: 0, childrens: sections[0].childrens} });
+        this.forceUpdate()
     }
 
     componentDidMount(){
@@ -68,14 +69,29 @@ export default class Browser extends React.Component
                 case DPAD.DPAD_CENTER:
                     this.pressElement();
                 break;
+
+                case DPAD.DPAD_FAST_FORWARD:
+                    this.fastMove(DPAD.DPAD_RIGHT)
+                break;
+
+                case DPAD.DPAD_FAST_BACKWARD:
+                    this.fastMove(DPAD.DPAD_LEFT)
+                break;
+                case 0:
+                    this.fastMove(DPAD.DPAD_RIGHT)
+                break;
             }
         })
     }
 
-    selectSection(dpadDirection){
-        if (this.state.selectedSection.childrens === 0) {
-            this.registerSections();
+    fastMove(direction){
+        for (var i = 0; i <= 5; i++) {
+            this.selectElement(direction);
         }
+    }
+
+    selectSection(dpadDirection){
+        
         const { selectedSection, sections } = this.state;
         
         let newSections = [...sections];
@@ -103,10 +119,7 @@ export default class Browser extends React.Component
     }
 
     selectElement(dpadDirection){
-        if (this.state.selectedSection.childrens === 0) {
-            this.registerSections();
-
-        }
+      
         let { selectedSection } = this.state;
         
        
@@ -144,12 +157,12 @@ export default class Browser extends React.Component
     }
 
     render(){
-        const { children } = this.props;
+        const { children, moveValue = sectionHeight, offsetY = 120 } = this.props;
         const { selectedSection, sections } = this.state
 
         return (
-            <View style={styles.browser}>
-                <ScrollList direction='vertical' movePosition={selectedSection.index} moveValue={sectionHeight} >
+            <View style={[styles.browser, this.props.style]}>
+                <ScrollList direction='vertical' offsetY={offsetY} movePosition={selectedSection.index} moveValue={moveValue} >
                     {React.Children.map(children, (child, i) => <child.type {...child.props} focus={i === selectedSection.index ? true : false} onSelectedElement={this._onSectionElementSelected} selectedElement={i === selectedSection.index ? selectedSection.currentItem : sections[i] === undefined ? 0 : sections[i].currentItem} onItemSelected={this._onItemSelected} />)}
                 </ScrollList>
             </View>

@@ -3,8 +3,11 @@ import Episode from './Episode';
 import { View, Animated } from 'react-native'
 import { DPAD_DOWN, DPAD_UP, DPAD_FAST_FORWARD, DPAD_FAST_BACKWARD, DPAD_CENTER } from '../common/dpadKeyCodes';
 import KeyEvents from 'react-native-keyevent'
+import Browser from './Browser';
+import Section from './Section';
+import ScrollList from './native/ScrollList';
 
-const MOVE_VALUE = 90;
+const MOVE_VALUE = 180;
 export default class EpisodeList extends React.Component {
     constructor(props) {
         super(props);
@@ -153,13 +156,17 @@ export default class EpisodeList extends React.Component {
         const { currentItem } = this.state
         const { episodes } = this.props
         return (
-            <View style={{ backgroundColor: '#000000', height: 9999, overflow: 'hidden', paddingTop: (MOVE_VALUE * -1) }} >
-                <Animated.View style={{ transform: [{ translateY: this.translateValue }], height: 99999, overflow: 'hidden' }}>
-                    <View style={{ flex: 1, flexDirection: 'column' }}>
-                        {episodes.map((episode, i) => <Episode onPress={() => this.selectEpisode(currentItem)} isFocus={currentItem === i ? true : false} key={i} {...episode}  />)}
-                    </View>
-                </Animated.View>
-            </View>
+           
+            <ScrollList direction='vertical' movePosition={currentItem} moveValue={MOVE_VALUE} offsetElement={2} style={{flexDirection:'column', backgroundColor: '#000000', height: 99999, overflow: 'hidden', paddingTop: (MOVE_VALUE * -1) }}>
+                {episodes.map((episode, i) => <Episode onPress={() => this.selectEpisode(currentItem)} isFocus={currentItem === i ? true : false} key={i} {...episode} />)}
+            </ScrollList>
+            // <View style={{ backgroundColor: '#000000', height: 9999, overflow: 'hidden', paddingTop: (MOVE_VALUE * -1) }} >
+            //     <Animated.View style={{ transform: [{ translateY: this.translateValue }], height: 99999, overflow: 'hidden' }}>
+            //         <View style={{ flex: 1, flexDirection: 'column' }}>
+            //             {episodes.map((episode, i) => <Episode onPress={() => this.selectEpisode(currentItem)} isFocus={currentItem === i ? true : false} key={i} {...episode}  />)}
+            //         </View>
+            //     </Animated.View>
+            // </View>
         )
     }
 }

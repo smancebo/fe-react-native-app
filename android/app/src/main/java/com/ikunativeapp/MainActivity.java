@@ -1,7 +1,12 @@
 package com.ikunativeapp;
 
 import com.facebook.react.ReactActivity;
+
+import android.os.Bundle;
 import android.view.KeyEvent; // <--- import
+import android.view.Window;
+import android.view.WindowManager;
+
 import com.github.kevinejohn.keyevent.KeyEventModule;
 
 
@@ -26,7 +31,9 @@ public class MainActivity extends ReactActivity {
         return true;
     }
 
-
-
-
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
 }

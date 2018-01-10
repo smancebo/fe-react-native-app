@@ -6,6 +6,7 @@ import android.media.MediaPlayer;
 import android.media.session.PlaybackState;
 import android.net.Uri;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.support.v4.media.session.MediaSessionCompat;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -114,6 +115,8 @@ public class VideoMainView extends FrameLayout implements Player.EventListener {
         BandwidthMeter banwidthMeter = new DefaultBandwidthMeter();
         TrackSelection.Factory videoTrackSelectionFactory = new AdaptiveTrackSelection.Factory(banwidthMeter);
         TrackSelector trackSelector = new DefaultTrackSelector(videoTrackSelectionFactory);
+
+
 
         return ExoPlayerFactory.newSimpleInstance(context, trackSelector);
     }
