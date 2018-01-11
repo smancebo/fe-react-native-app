@@ -2,11 +2,11 @@ import React from 'react';
 import {Content, Container, Text} from 'native-base';
 import {globalStyles} from '../../common/styles';
 import Video from '../../components/native/Video';
-import { StyleSheet, WebView, View } from 'react-native';
+import { StyleSheet, WebView, View, ProgressBarAndroid } from 'react-native';
 import { config } from '../../config';
 import videoHtml from './video.html';
-import { VideoOverlay } from './VideoOverlay';
 import KeyEvent from 'react-native-keyevent'
+import { baseOrangeColor } from '../../common/constants';
 
 export default class ViewEpisodeScreen extends React.Component
 {
@@ -15,6 +15,7 @@ export default class ViewEpisodeScreen extends React.Component
         this.onVideoReady = this.onVideoReady.bind(this);
         this.onVideoPaused = this.onVideoPaused.bind(this);
         this.onVideoResume = this.onVideoResume.bind(this);
+        this.onVideoBuffering = this.onVideoBuffering.bind(this);
         this.showOverlay = this.showOverlay.bind(this);
         
         this.state = {
@@ -32,11 +33,16 @@ export default class ViewEpisodeScreen extends React.Component
     }
 
     onVideoPaused(event) {
-
+        //this.showOverlay(true);
     }
 
     onVideoResume(event){
+        this.props.closeDialog();
+        //this.showOverlay(false);
+    }
 
+    onVideoBuffering(event){
+        //this.props.openDialog();
     }
 
     showOverlay(display) {
@@ -54,12 +60,15 @@ export default class ViewEpisodeScreen extends React.Component
             <Container>
                 <Content style={[globalStyles.page]} contentContainerStyle={{height: '100%'}}>
                     <View style={styles.container}>
-                        <VideoOverlay visible={showOverlay} show={{ episode: episode.name , name: show.title, image: show.image }} />
+                        
+                       
                         {/* <WebView injectedJavaScript={`setVideoUrl('${videoUrl}')`} mediaPlaybackRequiresUserAction={false} source={videoHtml} style={styles.fullContent} ></WebView> */}
                         <Video source={videoUrl} ref="videoPlayer" 
                             onReady={this.onVideoReady} 
                             onPaused={this.onVideoPaused}
                             onResume={this.onVideoResume}
+                            onBuffering={this.onVideoBuffering}
+                            showInfo={{ episode: episode.name, name: show.title, image: show.image }}
                             autoplay={true} 
                             style={styles.player} />
                     </View>
@@ -68,8 +77,7 @@ export default class ViewEpisodeScreen extends React.Component
         )
     }
     componentWillUnmount(){
-        this.refs.videoPlayer.release();
-        
+        this.refs.videoPlayer && this.refs.videoPlayer.release();
     }
 }
 

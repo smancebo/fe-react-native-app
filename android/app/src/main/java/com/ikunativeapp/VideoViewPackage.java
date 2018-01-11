@@ -32,7 +32,8 @@ public class VideoViewPackage implements ReactPackage {
          return Arrays.<ViewManager>asList(
                 new VideoViewManager(this.context),
                  new FocusableViewManager(),
-                 new ScrollListViewManager()
+                 new ScrollListViewManager(),
+                 new FadeViewManager()
         );
     }
 }

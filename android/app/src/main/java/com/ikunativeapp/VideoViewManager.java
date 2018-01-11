@@ -67,8 +67,9 @@ public class VideoViewManager extends SimpleViewManager<VideoMainView> {
     public Map getExportedCustomBubblingEventTypeConstants(){
         return MapBuilder.builder()
                 .put("onReady", MapBuilder.of("phasedRegistrationNames",MapBuilder.of("bubbled", "onReady")))
-                .put("onResume", MapBuilder.of("phaseRegistrationNames", MapBuilder.of("bubbled", "onResume")))
-                .put("onPaused", MapBuilder.of("phaseRegistrationNames", MapBuilder.of("bubbled", "onPaused")))
+                .put("onResume", MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onResume")))
+                .put("onPaused", MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onPaused")))
+                .put("onBuffering", MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onBuffering")))
                 .build();
     }
 

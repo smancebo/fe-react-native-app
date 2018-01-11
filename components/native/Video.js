@@ -3,6 +3,8 @@ import { requireNativeComponent, View, UIManager, findNodeHandle } from 'react-n
 import PropTypes from 'prop-types';
 import KeyEvent from 'react-native-keyevent';
 import { DPAD, DPAD_FAST_FORWARD } from '../../common/dpadKeyCodes';
+import VideoOverlay  from './VideoOverlay';
+import BufferingOverlay from './BufferingOverlay';
 
 
 class Video extends React.Component {
@@ -11,7 +13,13 @@ class Video extends React.Component {
         this._onReady = this._onReady.bind(this);
         this._onPaused = this._onPaused.bind(this);
         this._onResume = this._onResume.bind(this);
+        this._onBuffering = this._onBuffering.bind(this);
+
         this.play = this.play.bind(this);
+        this.state = {
+            buffering: false,
+            paused: false
+        }
 
     }
 
@@ -63,17 +71,19 @@ class Video extends React.Component {
     }
 
     _onPaused(event){
-        if(!this.props.onPaused){
-            return;
-        }
-        this.props.onPaused(event);
+        this.setState({ paused: true });
+        this.props.onPaused && this.props.onPaused(event);
     }
 
     _onResume(event){
-        if(!this.props.onResume){
-            return ;
-        }
-        this.props.onResume(event);
+        this.setState({paused: false, buffering: false})
+        this.props.onResume && this.props.onResume(event);
+    }
+
+    _onBuffering(event){
+
+        this.setState({ buffering: true });
+        this.props.onBuffering && this.props.onBuffering(event);
     }
 
     release(){
@@ -92,13 +102,22 @@ class Video extends React.Component {
         this._dispatchCommand('seek', [time])
     }
     render() {
-        return (<RCTVideoView {...this.props} onReady={this._onReady} onPaused={this._onPaused} onResume={this._onResume} />)
+        const { paused, buffering} = this.state
+        return (
+            <View>
+                <VideoOverlay visible={paused} show={this.props.showInfo} />
+                <BufferingOverlay visible={buffering} />
+                <RCTVideoView ref="videoView" {...this.props} onReady={this._onReady} onPaused={this._onPaused} onResume={this._onResume} onBuffering={this._onBuffering} />
+            </View>
+        )
     }
 
     _dispatchCommand(command, args){
-        UIManager.dispatchViewManagerCommand(findNodeHandle(this), UIManager.RCTVideoView.Commands[command], args);
+        UIManager.dispatchViewManagerCommand(findNodeHandle(this.refs.videoView), UIManager.RCTVideoView.Commands[command], args);
     }
 }
+
+
 
 Video.propTypes = {
     source: PropTypes.string,
@@ -106,6 +125,6 @@ Video.propTypes = {
     ...View.propTypes
 };
 
-const RCTVideoView = requireNativeComponent("RCTVideoView", Video, {nativeOnly: {onReady: true, onPaused: true, onResume: true}});
+const RCTVideoView = requireNativeComponent("RCTVideoView", Video, {nativeOnly: {onReady: true, onPaused: true, onResume: true, onBuffering: true}});
 
 export default Video;

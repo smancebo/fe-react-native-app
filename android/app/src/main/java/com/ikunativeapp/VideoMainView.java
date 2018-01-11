@@ -21,6 +21,7 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
 
@@ -57,7 +58,7 @@ import com.google.android.exoplayer2.util.Util;
  * Created by smancebo on 12/29/17.
  */
 
-public class VideoMainView extends FrameLayout implements Player.EventListener {
+public class VideoMainView extends FrameLayout implements Player.EventListener, LifecycleEventListener {
 
 
     SimpleExoPlayer _mediaPlayer;
@@ -101,7 +102,8 @@ public class VideoMainView extends FrameLayout implements Player.EventListener {
             CookieManager.setDefault(DEFAULT_COOKIE_MANAGER);
         }
 
-
+        ReactContext reactContext = (ReactContext)getContext();
+        reactContext.addLifecycleEventListener(this);
 
 
         boolean b = _mediaPlayerView.requestFocus();
@@ -245,6 +247,19 @@ public class VideoMainView extends FrameLayout implements Player.EventListener {
                     dispatchEvent("onReady", Arguments.createMap());
                     firstTimeLoad = false;
                 }
+                dispatchEvent("onResume", Arguments.createMap());
+                if(!_mediaPlayer.getPlayWhenReady()){
+                    dispatchEvent("onPaused", Arguments.createMap());
+                }
+
+                break;
+
+            case Player.STATE_BUFFERING:
+                    dispatchEvent("onBuffering", Arguments.createMap());
+                break;
+
+            default:
+                dispatchEvent("onResume", Arguments.createMap());
                 break;
         }
         _mediaPlayerView.requestFocus();
@@ -270,5 +285,20 @@ public class VideoMainView extends FrameLayout implements Player.EventListener {
     @Override
     public void onPlaybackParametersChanged(PlaybackParameters playbackParameters) {
 
+    }
+
+    @Override
+    public void onHostResume() {
+        //Play();
+    }
+
+    @Override
+    public void onHostPause() {
+        Pause();
+    }
+
+    @Override
+    public void onHostDestroy() {
+        Release();
     }
 }

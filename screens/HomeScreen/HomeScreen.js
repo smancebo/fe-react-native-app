@@ -6,7 +6,7 @@ import { BrowseScreen } from '../BrowseScreen/BrowseScreen'
 import {Logo} from '../../common/constants'
 import {backgroundImage} from '../../common/constants'
 import { DPAD_MENU} from '../../common/dpadKeyCodes';
-import { VideoOverlay } from '../ViewEpisode/VideoOverlay';
+
 import Tile from '../../components/Tile';
 import Section from '../../components/Section';
 import Browser from '../../components/Browser';
