@@ -1,19 +1,38 @@
 import React from 'react';
 import Episode from './Episode';
-import { View, Animated } from 'react-native'
+import EpisodesGroup from './EpisodesGroup';
+import { View, Animated, BackHandler } from 'react-native'
 import { DPAD_DOWN, DPAD_UP, DPAD_FAST_FORWARD, DPAD_FAST_BACKWARD, DPAD_CENTER } from '../common/dpadKeyCodes';
 import KeyEvents from 'react-native-keyevent'
 import Browser from './Browser';
 import Section from './Section';
 import ScrollList from './native/ScrollList';
+import FadeView from './native/FadeView';
 
 const MOVE_VALUE = 180;
+
+const group = (arr, pageSize, page, grouped) => {
+    let elements = [...arr];
+    if(elements.length === 0) {
+        return grouped
+    }
+    grouped = grouped || [];
+    page = page || 0;
+    const sliced = elements.slice(0, pageSize);
+    grouped.push({"category" : `Episodes ${page === 0 ? arr.length - 1 : arr.length - (page * pageSize) } to ${ page === 0 ? sliced.length : ((page + 1) * sliced.length) }`, episodes: sliced})
+    elements.splice(0, sliced.length);
+    return group(elements, pageSize, page + 1, grouped)
+}
+
 export default class EpisodeList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: [],
-            currentItem: 0
+            episodesGroups: [],
+            currentItem: 0,
+            episodes: [],
+            groups: true,
+            fade: 'in'
         }
         this.updateItems = this.updateItems.bind(this);
         this.focusItem = this.focusItem.bind(this);
@@ -22,11 +41,15 @@ export default class EpisodeList extends React.Component {
         this.currentItem = 0;
         this.timeOutInterval = 0;
         this.selectEpisode = this.selectEpisode.bind(this);
+        this.selectCategory = this.selectCategory.bind(this);
+        this.onPressElement = this.onPressElement.bind(this);
+        this.blink = this.blink.bind(this);
        
         this.moveDown = () => {
-            const { currentItem } = this.state;
-            const { episodes } = this.props;
-            if (currentItem < episodes.length - 1) {
+            const { currentItem, groups, episodesGroups, episodes } = this.state;
+            const children = (groups ? episodesGroups.length : episodes.length) - 1;
+
+            if (currentItem < children) {
 
                 this.currentItem += 1;
                 //this.setState({ currentItem: this.currentItem });
@@ -69,8 +92,24 @@ export default class EpisodeList extends React.Component {
 
     componentDidMount() {
         const { episodes } = this.props;
-        this.setState({ items: episodes.slice(0, 6) });
+        
+        this.setState({ episodesGroups: group(this.props.episodes, 50)});
         this.previousKeyDown = KeyEvents.listenerKeyDown;
+
+        BackHandler.addEventListener("hardwareBackPress", () => {
+            const { groups } = this.state;
+
+            if (!groups){
+                this.blink(() => {
+                    this.currentItem = 0;
+                    this.setState({ groups: true, currentItem: this.currentItem })
+                })
+               
+                return true;
+            } else {
+                return false;
+            }
+        })
 
         KeyEvents.removeKeyDownListener();
         KeyEvents.onKeyDownListener(({ keyCode }) => {
@@ -103,7 +142,7 @@ export default class EpisodeList extends React.Component {
                     break;
 
                 case DPAD_CENTER: 
-                    this.selectEpisode();
+                    this.onPressElement();
                 break;
 
             }
@@ -144,22 +183,53 @@ export default class EpisodeList extends React.Component {
         KeyEvents.removeKeyDownListener();
         KeyEvents.onKeyDownListener(this.previousKeyDown.listener);
     }
-    selectEpisode(item){
-        const { episodes } = this.props;
-        const { currentItem } = this.state;
-        const index = item || currentItem;
 
-        this.props.onEpisodeSelected(episodes[index]);
+    onPressElement(){
+        const childrens = React.Children.toArray(this.refs.scrollList.props.children);
+        const selectedElement = childrens[this.currentItem];
+        const {onPress = () => {}} = selectedElement.props;
+        
+        onPress();
+    }
+
+    selectEpisode(episode){
+        // const { episodes } = this.props;
+        // const { currentItem } = this.state;
+        // const index = item || currentItem;
+
+        this.props.onEpisodeSelected(episode);
+    }
+    selectCategory(category){
+        this.blink(() => {
+            this.currentItem = 0;
+            this.setState({ groups: false, episodes: category.episodes, currentItem: this.currentItem })
+        })
     }   
 
+    blink(cb){
+        this.setState({fade: 'out'}, () => {
+            setTimeout(()=> {
+                this.setState({fade: 'in'}, cb)
+            }, 200)
+        })
+    }
+
     render() {
-        const { currentItem } = this.state
-        const { episodes } = this.props
+        const { currentItem, episodesGroups, groups, episodes, fade } = this.state
+        // const { episodes } = this.props
+        let childs = [];
+        if(groups){
+            childs = episodesGroups.map((item, i) => <EpisodesGroup onPress={() => this.selectCategory(item)} name={item.category} isFocus={currentItem === i ? true : false} key={i} />)
+        } else {
+            childs = episodes.map((episode, i) => <Episode onPress={() => this.selectEpisode(episode)} isFocus={currentItem === i ? true : false} key={i} {...episode} />)
+        }
         return (
            
-            <ScrollList direction='vertical' movePosition={currentItem} moveValue={MOVE_VALUE} offsetElement={2} style={{flexDirection:'column', backgroundColor: '#000000', height: 99999, overflow: 'hidden', paddingTop: (MOVE_VALUE * -1) }}>
-                {episodes.map((episode, i) => <Episode onPress={() => this.selectEpisode(currentItem)} isFocus={currentItem === i ? true : false} key={i} {...episode} />)}
-            </ScrollList>
+            <FadeView fade={fade}>
+                <ScrollList ref="scrollList" direction='vertical' movePosition={currentItem} moveValue={MOVE_VALUE} offsetElement={2} style={{flexDirection:'column', backgroundColor: '#000000', height: 99999, overflow: 'hidden', paddingTop: (MOVE_VALUE * -1) }}>
+                    {childs}
+                </ScrollList>
+            </FadeView>
             // <View style={{ backgroundColor: '#000000', height: 9999, overflow: 'hidden', paddingTop: (MOVE_VALUE * -1) }} >
             //     <Animated.View style={{ transform: [{ translateY: this.translateValue }], height: 99999, overflow: 'hidden' }}>
             //         <View style={{ flex: 1, flexDirection: 'column' }}>
