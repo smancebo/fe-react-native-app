@@ -48,9 +48,9 @@ export default class EpisodesGroup extends React.Component {
         const { name, link, isFocus = false } = this.props
         return (
             <TouchableNativeFeedback onPress={this.onPress}>
-                <View style={[{ height: 80, backgroundColor: '#222222', margin: 10, flexDirection: 'row', marginBottom: 0, borderRadius: 10 }, isFocus ? { backgroundColor: baseOrangeColor } : {}]}>
+                <View style={[{ height: 80, backgroundColor: '#222222', margin: 10, flexDirection: 'row', marginBottom: 0, borderRadius: 2 }, isFocus ? { backgroundColor: baseOrangeColor } : {}]}>
                     <View style={{ flex: 20 }}>
-                        <View style={{ backgroundColor: '#000000', height: '100%', flex: 1, alignItems: 'center', justifyContent: 'center', margin: 5, borderRadius: 10 }}>
+                        <View style={{ backgroundColor: '#000000', height: '100%', flex: 1, alignItems: 'center', justifyContent: 'center', margin: 5, borderRadius: 2 }}>
                             <Icon style={{ fontSize: 40, color: 'white', textAlign: 'center' }} name='md-apps' color='white' />
                         </View>
                     </View>

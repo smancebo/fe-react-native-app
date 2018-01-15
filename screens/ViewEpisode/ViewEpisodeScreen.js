@@ -2,7 +2,7 @@ import React from 'react';
 import {Content, Container, Text} from 'native-base';
 import {globalStyles} from '../../common/styles';
 import Video from '../../components/native/Video';
-import { StyleSheet, WebView, View, ProgressBarAndroid } from 'react-native';
+import { StyleSheet, WebView, View, ProgressBarAndroid, BackHandler } from 'react-native';
 import { config } from '../../config';
 import videoHtml from './video.html';
 import KeyEvent from 'react-native-keyevent'
@@ -23,8 +23,11 @@ export default class ViewEpisodeScreen extends React.Component
         }
     }
     componentDidMount(){
+        const { backHandler} = this.props.navigation.state.params;
+        BackHandler.addEventListener("hardwareBackPress", () =>  false);
+        this.backHandler = backHandler;
         this.props.openDialog();
-        
+       
     }
 
     onVideoReady(event) {
@@ -78,6 +81,7 @@ export default class ViewEpisodeScreen extends React.Component
     }
     componentWillUnmount(){
         this.refs.videoPlayer && this.refs.videoPlayer.release();
+        BackHandler.addEventListener("hardwareBackPress", this.backHandler);
     }
 }
 

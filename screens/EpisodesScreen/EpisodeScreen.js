@@ -10,6 +10,7 @@ import KeyEvent from 'react-native-keyevent';
 
 import { config } from '../../config'
 import  Service from '../../common/api/service';
+import Background from '../../components/Background';
  
 export default class EpisodeScreen extends React.Component {
 
@@ -18,12 +19,12 @@ export default class EpisodeScreen extends React.Component {
         this.onEpisodeSelected = this.onEpisodeSelected.bind(this);
     }
     
-    async onEpisodeSelected(episode){
+    async onEpisodeSelected(episode, backHandler){
         this.props.openDialog();
         const { show } = this.props.navigation.state.params;
         const {data: videoLink} = await Service.GetVideo(episode.link);
         console.log(videoLink);
-        this.props.navigation.navigate('View', {url: videoLink.url, episode, show})
+        this.props.navigation.navigate('View', {url: videoLink.url, episode, show, backHandler})
         this.props.closeDialog();
     }
     render(){
@@ -34,6 +35,7 @@ export default class EpisodeScreen extends React.Component {
         return(
             <Container style={{height: '100%'}}  >
                 <Content style={globalStyles.page} contentContainerStyle={{height: '100%'}} >
+                   
                     <View style={{flex: 1, flexDirection: 'row'}}>
                         <View style={{flex: 30}}>
                             <View style={style.absoluteContainer}>

@@ -9,17 +9,25 @@ import Section from './Section';
 import ScrollList from './native/ScrollList';
 import FadeView from './native/FadeView';
 
+const EPISODE_GROUP = 50;
 const MOVE_VALUE = 180;
 
 const group = (arr, pageSize, page, grouped) => {
     let elements = [...arr];
-    if(elements.length === 0) {
-        return grouped
-    }
     grouped = grouped || [];
     page = page || 0;
+
+    if(elements.length === 0) {
+        return grouped.map((item, i) => {
+            const reduced = grouped.slice(0, i + 1).map((elm) => elm.length).reduce((a, b) => a + b, 0);
+            return {
+                category: `Episodes ${(i * pageSize) + 1} to ${reduced}`,
+                episodes: item
+            }
+        })
+    }
     const sliced = elements.slice(0, pageSize);
-    grouped.push({"category" : `Episodes ${page === 0 ? arr.length - 1 : arr.length - (page * pageSize) } to ${ page === 0 ? sliced.length : ((page + 1) * sliced.length) }`, episodes: sliced})
+    grouped.push(sliced)
     elements.splice(0, sliced.length);
     return group(elements, pageSize, page + 1, grouped)
 }
@@ -43,6 +51,7 @@ export default class EpisodeList extends React.Component {
         this.selectEpisode = this.selectEpisode.bind(this);
         this.selectCategory = this.selectCategory.bind(this);
         this.onPressElement = this.onPressElement.bind(this);
+        this.handleBack = this.handleBack.bind(this);
         this.blink = this.blink.bind(this);
        
         this.moveDown = () => {
@@ -93,23 +102,17 @@ export default class EpisodeList extends React.Component {
     componentDidMount() {
         const { episodes } = this.props;
         
-        this.setState({ episodesGroups: group(this.props.episodes, 50)});
+        if (this.props.episodes > EPISODE_GROUP){
+            this.setState({ episodesGroups: group(this.props.episodes.sort((a, b) => b.id - a.id), EPISODE_GROUP) });
+            this.handler = BackHandler.addEventListener("hardwareBackPress", this.handleBack)
+        } else {
+            this.setState({group: false, episodes: this.props.episodes})
+        }
+        
         this.previousKeyDown = KeyEvents.listenerKeyDown;
 
-        BackHandler.addEventListener("hardwareBackPress", () => {
-            const { groups } = this.state;
-
-            if (!groups){
-                this.blink(() => {
-                    this.currentItem = 0;
-                    this.setState({ groups: true, currentItem: this.currentItem })
-                })
-               
-                return true;
-            } else {
-                return false;
-            }
-        })
+        
+        
 
         KeyEvents.removeKeyDownListener();
         KeyEvents.onKeyDownListener(({ keyCode }) => {
@@ -152,6 +155,21 @@ export default class EpisodeList extends React.Component {
         this.setState({ currentItem: this.currentItem });
     }
 
+    handleBack(){
+        const { groups } = this.state;
+
+        if (!groups) {
+            this.blink(() => {
+                this.currentItem = 0;
+                this.setState({ groups: true, currentItem: this.currentItem })
+            })
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     updateItems(direction) {
         let items = [...this.state.items];
         const { currentItem } = this.state;
@@ -182,6 +200,7 @@ export default class EpisodeList extends React.Component {
     componentWillUnmount() {
         KeyEvents.removeKeyDownListener();
         KeyEvents.onKeyDownListener(this.previousKeyDown.listener);
+        BackHandler.removeEventListener();
     }
 
     onPressElement(){
@@ -196,8 +215,8 @@ export default class EpisodeList extends React.Component {
         // const { episodes } = this.props;
         // const { currentItem } = this.state;
         // const index = item || currentItem;
-
-        this.props.onEpisodeSelected(episode);
+        this.handler.remove();
+        this.props.onEpisodeSelected(episode, this.handleBack.bind(this));
     }
     selectCategory(category){
         this.blink(() => {
@@ -210,7 +229,7 @@ export default class EpisodeList extends React.Component {
         this.setState({fade: 'out'}, () => {
             setTimeout(()=> {
                 this.setState({fade: 'in'}, cb)
-            }, 200)
+            }, 100)
         })
     }
 

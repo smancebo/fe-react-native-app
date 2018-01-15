@@ -107,14 +107,14 @@ const styles = StyleSheet.create({
     image: {
         width: 190,
         height: 230,
-        borderRadius: 10
+        borderRadius: 2
     },
     shadow: {
         elevation: 3,
         width: 190,
         height: 230,
         backgroundColor: '#222222',
-        borderRadius: 10
+        borderRadius: 2
     }
 
 
