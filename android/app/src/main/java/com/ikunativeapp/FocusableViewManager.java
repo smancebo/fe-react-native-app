@@ -26,7 +26,7 @@ public class FocusableViewManager extends ViewGroupManager<FocusableView> {
     @Override
     protected FocusableView createViewInstance(ThemedReactContext reactContext) {
         FocusableView view = new FocusableView(reactContext);
-
+        view.Blur();
         return view;
     }
 

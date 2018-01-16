@@ -24,6 +24,7 @@ public class FocusableView extends ReactViewGroup {
     public FocusableView(Context context) {
         super(context);
         _context = context;
+
     }
 
     static final float FOCUS_SCALE = 1.1f;

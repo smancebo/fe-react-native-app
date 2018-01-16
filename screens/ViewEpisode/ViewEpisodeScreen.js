@@ -24,8 +24,10 @@ export default class ViewEpisodeScreen extends React.Component
     }
     componentDidMount(){
         const { backHandler} = this.props.navigation.state.params;
-        BackHandler.addEventListener("hardwareBackPress", () =>  false);
-        this.backHandler = backHandler;
+        if(backHandler){
+            BackHandler.addEventListener("hardwareBackPress", () => false);
+            this.backHandler = backHandler;
+        }
         this.props.openDialog();
        
     }
@@ -81,7 +83,9 @@ export default class ViewEpisodeScreen extends React.Component
     }
     componentWillUnmount(){
         this.refs.videoPlayer && this.refs.videoPlayer.release();
-        BackHandler.addEventListener("hardwareBackPress", this.backHandler);
+        if(this.backHandler){
+            BackHandler.addEventListener("hardwareBackPress", this.backHandler);
+        }
     }
 }
 

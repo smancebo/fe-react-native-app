@@ -5,71 +5,22 @@ import PropTypes from 'prop-types';
 import FocusableView from './native/FocusableView'
 import { baseOrangeColor } from '../common/constants';
 
-
-
-
-
 class Tile extends React.Component {
     constructor(props) {
         super(props);
-        this.focusElement = this.focusElement.bind(this);
-        this.scaleValue = new Animated.Value(1);
-        this.opacityValue = new Animated.Value(0.8);
+       
         this._onPress = this._onPress.bind(this);
     }
-    shouldComponentUpdate(newProps, newState) {
-        const { focus: isFocus = false } = this.props;
-        const { focus: newFocus = false } = newProps;
-        if (isFocus !== newFocus) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // shouldComponentUpdate(newProps, newState) {
+    //     const { focus: isFocus = false } = this.props;
+    //     const { focus: newFocus = false } = newProps;
+    //     if (isFocus !== newFocus) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
-    focusElement(cb) {
-        Animated.parallel([
-            Animated.timing(this.scaleValue, {
-                duration: 200,
-                toValue: 1.1
-            }),
-            Animated.spring(this.opacityValue, {
-                duration: 200,
-                toValue: 1
-            })
-        ]).start(done => cb && cb(done));
-    }
-
-    blurElement(cb) {
-        Animated.parallel([
-            Animated.timing(this.scaleValue, {
-                duration: 200,
-                toValue: 1
-            }),
-            Animated.spring(this.opacityValue, {
-                duration: 200,
-                toValue: .8
-            })
-        ]).start(done => cb && cb(done));
-    }
-
-    componentDidMount() {
-        const { focus = false } = this.props;
-        //this.evaluateFocus(focus);
-    }
-    componentWillReceiveProps(newProps) {
-        const { focus = false } = newProps;
-        //this.evaluateFocus(focus);
-
-    }
-
-    evaluateFocus(focus) {
-        if (focus) {
-            this.focusElement()
-        } else {
-            this.blurElement()
-        }
-    }
 
     _onPress(ev) {
         const { onPress = () => { } } = this.props;
@@ -81,10 +32,10 @@ class Tile extends React.Component {
 
     render() {
         const { style = {}, focus = false, pivotX = 0, pivotY = 0 } = this.props;
-        const focusStyle = { transform: [{ scaleX: this.scaleValue }, { scaleY: this.scaleValue }], opacity: this.opacityValue }
+        
         return (
 
-            <FocusableView focusView={focus} style={{ margin: 5 }} pivotX={pivotX} pivotY={pivotY}  >
+            <FocusableView focusView={focus} style={{ margin: 5}} pivotX={pivotX} pivotY={pivotY}  >
 
                 <View style={styles.wrapper} >
                     <View style={[styles.tile, style,]}  >

@@ -45,7 +45,7 @@ export default class Section extends React.PureComponent {
 
     componentDidMount() {
         const { focus, selectedElement } = this.props;
-        this.selectElement(selectedElement);
+        //this.selectElement(selectedElement);
         // if (focus) {
         //     KeyEvent.onKeyDownListener(({ keyCode }) => {
         //         const children = React.Children.toArray(this.props.children);
@@ -81,6 +81,7 @@ export default class Section extends React.PureComponent {
     componentWillReceiveProps(newProps) {
         const { selectedElement } = newProps;
        this.setState({currentItem: selectedElement})
+       this.forceUpdate()
     }
 
     registerTile(tile) {

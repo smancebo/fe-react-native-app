@@ -23,7 +23,6 @@ export default class EpisodeScreen extends React.Component {
         this.props.openDialog();
         const { show } = this.props.navigation.state.params;
         const {data: videoLink} = await Service.GetVideo(episode.link);
-        console.log(videoLink);
         this.props.navigation.navigate('View', {url: videoLink.url, episode, show, backHandler})
         this.props.closeDialog();
     }

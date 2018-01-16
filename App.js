@@ -15,7 +15,7 @@ import { drawerActiveBackgroundColor, drawerBackgroundColor, drawerInactiveTintC
 
 
 const Main = DrawerNavigator({
-  Home: { screen: HomeScreen },
+  Home: { screen: withLoading(HomeScreen) },
   Browse: { screen: withLoading(BrowseScreen) },
   
 }, {

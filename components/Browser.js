@@ -40,13 +40,14 @@ export default class Browser extends React.Component
     }
 
     componentDidMount(){
-        let sections = React.Children.map(this.props.children, (child, i) => { 
-            const childrens = React.Children.toArray(child.props.children);
-            const {selectedElement : currentItem = 0} = child.props;
-            return { index: i, currentItem, childrens: childrens.length}
-        });
+        this.refreshSections()
+        // let sections = React.Children.map(this.props.children, (child, i) => { 
+        //     const childrens = React.Children.toArray(child.props.children);
+        //     const {selectedElement : currentItem = 0} = child.props;
+        //     return { index: i, currentItem, childrens: childrens.length}
+        // });
 
-        this.setState({sections});
+        // this.setState({ sections, selectedSection: { index: 0, currentItem: 0, childrens: sections[0].childrens }});
         KeyEvent.removeKeyDownListener();
         KeyEvent.onKeyDownListener(({keyCode}) => {
             switch(keyCode){

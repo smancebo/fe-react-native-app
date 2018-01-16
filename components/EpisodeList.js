@@ -53,6 +53,7 @@ export default class EpisodeList extends React.Component {
         this.onPressElement = this.onPressElement.bind(this);
         this.handleBack = this.handleBack.bind(this);
         this.blink = this.blink.bind(this);
+        this.groupEpisodes = this.groupEpisodes.bind(this);
        
         this.moveDown = () => {
             const { currentItem, groups, episodesGroups, episodes } = this.state;
@@ -98,22 +99,21 @@ export default class EpisodeList extends React.Component {
         }
     }
 
+   
+    groupEpisodes(e){
+        const episodes = e.sort((a, b) => b.id - a.id)
+        if (episodes.length > EPISODE_GROUP) {
+            this.setState({ episodesGroups: group(episodes, EPISODE_GROUP) });
+            this.handler = BackHandler.addEventListener("hardwareBackPress", this.handleBack)
+        } else {
+            this.setState({ groups: false, episodes }, this.blink())
+        }
+    }
 
     componentDidMount() {
         const { episodes } = this.props;
-        
-        if (this.props.episodes > EPISODE_GROUP){
-            this.setState({ episodesGroups: group(this.props.episodes.sort((a, b) => b.id - a.id), EPISODE_GROUP) });
-            this.handler = BackHandler.addEventListener("hardwareBackPress", this.handleBack)
-        } else {
-            this.setState({group: false, episodes: this.props.episodes})
-        }
-        
+        this.groupEpisodes(episodes)
         this.previousKeyDown = KeyEvents.listenerKeyDown;
-
-        
-        
-
         KeyEvents.removeKeyDownListener();
         KeyEvents.onKeyDownListener(({ keyCode }) => {
             const { currentItem } = this.state;
