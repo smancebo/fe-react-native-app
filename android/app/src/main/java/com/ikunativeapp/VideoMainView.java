@@ -65,6 +65,9 @@ public class VideoMainView extends FrameLayout implements Player.EventListener, 
     SimpleExoPlayerView _mediaPlayerView;
     PlaybackControlView _mediaPlayerController;
     MediaSessionCompat _mediaSession;
+    Handler _handler;
+    Runnable _handlerTask;
+
 
     boolean firstTimeLoad;
 
@@ -86,6 +89,21 @@ public class VideoMainView extends FrameLayout implements Player.EventListener, 
         _mediaPlayerView = new SimpleExoPlayerView(context);
         _mediaPlayerView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         _mediaPlayerView.setPlayer(_mediaPlayer);
+        _handler = new Handler();
+        _handlerTask = new Runnable() {
+            @Override
+            public void run() {
+                Long duration = _mediaPlayer.getDuration();
+                Long currentTime = _mediaPlayer.getCurrentPosition();
+                WritableMap arguments = Arguments.createMap();
+
+                arguments.putDouble("duration", duration.doubleValue());
+                arguments.putDouble("currentTime", currentTime.doubleValue());
+
+                dispatchEvent("onProgress", arguments);
+                _handler.postDelayed(_handlerTask, 500);
+            }
+        };
 
 
         _mediaPlayerView.setOnKeyListener(new View.OnKeyListener() {
@@ -127,6 +145,7 @@ public class VideoMainView extends FrameLayout implements Player.EventListener, 
     public void Play(){
         if(!isPlaying()){
             _mediaPlayer.setPlayWhenReady(true);
+            StartOnProgress();
             dispatchEvent("onResume", Arguments.createMap());
 
         }
@@ -147,8 +166,18 @@ public class VideoMainView extends FrameLayout implements Player.EventListener, 
     public void Pause(){
         if(isPlaying()){
             _mediaPlayer.setPlayWhenReady(false);
+            StopOnProgress();
             dispatchEvent("onPaused", Arguments.createMap());
+
         }
+    }
+
+    private void StopOnProgress(){
+        _handler.removeCallbacksAndMessages(null);
+    }
+
+    private void StartOnProgress(){
+        _handler.post(_handlerTask);
     }
 
     public void Seek(long position){
@@ -221,6 +250,7 @@ public class VideoMainView extends FrameLayout implements Player.EventListener, 
     }
 
     public void Release(){
+        StopOnProgress();
         _mediaPlayer.release();
     }
 
@@ -247,14 +277,17 @@ public class VideoMainView extends FrameLayout implements Player.EventListener, 
                     dispatchEvent("onReady", Arguments.createMap());
                     firstTimeLoad = false;
                 }
-                dispatchEvent("onResume", Arguments.createMap());
+
                 if(!_mediaPlayer.getPlayWhenReady()){
                     dispatchEvent("onPaused", Arguments.createMap());
+                } else {
+                    dispatchEvent("onResume", Arguments.createMap());
                 }
 
                 break;
 
             case Player.STATE_BUFFERING:
+
                     dispatchEvent("onBuffering", Arguments.createMap());
                 break;
 

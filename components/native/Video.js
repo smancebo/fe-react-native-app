@@ -41,11 +41,11 @@ class Video extends React.Component {
                 break;
 
                 case DPAD.DPAD_LEFT:
-                    this.seek(-5000);
+                    this.seek(-10000);
                 break;
 
                 case DPAD.DPAD_RIGHT:
-                    this.seek(5000);
+                    this.seek(10000);
                 break;
 
                 case DPAD.DPAD_PLAY_PAUSA:

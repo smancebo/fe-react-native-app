@@ -26,15 +26,17 @@ public class FocusableViewManager extends ViewGroupManager<FocusableView> {
     @Override
     protected FocusableView createViewInstance(ThemedReactContext reactContext) {
         FocusableView view = new FocusableView(reactContext);
-        view.Blur();
+        view.Focus();
         return view;
     }
 
     @ReactProp(name="focusView", defaultBoolean = false)
     public void setFocusView(FocusableView view, boolean focusView){
+        view.setFocusState(focusView);
         if(focusView){
             view.Focus();
         } else {
+            //view.Focus();
             view.Blur();
         }
     }

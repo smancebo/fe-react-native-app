@@ -1,12 +1,6 @@
 import React from 'react';
-import { View, Alert, StyleSheet, StatusBar, Image, ProgressBarAndroid, Button as Btn } from 'react-native';
-import { Container, Header, Body, Title, Left, Right, Button, Icon, Text, Content } from 'native-base'
-import { DrawerNavigator } from 'react-navigation'
-import { BrowseScreen } from '../BrowseScreen/BrowseScreen'
-import { Logo } from '../../common/constants'
-import { backgroundImage } from '../../common/constants'
-import { DPAD_MENU } from '../../common/dpadKeyCodes';
-
+import { View, StyleSheet, ProgressBarAndroid} from 'react-native';
+import { Container, Content, Icon, Text } from 'native-base'
 import Tile from '../../components/Tile';
 import Section from '../../components/Section';
 import Browser from '../../components/Browser';
@@ -16,23 +10,14 @@ import Service from '../../common/api/service';
 import Background from '../../components/Background';
 
 
-
-
-
 class HomeScreen extends React.Component {
-    static navigationOptions = {
-        drawerLabel: 'Home',
-        drawerIcon: (({ tintColor }) => (<Icon style={{ color: tintColor }} name='home'></Icon>))
-    }
+
     constructor(props) {
         super(props);
-        this.handleButton = this.handleButton.bind(this);
-        this.moveNext = this.moveNext.bind(this);
-        this.movePrev = this.movePrev.bind(this);
-        this.openBrowse = this.openBrowse.bind(this);
+        this.navigate = this.navigate.bind(this);
+        this.openRecent = this.openRecent.bind(this);
 
         this.state = {
-            selectedElement: 0,
             recentRelease: []
         }
     }
@@ -43,69 +28,47 @@ class HomeScreen extends React.Component {
 
     }
 
-    handleButton(e) {
-        //console.log(e);
-        const { navigate } = this.props.navigation;
-        Alert.alert('from native');
-
-
-    }
-
-    openBrowse() {
-        const { navigate } = this.props.navigation;
-        navigate('Browse');
+   
+    navigate(page){
+        const {navigate} = this.props.navigation;
+        navigate(page);
     }
 
     async openRecent(show) {
         this.props.openDialog();
+        const { navigate } = this.props.navigation;
 
         const { data: videoLink } = await Service.GetVideo(show.link);
-        this.props.navigation.navigate('View', { url: videoLink.url, episode: show.episode, show })
-        this.props.closeDialog();
-    }
+        navigate('View', { url: videoLink.url, episode: show.episode, show })
 
-    moveNext() {
-        let { selectedElement } = this.state;
-        selectedElement += 1;
-        this.setState({ selectedElement })
-    }
-    movePrev() {
-        let { selectedElement } = this.state;
-        selectedElement -= 1;
-        this.setState({ selectedElement })
+        this.props.closeDialog();
     }
 
     render() {
 
-        const { navigate } = this.props.navigation;
-        const { selectedElement, recentRelease } = this.state;
+        const { recentRelease } = this.state;
         const loadingRecent = (recentRelease.length === 0);
         return (
-
 
             <Container>
 
                 <Content style={styles.page} contentContainerStyle={{ height: '100%' }} >
                     <Background />
-
-
-
                     {
-
                         loadingRecent ?
                             <View style={{ width: '100%', height: '100%', position: 'absolute', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                                 <ProgressBarAndroid indeterminate={true} color={baseOrangeColor} />
                             </View> :
                             <Browser style={{ paddingTop: 30 }} ref="browser" >
-                                
-                                <Section scrollValue={300} offsetElement={1} selectedElement={99} focus={true} >
-                                    <Tile style={styles.upperSectionTile} onPress={this.openBrowse} >
+
+                                <Section scrollValue={300} offsetElement={1} >
+                                    <Tile style={styles.upperSectionTile} onPress={() => this.navigate('Browse')} >
                                         <View style={styles.upperSectionTileInnerView} >
                                             <Icon name='md-search' style={[styles.upperSectionTileText, styles.upperSectionTileIcon]} />
                                             <Text style={styles.upperSectionTileText}>Browse</Text>
                                         </View>
                                     </Tile>
-                                    <Tile style={styles.upperSectionTile} onPress={this.openBrowse} >
+                                    <Tile style={styles.upperSectionTile} onPress={() => {this.navigate('Config')}} >
                                         <View style={styles.upperSectionTileInnerView} >
                                             <Icon name='md-settings' style={[styles.upperSectionTileText, styles.upperSectionTileIcon]} />
                                             <Text style={styles.upperSectionTileText}>Configuration</Text>
@@ -113,9 +76,6 @@ class HomeScreen extends React.Component {
                                     </Tile>
 
                                 </Section>
-
-
-
 
                                 <Section title='Recent Release' scrollValue={400}>
 
@@ -129,11 +89,8 @@ class HomeScreen extends React.Component {
                                     ))}
                                 </Section>
 
-                            </Browser>}
-
-
-
-
+                            </Browser>
+                        }
                 </Content>
             </Container>
 
@@ -161,7 +118,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     upperSectionTileInnerView: { flexDirection: 'column', alignItems: 'center', justifyContent: 'center' },
-    upperSectionTile: { backgroundColor: baseOrangeColor },
+    upperSectionTile: { backgroundColor: '#222', width: 140, height: 120 },
     upperSectionTileText: { color: 'white' },
     upperSectionTileIcon: { fontSize: 40 }
 })

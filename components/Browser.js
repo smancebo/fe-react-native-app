@@ -48,6 +48,7 @@ export default class Browser extends React.Component
         // });
 
         // this.setState({ sections, selectedSection: { index: 0, currentItem: 0, childrens: sections[0].childrens }});
+        this.previousKeyHandler = KeyEvent.listenerKeyDown;
         KeyEvent.removeKeyDownListener();
         KeyEvent.onKeyDownListener(({keyCode}) => {
             switch(keyCode){
@@ -168,6 +169,11 @@ export default class Browser extends React.Component
                 </ScrollList>
             </View>
         )
+    }
+
+    componentWillUnmount(){
+        KeyEvent.removeKeyDownListener();
+        this.previousKeyHandler && KeyEvent.onKeyDownListener(this.previousKeyHandler.listener);
     }
 }
 

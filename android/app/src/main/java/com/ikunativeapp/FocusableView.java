@@ -21,6 +21,8 @@ public class FocusableView extends ReactViewGroup {
     Context _context;
     float _pivotX;
     float _pivotY;
+    private boolean _focusState = false;
+
     public FocusableView(Context context) {
         super(context);
         _context = context;
@@ -35,52 +37,51 @@ public class FocusableView extends ReactViewGroup {
 
     public void Focus(){
 
-        ScaleView(NO_FOCUS_SCALE, FOCUS_SCALE, NO_FOCUS_SCALE, FOCUS_SCALE, NO_FOCUS_OPACITY, FOCUS_OPACITY);
+        ScaleView(FOCUS_SCALE, FOCUS_SCALE, FOCUS_OPACITY);
 
     }
 
     public void Blur(){
 
-        ScaleView(FOCUS_SCALE, NO_FOCUS_SCALE, FOCUS_SCALE, NO_FOCUS_SCALE, FOCUS_OPACITY, NO_FOCUS_OPACITY);
+
+        ScaleView(NO_FOCUS_SCALE,NO_FOCUS_SCALE, NO_FOCUS_OPACITY);
 
     }
 
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        if(isFocus()){
+            this.Focus();
+        } else {
+            this.Blur();
+        }
 
-    private void ScaleView(float fromX, float toX, float fromY, float toY, float alphaFrom, float alphaTo){
-        Log.d("ScaleWidth", String.valueOf(getWidth()));
+    }
 
+    private void ScaleView(float x, float y, float alpha){
 
-        if( getWidth() > 0) {
 
 
             _pivotX = getWidth() / 2;
             _pivotY = getHeight() / 2;
 
+            this.setPivotX(_pivotX);
+            this.setPivotY(_pivotY);
 
-            AnimationSet animation = new AnimationSet(false);
+            this.animate().scaleX(x).scaleY(y).alpha(alpha).setDuration(200).start();
 
-            ScaleAnimation scale = new ScaleAnimation(fromX, toX, fromY, toY, _pivotX, _pivotY);
-            scale.setFillAfter(true);
-            scale.setDuration(200);
-            scale.setStartTime(0);
 
-            AlphaAnimation alpha = new AlphaAnimation(alphaFrom, alphaTo);
-
-            alpha.setDuration(200);
-            alpha.setFillAfter(true);
-            alpha.setStartTime(200);
-
-            animation.setFillAfter(true);
-            animation.addAnimation(scale);
-            animation.addAnimation(alpha);
-
-            this.startAnimation(animation);
-        }
 
 
     }
 
 
+    public boolean isFocus() {
+        return _focusState;
+    }
 
-
+    public void setFocusState(boolean _focusState) {
+        this._focusState = _focusState;
+    }
 }

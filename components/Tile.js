@@ -10,15 +10,24 @@ class Tile extends React.Component {
         super(props);
        
         this._onPress = this._onPress.bind(this);
+        // this.state = {
+        //     focus: false
+        // }
     }
-    // shouldComponentUpdate(newProps, newState) {
-    //     const { focus: isFocus = false } = this.props;
-    //     const { focus: newFocus = false } = newProps;
-    //     if (isFocus !== newFocus) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
+    shouldComponentUpdate(newProps, newState) {
+        const { focus: isFocus = false } = this.props;
+        const { focus: newFocus = false } = newProps;
+        if (isFocus !== newFocus) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // componentWillReceiveProps(newProps){
+    //     const {focus} = newProps;
+    //     this.setState({focus})
+    //     this.forceUpdate();
     // }
 
 
@@ -31,14 +40,15 @@ class Tile extends React.Component {
     }
 
     render() {
-        const { style = {}, focus = false, pivotX = 0, pivotY = 0 } = this.props;
-        
+        // const {focus} = this.state;
+        const { style = {}, focus, pivotX = 0, pivotY = 0, focusBackgroundColor = baseOrangeColor } = this.props;
+        const selected = focus ? { backgroundColor: focusBackgroundColor} : {}
         return (
 
-            <FocusableView focusView={focus} style={{ margin: 5}} pivotX={pivotX} pivotY={pivotY}  >
+            <FocusableView focusView={focus} style={[{ margin: 5}]} pivotX={pivotX} pivotY={pivotY}  >
 
                 <View style={styles.wrapper} >
-                    <View style={[styles.tile, style,]}  >
+                    <View style={[styles.tile, style, selected]}  >
 
                         {this.props.children}
 
@@ -58,11 +68,11 @@ class Tile extends React.Component {
 
 Tile.Image = (props) => {
     const {focus} = props;
-    const selected = focus ? { backgroundColor: 'white' } : {} 
+    
    
     return (
         <View style={styles.imageTileWrapper}>
-            <Tile {...props} style={[styles.imageTile, selected]} >
+            <Tile focusBackgroundColor='white' {...props} style={[styles.imageTile]} >
                 <View style={styles.imageTileImageWrapper}>
                     <Image source={{ uri: props.image }} style={styles.imageTileImage} />
                 </View>
@@ -74,11 +84,11 @@ Tile.Image = (props) => {
 
 Tile.Show = (props) => {
     const { focus } = props;
-    const selected = focus ? { backgroundColor: 'white' } : {}
+   
 
     return (
         <View style={styles.showTileWrapper}>
-            <Tile {...props} style={[styles.showTile, selected]} >
+            <Tile {...props} style={[styles.showTile]} focusBackgroundColor='white' >
                 <View style={styles.showTileImageWrapper}>
                     <Image source={{ uri: props.image }} style={styles.showTileImage} />
                 </View>

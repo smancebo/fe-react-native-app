@@ -81,7 +81,7 @@ export default class Section extends React.PureComponent {
     componentWillReceiveProps(newProps) {
         const { selectedElement } = newProps;
        this.setState({currentItem: selectedElement})
-       this.forceUpdate()
+     
     }
 
     registerTile(tile) {

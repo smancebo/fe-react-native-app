@@ -70,6 +70,7 @@ public class VideoViewManager extends SimpleViewManager<VideoMainView> {
                 .put("onResume", MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onResume")))
                 .put("onPaused", MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onPaused")))
                 .put("onBuffering", MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onBuffering")))
+                .put("onProgress", MapBuilder.of("phasedRegistrationNames", MapBuilder.of("bubbled", "onProgress")))
                 .build();
     }
 

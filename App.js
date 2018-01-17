@@ -5,38 +5,40 @@ import HomeScreen from './screens/HomeScreen/HomeScreen';
 import BrowseScreen from './screens/BrowseScreen/BrowseScreen';
 import EpisodeScreen from './screens/EpisodesScreen/EpisodeScreen';
 import ViewEpisodeScreen from './screens/ViewEpisode/ViewEpisodeScreen';
-import { Drawer as DrawerContent } from './components/DrawerComponent';
+import ConfigScreen from './screens/ConfigScreen/ConfigScreen';
 import { withLoading } from './components/hoc/withLoading';
 
 
 
-import { drawerActiveBackgroundColor, drawerBackgroundColor, drawerInactiveTintColor, drawerActiveTintColor } from './common/constants';
+// import { drawerActiveBackgroundColor, drawerBackgroundColor, drawerInactiveTintColor, drawerActiveTintColor } from './common/constants';
 
 
 
-const Main = DrawerNavigator({
-  Home: { screen: withLoading(HomeScreen) },
-  Browse: { screen: withLoading(BrowseScreen) },
+// const Main = DrawerNavigator({
+//   Home: { screen: withLoading(HomeScreen) },
+//   Browse: { screen: withLoading(BrowseScreen) },
   
-}, {
-    contentComponent: DrawerContent,
-    drawerBackgroundColor: drawerBackgroundColor,
-    contentOptions: {
-      activeBackgroundColor: drawerActiveBackgroundColor,
-      activeTintColor: drawerActiveTintColor,
-      inactiveTintColor: drawerInactiveTintColor,
+// }, {
+//     contentComponent: DrawerContent,
+//     drawerBackgroundColor: drawerBackgroundColor,
+//     contentOptions: {
+//       activeBackgroundColor: drawerActiveBackgroundColor,
+//       activeTintColor: drawerActiveTintColor,
+//       inactiveTintColor: drawerInactiveTintColor,
 
-    }
-  })
+//     }
+//   })
 
 const Navigator = StackNavigator({
 
-  Main: { screen: Main },
+  Home: { screen: withLoading(HomeScreen) },
+  Browse: { screen: withLoading(BrowseScreen) },
   Episodes: { screen: withLoading(EpisodeScreen) },
-  View: { screen: withLoading(ViewEpisodeScreen)}
+  View: { screen: withLoading(ViewEpisodeScreen)},
+  Config: { screen: withLoading(ConfigScreen)}
 }, {
     headerMode: 'none',
-    animationEnabled: false,
+    animationEnabled: true,
     swipeEnabled: false
   })
 
