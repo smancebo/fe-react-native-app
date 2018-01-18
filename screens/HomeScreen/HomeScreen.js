@@ -71,7 +71,7 @@ class HomeScreen extends React.Component {
                                     <Tile style={styles.upperSectionTile} onPress={() => {this.navigate('Config')}} >
                                         <View style={styles.upperSectionTileInnerView} >
                                             <Icon name='md-settings' style={[styles.upperSectionTileText, styles.upperSectionTileIcon]} />
-                                            <Text style={styles.upperSectionTileText}>Configuration</Text>
+                                            <Text style={styles.upperSectionTileText}>Settings</Text>
                                         </View>
                                     </Tile>
 

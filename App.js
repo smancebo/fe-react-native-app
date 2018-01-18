@@ -6,6 +6,7 @@ import BrowseScreen from './screens/BrowseScreen/BrowseScreen';
 import EpisodeScreen from './screens/EpisodesScreen/EpisodeScreen';
 import ViewEpisodeScreen from './screens/ViewEpisode/ViewEpisodeScreen';
 import ConfigScreen from './screens/ConfigScreen/ConfigScreen';
+import MediaSourceScreen from './screens/MediaSourceScreen/MediaSourceScreen';
 import { withLoading } from './components/hoc/withLoading';
 
 
@@ -35,7 +36,8 @@ const Navigator = StackNavigator({
   Browse: { screen: withLoading(BrowseScreen) },
   Episodes: { screen: withLoading(EpisodeScreen) },
   View: { screen: withLoading(ViewEpisodeScreen)},
-  Config: { screen: withLoading(ConfigScreen)}
+  Config: { screen: withLoading(ConfigScreen)},
+  MediaSource: { screen: withLoading(MediaSourceScreen)}
 }, {
     headerMode: 'none',
     animationEnabled: true,
