@@ -11,30 +11,48 @@ import KeyEvent from 'react-native-keyevent';
 import { config } from '../../config'
 import  Service from '../../common/api/service';
 import Background from '../../components/Background';
+import ChooseFlavorDialog from './ChooseFlavorDialog';
  
 export default class EpisodeScreen extends React.Component {
 
     constructor(props) {
         super(props);
         this.onEpisodeSelected = this.onEpisodeSelected.bind(this);
+        this.state = {
+            showFlavors: false,
+            flavors: []
+        }
     }
     
     async onEpisodeSelected(episode, backHandler){
         this.props.openDialog();
         const { show } = this.props.navigation.state.params;
         const {data: videoLink} = await Service.GetVideo(episode.link);
-        this.props.navigation.navigate('View', {url: videoLink.url, episode, show, backHandler})
-        this.props.closeDialog();
+
+        if(videoLink instanceof Array){
+            this.props.closeDialog();
+            this.setState({
+                showFlavors: true,
+                flavors: videoLink
+            })
+
+        } else {
+            this.props.navigation.navigate('View', { url: videoLink.url, episode, show, backHandler })
+            this.props.closeDialog();
+        }
+
+        
     }
     render(){
 
         const { params } = this.props.navigation.state
         const { show, episodes } = params
+        const { showFlavors = false, flavors } = this.state;
 
         return(
             <Container style={{height: '100%'}}  >
                 <Content style={globalStyles.page} contentContainerStyle={{height: '100%'}} >
-                   
+                    <ChooseFlavorDialog visible={showFlavors} onClose={() => {}} flavors={flavors} />
                     <View style={{flex: 1, flexDirection: 'row'}}>
                         <View style={{flex: 30}}>
                             <View style={style.absoluteContainer}>
